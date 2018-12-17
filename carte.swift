@@ -1,7 +1,7 @@
 //Carte
 import Foundation
 class carte : CarteProtocol{
-	private var nom : string
+	private var Nom : string
 	private var DefPDef : int 
 	private var Attaque : int 
 	private var PointdeDefduTour : int 
@@ -11,7 +11,7 @@ class carte : CarteProtocol{
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
-	self.nom= nil
+	self.Nom= nil
 	self.DefPDef= nil
 	self.Attaque= nil    
 	self.PointdeDefduTour= nil
@@ -24,7 +24,7 @@ class carte : CarteProtocol{
     //Renvoie le nom de la carte
     //-> String
     func getNom(){
-	    return self.nom
+	    return self.Nom
     }     
 
 	//mettreEnPositionOffensive: CarteProtocol -> CarteProtocol
@@ -69,8 +69,8 @@ class carte : CarteProtocol{
 		self.DefPDef = 4
 		self.DefPOff = 4
 		self.Postion = True
-		self.nom = Roi1
-		self.portee = 3 //PB-----------------------------------------------------------
+		self.Nom = Roi1
+		self.Portee = 3 //PB-----------------------------------------------------------
 	}
 
 
@@ -83,8 +83,8 @@ class carte : CarteProtocol{
 		self.DefPDef = 4
 		self.DefPOff = 4
 		self.Postion = True
-		self.nom = Roi2
-		self.portee = 3 //PB-----------------------------------------------------------
+		self.Nom = Roi2
+		self.Portee = 3 //PB-----------------------------------------------------------
 	}
 
 	//CreerSoldat:  ->CarteProtocol
@@ -96,8 +96,8 @@ class carte : CarteProtocol{
 		self.DefPDef = 2
 		self.DefPOff = 2
 		self.Postion = True
-		self.nom = Soldat
-		self.portee = 1 //PB-----------------------------------------------------------
+		self.Nom = Soldat
+		self.Portee = 1 //PB-----------------------------------------------------------
 	}
 
 	//creerGarde:  ->CarteProtocol
@@ -122,8 +122,8 @@ class carte : CarteProtocol{
 		self.DefPDef = 2
 		self.DefPOff = 1
 		self.Postion = True
-		self.nom = Archer
-		self.portee = 3 //PB-----------------------------------------------------------
+		self.Nom = Archer
+		self.Portee = 3 //PB-----------------------------------------------------------
 	}
 
 	//getAttaque: CarteProtocol -> Int
@@ -187,13 +187,17 @@ class carte : CarteProtocol{
 	//Attribue la valeur de la force de défense en position défensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position défensive = entier rentré en paramètre = 2 si l'carte est un soldat ou archer, 3 si c'est un garde, 4 si c'est un Roi1, 5 si c'est un Roi2
 	//Résultat: La carte à une valeur de force de défense en position défensive affectée
-	mutating func setDefPDef(valeur: Int)
+	mutating func setDefPDef(valeur: Int){
+		self.DefPDef = valeur
+	}
 
 	//setDefPOff: Int -> CarteProtocol
 	//Attribue la valeur de la force de défense en position offensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position offensive = entier rentré en paramètre = 1 si l'carte est un soldat ou archer, 2 si c'est un garde, 4 si c'est un Roi1 ou Roi2
 	//Résultat: La carte à une valeur de force de défense en position offensive affectée
-	mutating func setDefPOff(valeur: Int)
+	mutating func setDefPOff(valeur: Int){
+		self.DefPOff = valeur
+	}
 
 	//setPortee: 
 
@@ -201,23 +205,43 @@ class carte : CarteProtocol{
 	// Attibue la valeur de defense de ce tour à une carte
 	//Pré-conditions: valeur >= 0 et valeur <= Points de def en fonction de la position de la carte
 	//Résultat: La carte à une nouvelle valeur de défense pour ce tour qui lui est affectée
-	mutating func setPointsDefTour(valeur: Int)
+	mutating func setPointsDefTour(valeur: Int){
+		self.PointsDefTour = valeur
+	}
 
 
 	//estRoi:CarteProtocol -> Bool
 	//Indique si une carte est un roi ou pas, appelle getNom
 	//Résultat: Booléen: vrai si la fonction getNom renvoie  Roi1 ou Roi2, faux sinon
-	func estRoi() -> Bool
+	func estRoi() -> Bool{
+		if self.nom == "Roi1" or self.nom == "Roi2"{
+			return True
+		}else {
+			return False
+		}
+	}
 
 	//estSoldat:CarteProtocol -> Bool
 	//Indique si une carte est un soldat ou pas, apelle getNom
 	//Résultat: Booléen: vrai si la fonction getNom renvoie Soldat, faux sinon
-	func estSoldat() -> Bool
+	func estSoldat() -> Bool{
+		if self.nom == "Soldat"
+			return True
+		}else {
+			return False
+		}
+	}
 
 	//EstDefensif: CarteProtocol -> Bool
 	//Indique si la carte est en position défensive (vertical)
 	//Résultat: retourne true si carte en position défensive, false sinon
-	func estDefensif() -> Bool
+	func estDefensif() -> Bool{
+		if self.Position == False{
+			return True
+		}else {
+			return False
+		}
+	}
 }
 	
 
