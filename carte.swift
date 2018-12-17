@@ -65,7 +65,12 @@ class carte : CarteProtocol{
 	//Résultat: 1 carte de type roi1
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive= 4 ; défense/position oﬀensive = 4 ; portée = toute la ligne devant lui, et la position à une distance 2 devant lui (c’est à dire la case juste derrière celle devant lui); nom=Roi1 ; positionDéfensive=true
 	mutating func creerRoi1(){
-		
+		self.Attaque = 1
+		self.DefPDef = 4
+		self.DefPOff = 4
+		self.Postion = True
+		self.nom = Roi1
+		self.portee = 3 //PB-----------------------------------------------------------
 	}
 
 
@@ -73,25 +78,53 @@ class carte : CarteProtocol{
 	//Crée un roi2, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Roi2
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive = 5 ; défense/position oﬀensive = 4 ; portée= toute la ligne devant lui ; nom=Roi2 ; positionDéfensive=true
-	mutating func creerRoi2()
+	mutating func creerRoi2(){
+		self.Attaque = 1
+		self.DefPDef = 4
+		self.DefPOff = 4
+		self.Postion = True
+		self.nom = Roi2
+		self.portee = 3 //PB-----------------------------------------------------------
+	}
 
 	//CreerSoldat:  ->CarteProtocol
 	//Crée un soldat, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Soldat
 	//Post-conditions: caractéristiques: attaque = autant que d’cartes dans la Main ; défense/position défensive=2 ; défense/position oﬀensive= 1 ; portée =la position devant lui ; nom=Soldat ; positionDéfensive=true
-	mutating func creerSoldat()
+	mutating func creerSoldat(){
+		self.Attaque = //PB --------------------------------------------------
+		self.DefPDef = 2
+		self.DefPOff = 2
+		self.Postion = True
+		self.nom = Soldat
+		self.portee = 1 //PB-----------------------------------------------------------
+	}
 
 	//creerGarde:  ->CarteProtocol
 	//Crée un garde, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Garde
 	//Post-conditions: caractéristiques: attaque = 1 ; défense/position défensive=3 ; défense/position oﬀensive = 2 ; portée=la position devant lui ; nom=Garde ; positionDéfensive=true
-	mutating func creerGarde()
+	mutating func creerGarde(){
+		self.Attaque = 1
+		self.DefPDef = 3
+		self.DefPOff = 2
+		self.Postion = True
+		self.nom = Garde
+		self.portee = 1 //PB-----------------------------------------------------------
+	}
 
 	//creerArcher:  ->CarteProtocol
 	//Crée un archer, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Archer
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive = 2 ; défense/position oﬀensive= 1 ; portée= les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale ; nom=Archer ; positionDéfensive=true
-	mutating func creerArcher()
+	mutating func creerArcher(){
+		self.Attaque = 1
+		self.DefPDef = 2
+		self.DefPOff = 1
+		self.Postion = True
+		self.nom = Archer
+		self.portee = 3 //PB-----------------------------------------------------------
+	}
 
 	//getAttaque: CarteProtocol -> Int
 	//Renvoie la force d'attaque d'une carte
