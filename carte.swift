@@ -6,7 +6,7 @@ class carte : CarteProtocol{
 	private var Attaque : int 
 	private var PointdeDefduTour : int 
 	private var DefPOff : int 
-	private var Portee : int 
+	private var Portee : int //OU String pb----------------------
 	private var Position : bool // true carte en offensive ; false defensive
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
