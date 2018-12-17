@@ -1,10 +1,23 @@
 //Carte
 import Foundation
-struct:carte, CarteProtocol
+class carte : CarteProtocol{
+	private var nom : string
+	private var DefPDef : int 
+	private var Attaque : int 
+	private var PointdeDefduTour : int 
+	private var DefPOff : int 
+	private var Portee : int 
+	private var Position : bool
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
-	return new carte;
+	self.nom= nil
+	self.DefPDef= nil
+	self.Attaque= nil    
+	self.PointdeDefduTour= nil
+	self.DefPoff= nil    
+	self.Portee= nil    
+	self.Position= nil	    
     }
     
     //getNom: CarteProtocol -> String
@@ -149,6 +162,7 @@ struct:carte, CarteProtocol
 	//Indique si la carte est en position défensive (vertical)
 	//Résultat: retourne true si carte en position défensive, false sinon
 	func estDefensif() -> Bool
+}
 	
 
 }
