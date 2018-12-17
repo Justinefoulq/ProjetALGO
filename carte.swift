@@ -1,6 +1,9 @@
 //Carte
 import Foundation
 class carte : CarteProtocol{
+	
+	associatedtype Zone
+	
 	private var Nom : string
 	private var DefPDef : int 
 	private var Attaque : int 
@@ -8,6 +11,7 @@ class carte : CarteProtocol{
 	private var DefPOff : int 
 	private var Portee : int //OU String pb----------------------
 	private var Position : bool // true carte en offensive ; false defensive
+	private var Zone : zone
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
@@ -17,13 +21,14 @@ class carte : CarteProtocol{
 	self.PointdeDefduTour= nil
 	self.DefPoff= nil    
 	self.Portee= nil    
-	self.Position= nil	    
+	self.Position= nil
+	self.Zone = nil
     }
     
     //getNom: CarteProtocol -> String
     //Renvoie le nom de la carte
     //-> String
-    func getNom(){
+    func getNom() -> string{
 	    return self.Nom
     }     
 
@@ -43,7 +48,7 @@ class carte : CarteProtocol{
 	//getPointdeDefduTour:  CarteProtocol-> Int
 	//Résultat : renvoie les points de def de la carte (au cas où elle a déjà eu des dégâts) après une attaque (points de dégâts cumulésjusqu'à la fin du tour)
 	//post conditions: les points de def du tour son > 0 et <= au point de Def en vigueur de la carte
-	func getPointdeDefduTour(){
+	func getPointdeDefduTour() -> int{
 		 return self.PointdeDefduTour
 	}
 
@@ -134,7 +139,7 @@ class carte : CarteProtocol{
 	//																   Soldat: égale au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains); 
 	//																   Garde: 1;
 	//																   Archer: 1
-	func getAttaque(){
+	func getAttaque() -> int{
 		return self.Attaque
 	}
 
@@ -147,7 +152,7 @@ class carte : CarteProtocol{
 	//																   		 Soldat: 2; 
 	//																   		 Garde: 3;
 	//																   		 Archer: 2
-	func getDefPDef() {
+	func getDefPDef() -> int{
 		return self.DefPDef
 	}
 
@@ -159,7 +164,7 @@ class carte : CarteProtocol{
 	//																   		 Soldat: 1; 
 	//																   		 Garde: 2;
 	//																   		 Archer: 1
-	func getDefPOff(){
+	func getDefPOff() -> int{
 		return self.DefPOff
 	}
 
@@ -171,7 +176,7 @@ class carte : CarteProtocol{
 	//																   		 Soldat: la position devant lui; 
 	//																   		 Garde: la position devant lui;
 	//																   		 Archer: les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale
-	func getPortee(){
+	func getPortee() -> {
 		return self.Portee
 	}
 
@@ -241,6 +246,14 @@ class carte : CarteProtocol{
 		}else {
 			return False
 		}
+	}
+
+	func getZone() ->Zone{
+		return self.Zone		
+	}
+
+	func setZone(Zone : Zone){
+		self.Zone = Zone	
 	}
 }
 	
