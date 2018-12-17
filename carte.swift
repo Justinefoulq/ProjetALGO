@@ -1,20 +1,19 @@
 //Carte
 import Foundation
-protocol CarteProtocol{
-
+struct:carte, CarteProtocol
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
-	return new CarteProtocol;
+	return new carte;
     }
     
     //getNom: CarteProtocol -> String
     //Renvoie le nom de la carte
     //-> String
     func getNom(x: CarteProtocol){
-	    
+	    return x.Nom
     } 
-    
+    var nom : string
     
 
 	//mettreEnPositionOffensive: CarteProtocol -> CarteProtocol
