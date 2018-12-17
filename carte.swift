@@ -92,7 +92,7 @@ class carte : CarteProtocol{
 	//Résultat: 1 carte de type Soldat
 	//Post-conditions: caractéristiques: attaque = autant que d’cartes dans la Main ; défense/position défensive=2 ; défense/position oﬀensive= 1 ; portée =la position devant lui ; nom=Soldat ; positionDéfensive=true
 	mutating func creerSoldat(){
-		self.Attaque = //PB --------------------------------------------------
+		self.Attaque = //PB on sait pas queml main appartient la carte --------------------------------------------------
 		self.DefPDef = 2
 		self.DefPOff = 2
 		self.Postion = True
@@ -134,7 +134,9 @@ class carte : CarteProtocol{
 	//																   Soldat: égale au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains); 
 	//																   Garde: 1;
 	//																   Archer: 1
-	func getAttaque() -> Int
+	func getAttaque(){
+		return self.Attaque
+	}
 
 
 	//getDefPDef: CarteProtocol -> Int
@@ -145,7 +147,9 @@ class carte : CarteProtocol{
 	//																   		 Soldat: 2; 
 	//																   		 Garde: 3;
 	//																   		 Archer: 2
-	func getDefPDef() -> Int
+	func getDefPDef() {
+		return self.DefPDef
+	}
 
 	//getDefPOff: CarteProtocol -> Int
 	//Renvoie la valeur de la force de défense en position offensive (La carte en position horizontale) d'une carte
@@ -155,7 +159,9 @@ class carte : CarteProtocol{
 	//																   		 Soldat: 1; 
 	//																   		 Garde: 2;
 	//																   		 Archer: 1
-	func getDefPOff() -> Int
+	func getDefPOff(){
+		return self.DefPOff
+	}
 
 	//getPortee: CarteProtocol -> String
 	//Renvoie la portée d'une carte
@@ -165,13 +171,17 @@ class carte : CarteProtocol{
 	//																   		 Soldat: la position devant lui; 
 	//																   		 Garde: la position devant lui;
 	//																   		 Archer: les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale
-	func getPortee() -> String
+	func getPortee(){
+		return self.Portee
+	}
 
 	//setAttaque: Int -> CarteProtocol
 	//Attribue la valeur de la force d'attaque à une carte
 	//Pré-conditions: Valeur de la force d'attaque = entier rentré en paramètre = 1 si l'carte est un roi1, roi2, garde ou archer ou égal au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains)
 	//Résultat: La carte à une valeur de force d'attaque affectée
-	mutating func setAttaque(valeur: Int)
+	mutating func setAttaque(valeur: Int){
+		self.Attaque= valeur
+	}
 	 
 	//setDefPDef: Int -> CarteProtocol
 	//Attribue la valeur de la force de défense en position défensive à une carte
