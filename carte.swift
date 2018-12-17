@@ -7,7 +7,7 @@ class carte : CarteProtocol{
 	private var PointdeDefduTour : int 
 	private var DefPOff : int 
 	private var Portee : int 
-	private var Position : bool
+	private var Position : bool // true carte en offensive ; false defensive
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
@@ -23,37 +23,50 @@ class carte : CarteProtocol{
     //getNom: CarteProtocol -> String
     //Renvoie le nom de la carte
     //-> String
-    func getNom(x: CarteProtocol){
-	    return x.Nom
-    } 
-    var nom : string
-    
+    func getNom(){
+	    return self.nom
+    }     
 
 	//mettreEnPositionOffensive: CarteProtocol -> CarteProtocol
 	//met la carte en position offensive ( horizontale )
-	mutating func mettreEnPositionOffensive()
+	mutating func mettreEnPositionOffensive(){
+		self.position= True 
+	
+	}
     
     //mettreEnPositionDefensive: CarteProtocol -> CarteProtocol
     //met la carte en position Defensive ( verticale )
-    mutating func mettreEnPositionDefensive()
+    mutating func mettreEnPositionDefensive(){
+	self.position= False
+    }	    
 
 	//getPointdeDefduTour:  CarteProtocol-> Int
 	//Résultat : renvoie les points de def de la carte (au cas où elle a déjà eu des dégâts) après une attaque (points de dégâts cumulésjusqu'à la fin du tour)
 	//post conditions: les points de def du tour son > 0 et <= au point de Def en vigueur de la carte
-	func getPointdeDefduTour() -> Int
+	func getPointdeDefduTour(){
+		 return self.PointdeDefduTour
+	}
 
 
 	//initialiserPointdeDefTour: CarteProtocol -> CarteProtocol 
 	//Initialise en début de tour les pointsDeDefTour de la carte en fonction de sa position( offensive ou defensive).  
     //Si elle est en position offensive, alors ptDefDeTour sera égal au résultat de getDefPOff(), sinon il sera égal au résultat de getDefPDef())
-	mutating func initialiserPointdeDefTour()
+	mutating func initialiserPointdeDefTour(){
+		if self.position == true{
+			self.pointdeDefTour = self.getDefPOff() 
+		}else{
+			self.pointdeDefTour =self.getDefPDef() 
+		}
+	}
 
 
 	//creerRoi1:  ->CarteProtocol
 	//Crée un roi1, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type roi1
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive= 4 ; défense/position oﬀensive = 4 ; portée = toute la ligne devant lui, et la position à une distance 2 devant lui (c’est à dire la case juste derrière celle devant lui); nom=Roi1 ; positionDéfensive=true
-	mutating func creerRoi1()
+	mutating func creerRoi1(){
+		
+	}
 
 
 	//CreerRoi2:  ->CarteProtocol
