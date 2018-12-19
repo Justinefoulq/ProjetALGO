@@ -12,7 +12,7 @@ class joueur{
 	private var pioche : pioche
 	private var royaume : royaume
 	private var main : main
-	priavte var champDeBataille : champDeBataille
+	private var champDeBataille : champDeBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
