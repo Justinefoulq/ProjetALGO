@@ -97,7 +97,7 @@ class carte : CarteProtocol{
 	//Résultat: 1 carte de type Soldat
 	//Post-conditions: caractéristiques: attaque = autant que d’cartes dans la Main ; défense/position défensive=2 ; défense/position oﬀensive= 1 ; portée =la position devant lui ; nom=Soldat ; positionDéfensive=true
 	mutating func creerSoldat()->{
-		self.Attaque = //PB on sait pas queml main appartient la carte --------------------------------------------------
+		self.Attaque = //PB on sait pas quel main appartient la carte --------------------------------------------------
 		self.DefPDef = 2
 		self.DefPOff = 2
 		self.Postion = True
