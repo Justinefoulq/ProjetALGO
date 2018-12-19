@@ -1,12 +1,19 @@
 //JoueurProtocol
 import Foundation
-protocol JoueurProtocol{
+class joueur{
 	//main, champ de bataille, royaume, pioche
     associatedtype ChampDeBataille : ChampDeBatailleProtocol
     associatedtype Carte: CarteProtocol
     associatedtype Mains: MainsProtocol
     associatedtype Royaume: RoyaumeProtocol
     associatedtype Pioche: PiocheProtocol
+	
+	private var nom : String
+	private var pioche : pioche
+	private var royaume : royaume
+	private var main : main
+	priavte var champDeBataille : champDeBataille
+	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
 	//post-conditions pour la main: 1 roi, 3 unités piochées au hasard
@@ -31,7 +38,9 @@ protocol JoueurProtocol{
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	mutating func mobiliser(CarteMobilisee: Carte, nomZone: String) throws
+	mutating func mobiliser(CarteMobilisee: Carte, nomZone: String) throws{
+		
+	}
 
 
 
