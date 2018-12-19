@@ -10,10 +10,11 @@ protocol CarteProtocol{
     //Renvoie le nom de la carte
     func getNom() -> String
     
-    
+  
 
 	//mettreEnPositionOffensive: CarteProtocol -> CarteProtocol
 	//met la carte en position offensive ( horizontale )
+	
 	mutating func mettreEnPositionOffensive()
     
     //mettreEnPositionDefensive: CarteProtocol -> CarteProtocol
