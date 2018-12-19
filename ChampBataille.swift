@@ -56,13 +56,13 @@ class ChampBataille : ChampDeBatailleProtocol {
 		var liste : [String]
 		liste=["F1","F2","F3"]
 
-		if !(estVide(ChampBataille["F1"])) { 
+		if !(estVide(champBataille["F1"])) { 
 			liste = liste + ["A1"]
 		}
-		if !(estVide(ChampBataille["F2"])) { 
+		if !(estVide(champBataille["F2"])) { 
 			liste = liste + ["A2"]
 		}
-		if !(estVide(ChampBataille["F3"])) { 
+		if !(estVide(champBataille["F3"])) { 
 			liste = liste + ["A3"]
 		}
 
@@ -97,7 +97,7 @@ class ChampBataille : ChampDeBatailleProtocol {
 		var liste=nil
 
 		for (cle, valeur) in champbataille {
-			if valeur.getCarteZone.estDefensif {
+			if valeur.getCarteZone.estDefensif() {
 				liste=liste + [cle]
 			}
 		}
@@ -106,12 +106,53 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//initialiserPointdeDefTour: ChampDeBatailleProtocol -> ChampDeBatailleProtocol
 	//parcourt toutes les zones du champ de bataille après la phase d'action du joueur adverse et ré-initialise les points de défense de toutes les cartes du champs de bataille en fonction de leur position( defense / attaque) et de leur type d'unité
 	
-	mutating func initialiserPointdeDefTour()
+	mutating func initialiserPointdeDefTour(){
+
+		for (cle, valeur) in champbataille {
+			//Pour le joueur 1 et 2 roi different---------------determiner le joueur--------
+			if valeur.getCarteZone.estRoi() {
+				valeur.getCarteZone.setPointsDefTour(4)		
+			}else{
+				if valeur.getCarteZone.estSoldat() {
+					if valeur.getCarteZone.estDefensif(){
+						valeur.getCarteZone.setPointsDefTour(2)
+					}else {
+						valeur.getCarteZone.setPointsDefTour(1)
+					}					
+				}else{
+					if valeur.getCarteZone.estGarde() { //EstGarde n'existe pas ---------------------
+						if valeur.getCarteZone.estDefensif(){
+							valeur.getCarteZone.setPointsDefTour(3)
+						}else {
+							valeur.getCarteZone.setPointsDefTour(1)
+						}		
+
+					}else{
+						if valeur.getCarteZone.estDefensif(){
+							valeur.getCarteZone.setPointsDefTour(2)
+						}else {
+							valeur.getCarteZone.setPointsDefTour(1)
+						}	
+					}
+				}
+
+
+			}
+		}
+	}
 
     //initialiserAttaqueSoldat: ChampDeBatailleProtocol -> ChampDeBatailleProtocol
     //parcourt toutes les zones du champ de bataille au début de la phase d'attaque du joueur adverse et ré-initialise les points d'attaque des soldats du champs de bataille en fonction du nombre de cartes qu'il ya dans la main du joueur
    
-    mutating func initialiserAttaqueSoldat()
+
+   //----------Comment je trouve le nombre de cartes dans la main ? J'ai un champ de bataille mais comment je sais a quel joueur il appartient ? Un joueur a une main et un champ de bataille mais comment relis chp bataille a main
+    mutating func initialiserAttaqueSoldat() {
+    	for (cle, valeur) in champBataille {
+    		if valeur.getCarteZone.estSoldat() {
+    			valeur.getCarteZone.setAttaque(nbcartemain) //--------- pb nbcartemain
+    		}
+    	}
+    }
 
 
 
@@ -120,19 +161,62 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//pre-conditions: champ de bataille non vide
 	//résultat: champ de bataille avec ses cartes en position défensive
 	
-	mutating func replacerCarte() throws
+	mutating func replacerCarte() throws {
 
+		if !estVide(self.champBataille){
+			for (cle, valeur) in champBataille {
+				if !(valeur.estVide()) {
+					valeur.getCarteZone.mettreEnPositionDefensive()
+				} 			
+    		}	
+		}else{
+			Error
+		}
+	}
+
+
+	//Je pense que check avancement et une fonction mutating qui renvoie un chp de bataille modifié
 	//checkAvancement: ChampDeBatailleProtocol->
 	// Parcourt le champ de bataille et vérifie si une carte doit avancer(si une zone du front vide alors que celle derrière non), et appelle la fct avancerCarte() si c'est le cas
 	
-	func checkAvancement()
+	mutating func checkAvancement() {
+		if (estVide(champBataille["F1"]) && !(estVide(champBataille["A1"]) { 
+			avancercarte("A1")	
+		}
+		if (estVide(champBataille["F2"]) && !(estVide(champBataille["A2"]) { 
+			avancercarte("A2")	
+		}
+		if (estVide(champBataille["F3"]) && !(estVide(champBataille["A3"]) { 
+			avancercarte("A3")	
+		}
+
+
+	}
 
 	//avancerCarte: ZoneProtocol ->
 	//avance la carte qui se trouve dans la zone passée en paramètre en ligne de front, sur la zone juste devant
 	//pré-conditions: Zone passée en paramètre est une zone arrière (A1,A2 ou A3)
 	//Résultat: carte avancée dans la zone devant elle
-	
-	func avancerCarte(nomZone:Zone) throws
+	//-------------est ce qu'il faut mettre let avat les condition de mon throw , Arnaud la mis dans Zone ----------------------------------------------------
+	func avancerCarte(nomZone:Zone) throws {
+		if nomZone== "A1" || nomZone== "A2" || nomZone== "A3" {
+			if nomZone== "A1" {
+				champBataille["F1"].setCarteZone(getCarteZone(champBataille["A1"]))
+				champBataille["A1"].setCarteZone(nil)
+			}else {
+				if nomZone== "A2" {
+					champBataille["F2"].setCarteZone(getCarteZone(champBataille["A2"]))
+					champBataille["A2"].setCarteZone(nil)
+				}else {
+					champBataille["F3"].setCarteZone(getCarteZone(champBataille["A3"]))
+					champBataille["A3"].setCarteZone(nil)
+				}
+			}		
+		}else{
+			Error
+		}
+
+	}
 
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [Zone]
 	//Pré-conditions: Zone en entrée non vide
@@ -145,7 +229,7 @@ class ChampBataille : ChampDeBatailleProtocol {
     //pré-conditions: Chaîne de caactères entrée en paramètre correspond à une zone initialisée 
     //Resultat: renvoie un zone, celle dont le nom est passé en paramètre
     
-    //func getZone(nomZone: String) -> Zone------------------------------N'a rien a faire ici , a mettre dans zone --------------------
+    //func getZone(nomZone: String) -> Zone------------------------------N'a rien a faire ici ( a mettre dans zone et encore)--------------------
 	
     //affichageCible: [String] ->
     //Renvoie les cartes et toutes leurs propritétés détailées (point de défense restant...) des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
@@ -156,7 +240,8 @@ class ChampBataille : ChampDeBatailleProtocol {
 	// makeIterator : ChampDeBatailleProtocol -> IteratorNomZone
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur
-	func makeIterator() -> IteratorNomZone
+	f
+	unc makeIterator() -> IteratorNomZone
 
 }
 
