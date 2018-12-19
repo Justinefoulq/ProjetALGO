@@ -44,30 +44,64 @@ class pioche{
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
 	mutating func piocher()-> Carte{
-		let number = Int.random(in: 0 ..< len(self.pioche)-1)
+		var taille = self.pioche.count
+		let number = Int.random(in: 0 ..< taille-1)
 		return pioche[number];
 	}
 
 	
 	//nombreCartes: PiocheProtocol -> Int
 	//renvoie le nombre de cartes qu'il y a dans la pioche
-	func nombreCarte()-> Int
+	func nombreCarte()-> Int{
+		return self.pioche.count+
+	}
 	
 	//getNombreCarteSoldat: Piocheprotocol-> Int
 	//renvoie le nombre de cartes soldat restant dans la pioche
-	func getNombreCarteSoldat()->Int
+	func getNombreCarteSoldat()->Int{
+		var compteur = 0
+		for carte in pioche {
+    			if (carte.getNom()== "Soldat"){
+				compteur = compteur+1
+			}
+		}
+		return compteur
+	}
+	
 
 	//getNombreCarteGarde: Piocheprotocol-> Int
 	//renvoie le nombre de cartes garde restant dans la pioche
-	func getNombreCarteGarde()-> Int
+	func getNombreCarteGarde()-> Int{
+		var compteur = 0
+		for carte in pioche {
+    			if (carte.getNom()== "Garde"){
+				compteur = compteur+1
+			}
+		}
+		return compteur
+	}
 
 	//getNombreCarteArcher: Piocheprotocol-> Int
 	//renvoie le nombre de cartes archer restant dans la pioche
-	func getNombreCarteArcher()-> Int
+	func getNombreCarteArcher()-> Int{
+		var compteur = 0
+		for carte in pioche {
+    			if (carte.getNom()== "Archer"){
+				compteur = compteur+1
+			}
+		}
+		return compteur
+	}
 
 	//estVide: Piocheprotocol-> Bool
 	//renvoie vrai si la pioche est vide
 	//postCondition Si estVide renvoie vrai alors nombreCarte = 0
-	func estVide()-> Bool
+	func estVide()-> Bool{
+		if(pioche.count == 0){
+			return true
+		}else{
+			return false
+		}
+	}
 
 }
