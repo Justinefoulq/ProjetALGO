@@ -1,12 +1,37 @@
 // Pioche
 import Foundation
-protocol PiocheProtocol{
+class pioche{
     
     associatedtype Carte: CarteProtocol
+	private var nombreCarteSoldat : int 
+	private var nombreCarteArcher : int
+	private var nombreCarteGarde : int
+	private var pioche : [carte]
 	//init:  -> PiocheProtocol
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5
-	init()
+	init(){
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerSoldat())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerGarde())
+		self.pioche.append(carte.creerArcher())
+		self.pioche.append(carte.creerArcher())
+		self.pioche.append(carte.creerArcher())
+		self.pioche.append(carte.creerArcher())
+		self.pioche.append(carte.creerArcher())
+	}
 
 	//piocher: -> CarteProtocol
 	//précondition: La pioche n'est pas vide
@@ -18,7 +43,10 @@ protocol PiocheProtocol{
 	// postCondition : nombreCarteSoldat est >=0
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
-	mutating func piocher()-> Carte
+	mutating func piocher()-> Carte{
+		let number = Int.random(in: 0 ..< len(self.pioche)-1)
+		return pioche[number];
+	}
 
 	
 	//nombreCartes: PiocheProtocol -> Int
