@@ -42,7 +42,7 @@ class carte : CarteProtocol{
     //mettreEnPositionDefensive: CarteProtocol -> CarteProtocol
     //met la carte en position Defensive ( verticale )
     mutating func mettreEnPositionDefensive(){
-	self.position= False
+	self.position= false
     }	    
 
 	//getPointdeDefduTour:  CarteProtocol-> Int
@@ -56,7 +56,7 @@ class carte : CarteProtocol{
 	//initialiserPointdeDefTour: CarteProtocol -> CarteProtocol 
 	//Initialise en début de tour les pointsDeDefTour de la carte en fonction de sa position( offensive ou defensive).  
     //Si elle est en position offensive, alors ptDefDeTour sera égal au résultat de getDefPOff(), sinon il sera égal au résultat de getDefPDef())
-	mutating func initialiserPointdeDefTour(){
+	mutating func initialiserPointdeDefTour()->{
 		if self.position == true{
 			self.pointdeDefTour = self.getDefPOff() 
 		}else{
@@ -69,7 +69,7 @@ class carte : CarteProtocol{
 	//Crée un roi1, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type roi1
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive= 4 ; défense/position oﬀensive = 4 ; portée = toute la ligne devant lui, et la position à une distance 2 devant lui (c’est à dire la case juste derrière celle devant lui); nom=Roi1 ; positionDéfensive=true
-	mutating func creerRoi1(){
+	mutating func creerRoi1()->{
 		self.Attaque = 1
 		self.DefPDef = 4
 		self.DefPOff = 4
@@ -83,7 +83,7 @@ class carte : CarteProtocol{
 	//Crée un roi2, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Roi2
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive = 5 ; défense/position oﬀensive = 4 ; portée= toute la ligne devant lui ; nom=Roi2 ; positionDéfensive=true
-	mutating func creerRoi2(){
+	mutating func creerRoi2()->{
 		self.Attaque = 1
 		self.DefPDef = 4
 		self.DefPOff = 4
@@ -96,7 +96,7 @@ class carte : CarteProtocol{
 	//Crée un soldat, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Soldat
 	//Post-conditions: caractéristiques: attaque = autant que d’cartes dans la Main ; défense/position défensive=2 ; défense/position oﬀensive= 1 ; portée =la position devant lui ; nom=Soldat ; positionDéfensive=true
-	mutating func creerSoldat(){
+	mutating func creerSoldat()->{
 		self.Attaque = //PB on sait pas queml main appartient la carte --------------------------------------------------
 		self.DefPDef = 2
 		self.DefPOff = 2
@@ -109,7 +109,7 @@ class carte : CarteProtocol{
 	//Crée un garde, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Garde
 	//Post-conditions: caractéristiques: attaque = 1 ; défense/position défensive=3 ; défense/position oﬀensive = 2 ; portée=la position devant lui ; nom=Garde ; positionDéfensive=true
-	mutating func creerGarde(){
+	mutating func creerGarde()->{
 		self.Attaque = 1
 		self.DefPDef = 3
 		self.DefPOff = 2
@@ -122,7 +122,7 @@ class carte : CarteProtocol{
 	//Crée un archer, vous pouvez utiliser les fonctions set
 	//Résultat: 1 carte de type Archer
 	//Post-conditions: caractéristiques: attaque=1 ; défense/position défensive = 2 ; défense/position oﬀensive= 1 ; portée= les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale ; nom=Archer ; positionDéfensive=true
-	mutating func creerArcher(){
+	mutating func creerArcher()->{
 		self.Attaque = 1
 		self.DefPDef = 2
 		self.DefPOff = 1
@@ -176,7 +176,7 @@ class carte : CarteProtocol{
 	//																   		 Soldat: la position devant lui; 
 	//																   		 Garde: la position devant lui;
 	//																   		 Archer: les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale
-	func getPortee() -> {
+	func getPortee() ->  { //PB portee----------------------
 		return self.Portee
 	}
 
@@ -184,7 +184,7 @@ class carte : CarteProtocol{
 	//Attribue la valeur de la force d'attaque à une carte
 	//Pré-conditions: Valeur de la force d'attaque = entier rentré en paramètre = 1 si l'carte est un roi1, roi2, garde ou archer ou égal au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains)
 	//Résultat: La carte à une valeur de force d'attaque affectée
-	mutating func setAttaque(valeur: Int){
+	mutating func setAttaque(valeur: Int)->{
 		self.Attaque= valeur
 	}
 	 
@@ -192,7 +192,7 @@ class carte : CarteProtocol{
 	//Attribue la valeur de la force de défense en position défensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position défensive = entier rentré en paramètre = 2 si l'carte est un soldat ou archer, 3 si c'est un garde, 4 si c'est un Roi1, 5 si c'est un Roi2
 	//Résultat: La carte à une valeur de force de défense en position défensive affectée
-	mutating func setDefPDef(valeur: Int){
+	mutating func setDefPDef(valeur: Int) ->{
 		self.DefPDef = valeur
 	}
 
@@ -200,7 +200,7 @@ class carte : CarteProtocol{
 	//Attribue la valeur de la force de défense en position offensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position offensive = entier rentré en paramètre = 1 si l'carte est un soldat ou archer, 2 si c'est un garde, 4 si c'est un Roi1 ou Roi2
 	//Résultat: La carte à une valeur de force de défense en position offensive affectée
-	mutating func setDefPOff(valeur: Int){
+	mutating func setDefPOff(valeur: Int) ->{
 		self.DefPOff = valeur
 	}
 
@@ -210,7 +210,7 @@ class carte : CarteProtocol{
 	// Attibue la valeur de defense de ce tour à une carte
 	//Pré-conditions: valeur >= 0 et valeur <= Points de def en fonction de la position de la carte
 	//Résultat: La carte à une nouvelle valeur de défense pour ce tour qui lui est affectée
-	mutating func setPointsDefTour(valeur: Int){
+	mutating func setPointsDefTour(valeur: Int) ->{
 		self.PointsDefTour = valeur
 	}
 
