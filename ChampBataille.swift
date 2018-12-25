@@ -4,17 +4,13 @@ class ChampBataille : ChampDeBatailleProtocol {
 	 associatedtype Zone : ZoneProtocol
     associatedtype IteratorNomZone : IteratorProtocol
     private var PositionDispo : [String]
-	private var champBataille : [String: Zone]
+	private var champBataille : [String: Zone]()
 	private var ZoneA1 : Zone
 	private var ZoneA2 : Zone
 	private var ZoneA3 : Zone
 	private var ZoneF1 : Zone
 	private var ZoneF2 : Zone
 	private var ZoneF3 : Zone
-
-
-
-
    
 
 
@@ -28,6 +24,12 @@ class ChampBataille : ChampDeBatailleProtocol {
 	
 	 init(){
 	self.PositionDispo= nil
+	self.ZoneA1=nil
+	self.ZoneA2=nil
+	self.ZoneA3=nil
+	self.ZoneF1=nil
+	self.ZoneF2=nil
+	self.ZoneF3=nil
     let champBataille = ["A1": ZoneA1, "A2": ZoneA2, "A3": ZoneA3, "F1": ZoneF1 , "F2": ZoneF2, "F3": ZoneF3]
     }
 
@@ -37,9 +39,7 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//résultat: true si le champ de bataille est vide, false sinon
 	
 	func estVide()->Bool {
-		if champBataille.count == 0 {
-			return true
-		} else {return false}
+		return champBataille.count == 0 
 	}
 
 
@@ -229,10 +229,10 @@ class ChampBataille : ChampDeBatailleProtocol {
     //pré-conditions: Chaîne de caactères entrée en paramètre correspond à une zone initialisée 
     //Resultat: renvoie un zone, celle dont le nom est passé en paramètre
     
-    //func getZone(nomZone: String) -> Zone------------------------------N'a rien a faire ici ( a mettre dans zone et encore)--------------------
+    //func getZone(nomZone: String) -> Zone-----------------------------Pas utile ici car dictionnaire mais peut etre a mettre dans zone--------------------
 	
-    //affichageCible: [String] ->
-    //Renvoie les cartes et toutes leurs propritétés détailées (point de défense restant...) des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
+    //affichageCible: [String] -> 
+    //Renvoie les cartes //pas possible la suite ------et toutes leurs propritétés détailées (point de défense restant...) //--- des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
     //Résultat: une chaîne de caractères
    
     func affichageCible(carteAttaquable: [String]) -> String
@@ -240,8 +240,8 @@ class ChampBataille : ChampDeBatailleProtocol {
 	// makeIterator : ChampDeBatailleProtocol -> IteratorNomZone
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur
-	f
-	unc makeIterator() -> IteratorNomZone
+	
+	func makeIterator() -> IteratorNomZone
 
 }
 
