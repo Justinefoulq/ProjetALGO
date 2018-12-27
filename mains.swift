@@ -61,8 +61,8 @@ class mains : MainsProtocol{
 	//Résultat: Enleve la carte qui à pour identifiant celui passé en paramètre (utiliser getCarteparIdentifiant)
 	//post-conditions nombreCartes diminue de 1
 	
-	func enleverCarte( _ identifiantCarte : Int) throws -> {
-		guard !estDansMains(identifiantCarte) else {
+	func enleverCarte( identifiantCarte : Int) throws -> {
+		guard !estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
 		mains.removeValue(forKey: identifiantCarte) 
@@ -74,8 +74,8 @@ class mains : MainsProtocol{
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant( _ identifiantCarte : Int) throws -> Carte  {
-		guard !estDansMains(identifiantCarte) else {
+	func getCarteparIdentifiant( identifiantCarte : Int) throws -> Carte  {
+		guard !estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
 		return self.mains[identifiantCarte]
