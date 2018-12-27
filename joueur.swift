@@ -95,7 +95,18 @@ class joueur{
 	//Vérifie que la carte dans la première zone (nom passé en premier paramètre) peut attaquer celle dans la zone adverse (nom passé en 2e paramètre) (utiliser getCarteZone et getZone)
 	// Pre-conditions : 1ère chaine de caractères passée en paramètre: nom de la zone dans laquelle il y a la carte attaquante, 2e chaine de caractères passée en paramètre: nom de la zone adverse ciblée
 	// Resultat : True si la cible est à portée, false sinon
-	func estAPortee(zoneAttaquant : String, zoneCible : String) -> Bool{}
+	func estAPortee(zoneAttaquant : String, zoneCible : String) -> Bool{
+		var test = false
+		var CarteZoneAttaquant : carte
+		CarteZoneAttaquant = zoneAttaquant.getCarteZone()
+		var CarteZoneCible : carte
+		CarteZoneCible = zoneCible.getCarteZone()
+		//PB zone attaquanr 
+		if (CarteZoneAttaquant.attaquePossible(zoneCible)){
+			test = true
+		}
+		return true
+	}
 	
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
