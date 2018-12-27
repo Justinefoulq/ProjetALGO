@@ -27,7 +27,7 @@ class royaume : RoyaumeProtocol {
 	//Résultat: Renvoie le nombre de citoyens (cartes) qu'il y a dans le royaume, si royaume vide, renvoie 0
 	//Post-conditions: renvoie un entier supérieur ou égal à 0
 	func nombreCitoyens() -> Int {
-		return royaume.count
+		return self.royaume.count
 	}
 
 
@@ -58,8 +58,8 @@ class royaume : RoyaumeProtocol {
     	var bool : Bool 
 		bool=false
 		
-    	for i in 0..<royaume.count {
-				if royaume[i]==carte {
+    	for i in 0..<self.royaume.count {
+				if self.royaume[i]==carte {
 					bool=true
 				}
 			}
@@ -75,7 +75,7 @@ class royaume : RoyaumeProtocol {
 		guard !estDansRoyaume(carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
-		
+
 
 		
 	}

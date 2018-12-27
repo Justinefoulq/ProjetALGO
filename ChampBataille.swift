@@ -59,13 +59,13 @@ class ChampBataille : ChampDeBatailleProtocol {
 		var liste : [String]
 		liste=["F1","F2","F3"]
 
-		if !(zone.estVide(champBataille["F1"])) { 
+		if !(zone.estVide(self.champBataille["F1"])) { 
 			liste = liste + ["A1"]
 		}
-		if !(zone.estVide(champBataille["F2"])) { 
+		if !(zone.estVide(self.champBataille["F2"])) { 
 			liste = liste + ["A2"]
 		}
-		if !(zone.estVide(champBataille["F3"])) { 
+		if !(zone.estVide(self.champBataille["F3"])) { 
 			liste = liste + ["A3"]
 		}
 
@@ -113,31 +113,31 @@ class ChampBataille : ChampDeBatailleProtocol {
 			//Pour le joueur 1 et 2 roi different-------creation Joueur dans champ bataille + fonction getnom() dans joueur.swift
 			if valeur.getCarteZone.estRoi() {
 				if self.Joueur.getNomJoueur()=="Joueur1"{
-					valeur.getCarteZone.setPointsDefTour(4)	
+					valeur.getCarteZone(setPointsDefTour(4))	
 					}else {
-						valeur.getCarteZone.setPointsDefTour(5)
+						valeur.getCarteZone(setPointsDefTour(5))
 					}
 					
 			}else{
-				if valeur.getCarteZone.estSoldat() {
-					if valeur.getCarteZone.estDefensif(){
-						valeur.getCarteZone.setPointsDefTour(2)
+				if valeur.getCarteZone(estSoldat()) {
+					if valeur.getCarteZone(estDefensif()){
+						valeur.getCarteZone(setPointsDefTour(2))
 					}else {
-						valeur.getCarteZone.setPointsDefTour(1)
+						valeur.getCarteZone(setPointsDefTour(1))
 					}					
 				}else{
-					if valeur.getCarteZone.estGarde() { //EstGarde n'existais pas : creation dans carte de la fonction
-						if valeur.getCarteZone.estDefensif(){
-							valeur.getCarteZone.setPointsDefTour(3)
+					if valeur.getCarteZone(estGarde()) { //EstGarde n'existais pas : creation dans carte de la fonction
+						if valeur.getCarteZone(estDefensif()){
+							valeur.getCarteZone(setPointsDefTour(3))
 						}else {
-							valeur.getCarteZone.setPointsDefTour(1)
+							valeur.getCarteZone(setPointsDefTour(1))
 						}		
 
 					}else{ //cas si la carte est un archer 
-						if valeur.getCarteZone.estDefensif(){
-							valeur.getCarteZone.setPointsDefTour(2)
+						if valeur.getCarteZone(estDefensif()){
+							valeur.getCarteZone(setPointsDefTour(2))
 						}else {
-							valeur.getCarteZone.setPointsDefTour(1)
+							valeur.getCarteZone(setPointsDefTour(1))
 						}	
 					}
 				}
@@ -154,8 +154,8 @@ class ChampBataille : ChampDeBatailleProtocol {
    //----------Comment je trouve le nombre de cartes dans la main ? J'ai un champ de bataille mais comment je sais a quel joueur il appartient ? Un joueur a une main et un champ de bataille mais comment relis chp bataille a main
     func initialiserAttaqueSoldat() {
     	for (cle, valeur) in self.champBataille {
-    		if valeur.getCarteZone.estSoldat() {
-    			valeur.getCarteZone.setAttaque(Joueur.getMain.nombreCartes()) //--------- pb nbcartemain
+    		if valeur.getCarteZone(estSoldat()) {
+    			valeur.getCarteZone(setAttaque(Joueur.getMain.nombreCartes())) //--------- pb nbcartemain
     		}
     	}
     }
@@ -172,9 +172,9 @@ class ChampBataille : ChampDeBatailleProtocol {
 			throw ChampBatailleError.ChampBatailleVide
 		}
 
-		for (cle, valeur) in champBataille {
+		for (cle, valeur) in self.champBataille {
 			if !(valeur.estVide()) {
-				valeur.getCarteZone.mettreEnPositionDefensive()
+				valeur.getCarteZone(mettreEnPositionDefensive())
 			} 
 		}			
     	
@@ -186,13 +186,13 @@ class ChampBataille : ChampDeBatailleProtocol {
 	// Parcourt le champ de bataille et vérifie si une carte doit avancer(si une zone du front vide alors que celle derrière non), et appelle la fct avancerCarte() si c'est le cas
 	
 	func checkAvancement() {
-		if (zone.estVide(champBataille["F1"])) && !(zone.estVide(champBataille["A1"])) { 
+		if (zone.estVide(self.champBataille["F1"])) && !(zone.estVide(self.champBataille["A1"])) { 
 			avancerCarte("A1")	
 		}
-		if (zone.estVide(champBataille["F2"])) && !(zone.estVide(champBataille["A2"])){ 
+		if (zone.estVide(self.champBataille["F2"])) && !(zone.estVide(self.champBataille["A2"])){ 
 			avancerCarte("A2")	
 		}
-		if (zone.estVide(champBataille["F3"])) && !(zone.estVide(champBataille["A3"])) { 
+		if (zone.estVide(self.champBataille["F3"])) && !(zone.estVide(self.champBataille["A3"])) { 
 			avancerCarte("A3")	
 		}
 
@@ -210,15 +210,15 @@ class ChampBataille : ChampDeBatailleProtocol {
 		}
 
 		if nomZone=="A1" {
-			champBataille["F1"].setCarteZone(getCarteZone(champBataille["A1"]))
-			champBataille["A1"].setCarteZone(nil)
+			self.champBataille["F1"].setCarteZone(getCarteZone(self.champBataille["A1"]))
+			self.champBataille["A1"].setCarteZone(nil)
 		}else {
 			if nomZone=="A2" {
-				champBataille["F2"].setCarteZone(getCarteZone(champBataille["A2"]))
-				champBataille["A2"].setCarteZone(nil)
+				self.champBataille["F2"].setCarteZone(getCarteZone(self.champBataille["A2"]))
+				self.champBataille["A2"].setCarteZone(nil)
 			}else {
-				champBataille["F3"].setCarteZone(getCarteZone(champBataille["A3"]))
-				champBataille["A3"].setCarteZone(nil)
+				self.champBataille["F3"].setCarteZone(getCarteZone(self.champBataille["A3"]))
+				self.champBataille["A3"].setCarteZone(nil)
 			}
 		}	
 	}

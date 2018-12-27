@@ -37,7 +37,7 @@ class mains : MainsProtocol{
 	//Post-conditions: entier renvoyé supérieur ou égal à 0
 	
 	func nombreCartes() -> Int {
-			return mains.count
+			return self.mains.count
 	}
 
 	//ajouterCarte: CarteProtocol ->MainsProtocol
@@ -45,7 +45,7 @@ class mains : MainsProtocol{
 	//Résultat: Une carte est ajoutée dans la main du joueur
 	//post-conditions nombreCartes augmente de 1
 	 func ajouterCarte(carte : Carte){
-		mains[nombreCartes()] = carte
+		self.mains[nombreCartes()] = carte
 	}
 
 	//estDansMain: Int -> Bool
@@ -61,7 +61,7 @@ class mains : MainsProtocol{
 	//Résultat: Enleve la carte qui à pour identifiant celui passé en paramètre (utiliser getCarteparIdentifiant)
 	//post-conditions nombreCartes diminue de 1
 	
-	func enleverCarte(identifiantCarte : Int) throws -> {
+	func enleverCarte( _ identifiantCarte : Int) throws -> {
 		guard !estDansMains(identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
@@ -74,11 +74,11 @@ class mains : MainsProtocol{
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant(identifiantCarte : Int) throws -> Carte  {
+	func getCarteparIdentifiant( _ identifiantCarte : Int) throws -> Carte  {
 		guard !estDansMains(identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
-		return mains[identifiantCarte]
+		return self.mains[identifiantCarte]
 	}
 	
 
@@ -88,7 +88,7 @@ class mains : MainsProtocol{
 	//Résultat: renvoie vrai si la main est vide
 	
 	func estVide() -> Bool {
-		return mains.count == 0 
+		return self.mains.count == 0 
 	}
 	
 	
@@ -100,7 +100,7 @@ class mains : MainsProtocol{
 	//-----------------------------------------------------vois pas comment faire 
 	func setID(carte:Carte) { // nom mal apparoprié c'est plus ne mise a jour de la mains , comment on differencie de cas ou on enlevela carte ou le cas //soit fait plsr fonction soit on specifie mieux les fonction ajout et surpimmer elem de la mains pour que ca incremente ou decremente les id
 		var nbcarte : Int = nombreCartes() 
-		
+
 
 	}
 
@@ -112,10 +112,10 @@ class mains : MainsProtocol{
 	//Résultat: entiern identifiant de la carte (attribué par setID)
 	
 	func getID(carte:Carte) throws -> Int  {
-		guard !estDansMains(mains[carte]) else {
+		guard !estDansMains(self.mains[carte]) else {
 			throw MainsError.pasDansMains
 		}
-		return mains[carte]
+		return self.mains[carte]
 		
 	}
 	
