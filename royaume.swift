@@ -75,6 +75,7 @@ class royaume : RoyaumeProtocol {
 		guard !estDansRoyaume(carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
+		
 
 		
 	}

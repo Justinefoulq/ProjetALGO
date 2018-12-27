@@ -5,13 +5,14 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//associatedtype Zone : ZoneProtocol
    // associatedtype IteratorNomZone : IteratorProtocol
     private var PositionDispo : [String]
-	private var champBataille : [String: Zone]
-	private var ZoneA1 : Zone
-	private var ZoneA2 : Zone
-	private var ZoneA3 : Zone
-	private var ZoneF1 : Zone
-	private var ZoneF2 : Zone
-	private var ZoneF3 : Zone
+	private var champBataille : [String: zone]
+	private var ZoneA1 : zone
+	private var ZoneA2 : zone
+	private var ZoneA3 : zone
+	private var ZoneF1 : zone
+	private var ZoneF2 : zone
+	private var ZoneF3 : zone
+	private var Joueur : joueur
    
 
 
@@ -23,15 +24,16 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//				   ligne arriere: positions A1, A2, A3
 	//Résultat: Champ de bataille avec 6 Zones vides
 	
-	 init(){
-	self.PositionDispo = []
-	self.ZoneA1 = nil
-	self.ZoneA2 = nil
-	self.ZoneA3 = nil
-	self.ZoneF1 = nil
-	self.ZoneF2 = nil
-	self.ZoneF3 = nil
-    let champBataille = ["A1": ZoneA1, "A2": ZoneA2, "A3": ZoneA3, "F1": ZoneF1 , "F2": ZoneF2, "F3": ZoneF3]
+	init(){
+		self.PositionDispo = []
+		self.ZoneA1 = nil
+		self.ZoneA2 = nil
+		self.ZoneA3 = nil
+		self.ZoneF1 = nil
+		self.ZoneF2 = nil
+		self.ZoneF3 = nil
+		self.Joueur = nil
+		let champBataille = ["A1": ZoneA1, "A2": ZoneA2, "A3": ZoneA3, "F1": ZoneF1 , "F2": ZoneF2, "F3": ZoneF3]
     }
 
 
@@ -40,7 +42,7 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//résultat: true si le champ de bataille est vide, false sinon
 	
 	func estVide()->Bool {
-		return champBataille.count == 0 
+		return self.champBataille.count == 0 
 	}
 
 
@@ -95,8 +97,6 @@ class ChampBataille : ChampDeBatailleProtocol {
 	
 	func listeAttaquant()-> [String]? {
 		var liste = [String]() 
-
-
 		for (cle, valeur) in self.champBataille {
 			if valeur.getCarteZone.estDefensif() {
 				liste=liste + [cle]
@@ -110,9 +110,14 @@ class ChampBataille : ChampDeBatailleProtocol {
 	func initialiserPointdeDefTour(){
 
 		for (cle, valeur) in self.champBataille {
-			//Pour le joueur 1 et 2 roi different---------------determiner le joueur--------
+			//Pour le joueur 1 et 2 roi different-------creation Joueur dans champ bataille + fonction getnom() dans joueur.swift
 			if valeur.getCarteZone.estRoi() {
-				valeur.getCarteZone.setPointsDefTour(4)		
+				if self.Joueur.getNomJoueur()=="Joueur1"{
+					valeur.getCarteZone.setPointsDefTour(4)	
+					}else {
+						valeur.getCarteZone.setPointsDefTour(5)
+					}
+					
 			}else{
 				if valeur.getCarteZone.estSoldat() {
 					if valeur.getCarteZone.estDefensif(){
@@ -121,14 +126,14 @@ class ChampBataille : ChampDeBatailleProtocol {
 						valeur.getCarteZone.setPointsDefTour(1)
 					}					
 				}else{
-					if valeur.getCarteZone.estGarde() { //EstGarde n'existe pas ---------------------
+					if valeur.getCarteZone.estGarde() { //EstGarde n'existais pas : creation dans carte de la fonction
 						if valeur.getCarteZone.estDefensif(){
 							valeur.getCarteZone.setPointsDefTour(3)
 						}else {
 							valeur.getCarteZone.setPointsDefTour(1)
 						}		
 
-					}else{
+					}else{ //cas si la carte est un archer 
 						if valeur.getCarteZone.estDefensif(){
 							valeur.getCarteZone.setPointsDefTour(2)
 						}else {
@@ -150,7 +155,7 @@ class ChampBataille : ChampDeBatailleProtocol {
     func initialiserAttaqueSoldat() {
     	for (cle, valeur) in self.champBataille {
     		if valeur.getCarteZone.estSoldat() {
-    			valeur.getCarteZone.setAttaque(nbcartemain) //--------- pb nbcartemain
+    			valeur.getCarteZone.setAttaque(Joueur.getMain.nombreCartes()) //--------- pb nbcartemain
     		}
     	}
     }
@@ -231,6 +236,7 @@ class ChampBataille : ChampDeBatailleProtocol {
     
     //func getZone(nomZone: String) -> Zone-----------------------------Pas utile ici car dictionnaire mais peut etre a mettre dans zone--------------------
 	
+    
     //affichageCible: [String] -> 
     //Renvoie les cartes //pas possible la suite ------et toutes leurs propritétés détailées (point de défense restant...) //--- des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
     //Résultat: une chaîne de caractères

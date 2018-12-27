@@ -98,8 +98,9 @@ class mains : MainsProtocol{
 	//				   attribue un identifiant à chaque fois qu'on pioche une carte et met à jour quand on en pose une (si on a 5 cartes, lorsque l'on pose la 3, la 4 et 5 deviennent respectivement 3 et 4)
 	//Résultat: main avec ses cartes numérotées
 	//-----------------------------------------------------vois pas comment faire 
-	func setID(carte:Carte) { // nom mal apparoprié c'est plus ne mise a jour de la mains , comment on differencie de cas ou on enlevela carte ou le cas 
-								//soit fait plsr fonction soit on specifie mieux les fonction ajout et surpimmer elem de la mains pour que ca incremente ou decremente les id
+	func setID(carte:Carte) { // nom mal apparoprié c'est plus ne mise a jour de la mains , comment on differencie de cas ou on enlevela carte ou le cas //soit fait plsr fonction soit on specifie mieux les fonction ajout et surpimmer elem de la mains pour que ca incremente ou decremente les id
+		var nbcarte : Int = nombreCartes() 
+		
 
 	}
 

@@ -256,6 +256,16 @@ class carte : CarteProtocol{
 		self.Zone = Zone	
 	}
 }
-	
+	//estGarde:CarteProtocol -> Bool
+	//Indique si une carte est un Garde ou pas, appelle getNom
+	//Résultat: Booléen: vrai si la fonction getNom renvoie  Garde1 ou Garde2, faux sinon
+	func estGarde() -> Bool{
+		if self.nom == "Garde1" or self.nom == "Garde2"{
+			return True
+		}
+		}else {
+			return False
+		}
+	}
 
 }
