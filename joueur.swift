@@ -100,34 +100,51 @@ class joueur{
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : ChampDeBataille) -> Bool{}
+	func checkCible(champAdversaire : ChampDeBataille) -> Bool{
+		var tab =champAdversaire.listeAttaquant()
+		var test =false
+		if (tab !=nil){
+			test = true
+		}
+		return test		
+	}
 
 
 
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	mutating func Capturer(carteCapturée : Carte){}
+	mutating func Capturer(carteCapturée : Carte){
+		self.champDeBataille.CapturerCarte(carteCapturée)
+	}
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol
-    func getPioche() -> Pioche{}
-    
+    func getPioche() -> Pioche{
+	    return self.pioche
+    }
+    	
 	
     //getRoyaume: JoueurProtocol -> RoyaumeProtocol
     //Renvoie le Royaume du JoueurProtocol
-    func getRoyaume() -> Royaume{}
+    func getRoyaume() -> Royaume{
+	    return self.royaume
+    }
     
     
     
     //getMain: JoueurProtocol -> MainsProtocol
     //Renvoie la main du JoueurProtocol
-    func getMain() -> Mains{}
+    func getMain() -> Main{
+	    return self.main
+    }
     
     
     //getChampDeBataille: JoueurProtocol -> ChampDeBatailleProtocol
     //Renvoie le ChampDeBataille du JoueurProtocol
-    func getChampDeBataille() -> ChampDeBataille{}
+    func getChampDeBataille() -> ChampDeBataille{
+	    return self.champDeBataille
+    }
     
     //getNomJoueur: JoueurProtocol -> String
 	//Renvoie le nom du Joueur : Joueur1 ou Joueur2
