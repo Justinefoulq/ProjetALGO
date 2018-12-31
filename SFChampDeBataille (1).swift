@@ -2,7 +2,7 @@
 
 //Champs de Bataille est une collection contenant des ZoneProtocol
 import Foundation
-protocol ChampDeBatailleProtocol: Sequence{
+protocol ChampDeBatailleProtocol : Sequence {
     associatedtype Zone : ZoneProtocol
     associatedtype IteratorNomZone : IteratorProtocol
 

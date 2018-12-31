@@ -4,9 +4,9 @@
 // MainsProtocol est une collection de couple (identifiantCarte, Carte)
 // Cette collection peut être parcourue par 1 itérateur.
 import Foundation
-protocol MainsProtocol: Sequence{
+protocol MainsProtocol : Sequence {
 
-    associatedtype Carte: CarteProtocol
+    associatedtype Carte : CarteProtocol
     associatedtype IteratorIdentifiantCarte : IteratorProtocol
     
     

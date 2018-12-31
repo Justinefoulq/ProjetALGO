@@ -1,12 +1,12 @@
 //JoueurProtocol
 import Foundation
-protocol JoueurProtocol{
+protocol JoueurProtocol {
 	//main, champ de bataille, royaume, pioche
     associatedtype ChampDeBataille : ChampDeBatailleProtocol
-    associatedtype Carte: CarteProtocol
-    associatedtype Mains: MainsProtocol
-    associatedtype Royaume: RoyaumeProtocol
-    associatedtype Pioche: PiocheProtocol
+    associatedtype Carte : CarteProtocol
+    associatedtype Mains : MainsProtocol
+    associatedtype Royaume : RoyaumeProtocol
+    associatedtype Pioche : PiocheProtocol
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
 	//post-conditions pour la main: 1 roi, 3 unités piochées au hasard

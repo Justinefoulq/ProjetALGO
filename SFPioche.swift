@@ -1,8 +1,8 @@
 // Pioche
 import Foundation
-protocol PiocheProtocol{
+protocol PiocheProtocol {
     
-    associatedtype Carte: CarteProtocol
+    associatedtype Carte : CarteProtocol
 	//init:  -> PiocheProtocol
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5

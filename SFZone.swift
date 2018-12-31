@@ -5,7 +5,7 @@
 //ZoneProtocol est un couple (nomZone, Carte)
 
 import Foundation
-protocol ZoneProtocol{
+protocol ZoneProtocol {
 	// Carte ou nul
     associatedtype Carte : CarteProtocol
 	//init: String -> ZoneProtocol

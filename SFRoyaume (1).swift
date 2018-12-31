@@ -1,6 +1,6 @@
 //Royaume
 import Foundation
-protocol RoyaumeProtocol{
+protocol RoyaumeProtocol {
     associatedtype Carte : CarteProtocol
 	//init:  ->RoyaumeProtocol
 	//Création d'un royaume
