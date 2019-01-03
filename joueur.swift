@@ -82,13 +82,31 @@ class joueur{
 	//attaquantDispo: String ->Bool 
     //Appelle la fonction ListeAttaquant() du ChampDeBataille du joueur et Vérifie grâce au nom de la zone(chaine de caractère passée en paramètre)  si la carte qui se trouve dans cette zone (utiliser getZone de ChampDeBataille) peut attaquer
 	//Résultat: return true si la carteAttaquante(nom de ma zone où se trouve la carte ) est dans listeAttaquant() sinon renvoie false
-	func attaquantDispo(carteAttaquante: String) -> Bool{}
+	func attaquantDispo(carteAttaquante: String) -> Bool{
+		var test = false
+		var liste=self.champDeBataille.listeAttaquant()
+		for (carte) in liste{
+			if carte == carteAttaquante{
+				test = true
+			}
+		}
+		return test
+	}
 
 
 	//checkCarteAttaque: String x [String] -> Bool
 	//Résultat: renvoie vrai si la première chaine de caractères (correspondant à la zone de la carte que veut attaquer le joueur) est dans le tableau de chaîne de caractères passé en 2e paramètre
 	// Sinon renvoie faux
-    func checkCarteAttaque(nomZoneAttaquant: String, carteAttaquableparJ: [String]) -> Bool{}
+    func checkCarteAttaque(nomZoneAttaquant: String, carteAttaquableparJ: [String]) -> Bool{
+	    var test = false
+	    for (carte) in carteAttaquableparJ{
+		    if carte.getNom()==nomZoneAttaquant{
+			    test = true
+		    }
+		    
+	    }
+	    return test
+    }
 	
 	
 	// estAPortee: String x String-> bool
