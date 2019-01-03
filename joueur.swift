@@ -50,7 +50,13 @@ class joueur{
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	mutating func demobiliser( identifiantCarte: Int) throws -> Mains {}
+	mutating func demobiliser( identifiantCarte: Int) throws -> Mains {
+		guard identifiantCarte>0 or identifiantCarte<7 else {
+			throw joueurError.mainincorrecte
+		self.main.enleverCarte(identifiantCarte)
+		self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
+		return self.main
+	}
 
 
 
