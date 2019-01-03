@@ -31,7 +31,16 @@ class joueur{
 	// Si la position choisie ne correspond pas à une position disponible sur le champs de bataille (utiliser getChampDeBtaille) du joueur alors échoue
 	//résultat: la carte indiquée est posée à la position choisie sur le champ de bataille
 	//post-conditions: 1 carte en moins dans la main, 1 carte en plus sur le champ de bataille (à la bonne position)
-	mutating func poserCarte( identifiantCarte: Int, positionCarte: String) throws{}
+	mutating func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
+		guard identifiantCarte>0 or identifiantCarte<7 else {
+			throw joueurError.mainincorrecte		
+		if self.champDeBataille.checkPositionDispo(PositionCarte){
+			self.champDeBataille.AjouterCarte(positionCarte.getZone())
+			self.main.enleverCarte(identifiantCarte)
+			
+		}
+		
+	}
 
 
 	//mobiliser: CarteProtocol x String -> ChampDeBatailleProtocol
