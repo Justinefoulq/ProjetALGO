@@ -20,7 +20,12 @@ class joueur{
 	//post-conditions pour le champ de bataille: 2 lignes de positions; ligne devant=lignede front avec positions: F1,F2,F3; ligne derriere=ligne arriere avec positions: A1,A2,A3
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
-	init(){}
+	init(){
+		self.main.init()
+		self.champDeBataille.init()
+		self.royaume.init()
+		self.pioche.init()
+	}
 
 
 	//poserCarte: JoueurProtocol x Int x String ->
