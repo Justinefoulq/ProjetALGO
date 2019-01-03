@@ -60,7 +60,11 @@ class joueur{
 	//pré-conditions: pioche non vide
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
-	mutating func piocherCarte() -> Carte{}
+	mutating func piocherCarte() -> Carte{
+		var carte = self.pioche.piocher()
+		self.main.ajouterCarte(carte)
+		return carte
+	}
 
 	 
 
