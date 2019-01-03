@@ -75,7 +75,19 @@ class joueur{
 	// de la carte attaqué
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
-	mutating func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{}
+	mutating func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{
+		var test : int
+		if carteAttaquante.getAttaque()==carteCiblé.getDefPDef(){
+			test = 0
+		}else{
+			if carteAttaquante.getAttaque()>carteCiblé.getDefPDef(){
+				test = 1
+			}else {
+				test = 2
+			}
+		}
+		return test
+	}
 	
 	
 	
