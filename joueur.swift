@@ -39,7 +39,8 @@ class joueur{
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
 	mutating func mobiliser(CarteMobilisee: Carte, nomZone: String) throws{
-		
+		self.royaume.retirerCarte(CarteMobilisee)
+		self.champDeBataille.ajouterCarte(carteMobilisee, nomZone.getZone())//pb de fonction manquante ---------------------
 	}
 
 
