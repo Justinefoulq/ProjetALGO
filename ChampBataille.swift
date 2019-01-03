@@ -167,7 +167,7 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//pre-conditions: champ de bataille non vide
 	//résultat: champ de bataille avec ses cartes en position défensive
 	
-	func replacerCarte() throws  {
+	func replacerCarte() throws {
 		guard estVide() else {
 			throw ChampBatailleError.ChampBatailleVide
 		}
