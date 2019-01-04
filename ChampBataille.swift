@@ -1,6 +1,34 @@
 
 
 import Foundation
+
+
+class ChampBatailleIterator : IteratorProtocol {
+	let champ: ChampBataille
+    var i : Int = 0
+
+    init(champ: ChampBataille) {
+        self.champ = champ
+    }
+
+    func next() -> Carte? { // peut être changer dico avec A1=1 , A2=2 , A2=4 , F1=5 etC... pour faciliter iteratteur 
+    	
+    	let liste = self.front.fr
+        while (self.i < 6) && (liste[i] == nil){
+        	self.i = self.i + 1
+        }
+        if self.i < 0 || self.i >= 6 {
+        	return nil
+        }
+        else{
+        	self.i = self.i + 1
+        	return liste[self.i-1]
+        }
+    }
+}
+
+
+
 class ChampBataille : ChampDeBatailleProtocol {
 	//associatedtype Zone : ZoneProtocol
    // associatedtype IteratorNomZone : IteratorProtocol

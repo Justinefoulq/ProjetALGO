@@ -6,7 +6,7 @@ class mainsIterator : IteratorProtocol {
     var i : Int = 0
 
     init(Main: mains) {
-        self.Main = Main
+        self.ItMain = Main
     }
 
     func next() -> Carte? {
@@ -149,9 +149,12 @@ class mains : MainsProtocol{
 	// makeIterator : Mains -> IteratorIdentifiantCarte
 	// crée un itérateur sur la collection de couple (identifiantCarte, Carte)
 	//Résultat: Renvoie un Iterateur
-	//A une fonction next qui renvoie l'identifiant de la carte parcourue 
+	//A une fonction next qui renvoie l'identifiant de la carte parcourue  // C'ets quoi l'interet d'avoir un iterateur qui renvois que l'id de la carte ? sachant que ils veulent incrémenter a chaque fois que ce soit 1,2,3,4... bizarre
+
 	
-	func makeIterator() -> IteratorIdentifiantCarte {}
+	func makeIterator() -> IteratorIdentifiantCarte {
+		return MainIterator(main:self)
+	}
 
 	enum MainsError: Error {
     case pasDansMains
