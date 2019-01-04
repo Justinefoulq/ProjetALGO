@@ -3,10 +3,10 @@ import Foundation
 class pioche{
     
     associatedtype Carte: CarteProtocol
-	private var nombreCarteSoldat : int 
-	private var nombreCarteArcher : int
-	private var nombreCarteGarde : int
-	private var pioche : [carte]
+	private var nombreCarteSoldat: Int 
+	private var nombreCarteArcher: Int
+	private var nombreCarteGarde: Int
+	private var pioche: [carte]
 	//init:  -> PiocheProtocol
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5
