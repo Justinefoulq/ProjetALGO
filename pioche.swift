@@ -43,17 +43,17 @@ class pioche{
 	// postCondition : nombreCarteSoldat est >=0
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
-	mutating func piocher()-> Carte{           //----------------il faudrais pas enlever la carte de la pioche ? ------------------
+	mutating func piocher()-> carte{           //----------------il faudrais pas enlever la carte de la pioche ? ------------------
 		var taille = self.pioche.count
 		let number = Int.random(in: 0 ..< taille-1)
-		return pioche[number];
+		return self.pioche[number];
 	}
 
 	
 	//nombreCartes: PiocheProtocol -> Int
 	//renvoie le nombre de cartes qu'il y a dans la pioche
 	func nombreCarte()-> Int{
-		return self.pioche.count+
+		return self.pioche.count
 	}
 	
 	//getNombreCarteSoldat: Piocheprotocol-> Int
