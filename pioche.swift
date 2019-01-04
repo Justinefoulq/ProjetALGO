@@ -61,7 +61,7 @@ class pioche{
 	func getNombreCarteSoldat()->Int{
 		var compteur = 0
 		for carte in pioche {
-    			if (carte.getNom()== "Soldat"){
+    			if (carte.getNom()=="Soldat"){
 				compteur = compteur+1
 			}
 		}
@@ -74,7 +74,7 @@ class pioche{
 	func getNombreCarteGarde()-> Int{
 		var compteur = 0
 		for carte in pioche {
-    			if (carte.getNom()== "Garde"){
+    			if (carte.getNom()=="Garde"){
 				compteur = compteur+1
 			}
 		}
@@ -86,7 +86,7 @@ class pioche{
 	func getNombreCarteArcher()-> Int{
 		var compteur = 0
 		for carte in pioche {
-    			if (carte.getNom()== "Archer"){
+    			if (carte.getNom()=="Archer"){
 				compteur = compteur+1
 			}
 		}
