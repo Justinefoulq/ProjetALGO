@@ -2,17 +2,17 @@
 import Foundation
 class joueur{
 	//main, champ de bataille, royaume, pioche
-    associatedtype ChampDeBataille : ChampDeBatailleProtocol
+    associatedtype ChampDeBataille: ChampDeBatailleProtocol
     associatedtype Carte: CarteProtocol
     associatedtype Mains: MainsProtocol
     associatedtype Royaume: RoyaumeProtocol
     associatedtype Pioche: PiocheProtocol
 	
-	private var nom : String // Joueur1 ou Joueur2
-	private var pioche : pioche
-	private var royaume : royaume
-	private var main : main
-	private var champDeBataille : champDeBataille
+	private var nom: String // Joueur1 ou Joueur2
+	private var pioche: pioche
+	private var royaume: royaume
+	private var main: main
+	private var champDeBataille: champDeBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
@@ -37,7 +37,7 @@ class joueur{
 	//résultat: la carte indiquée est posée à la position choisie sur le champ de bataille
 	//post-conditions: 1 carte en moins dans la main, 1 carte en plus sur le champ de bataille (à la bonne position)
 	mutating func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
-		guard identifiantCarte>0 or identifiantCarte<7 else {
+		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte		
 		if self.champDeBataille.checkPositionDispo(PositionCarte){
 			self.champDeBataille.AjouterCarte(positionCarte.getZone())
