@@ -2,7 +2,7 @@
 import Foundation
 class pioche{
     
-    associatedtype Carte: CarteProtocol
+    associatedtype carte: CarteProtocol
 	private var nombreCarteSoldat: Int 
 	private var nombreCarteArcher: Int
 	private var nombreCarteGarde: Int
