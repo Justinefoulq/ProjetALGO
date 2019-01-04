@@ -1,5 +1,25 @@
 
 import Foundation
+
+class mainsIterator : IteratorProtocol {
+    let ItMain: mains
+    var i : Int = 0
+
+    init(Main: mains) {
+        self.Main = Main
+    }
+
+    func next() -> Carte? {
+    	let liste = self.ItMain.getMain()
+        if self.i < 0 || self.i >= self.ItMain.getMain().count{
+        	return nil 
+        }
+        else {
+        	self.i = self.i+1
+        	return liste[self.i-1]
+        }
+    }
+}
    
 class mains : MainsProtocol{
 	//associatedtype Carte : CarteProtocol
@@ -7,7 +27,7 @@ class mains : MainsProtocol{
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
 	
 	
-	private var mains : [Int: carte] //()
+	private var mains : [Int : carte] //()
 	private var carte0 : carte 
 	private var carte1 : carte 
 	private var carte2 : carte 
@@ -31,10 +51,16 @@ class mains : MainsProtocol{
 
 
 	
+
+	func getMain() -> [Int : Carte]{
+		return self.mains
+	}
+
 	//nombreCartes:  MainsProtocol-> Int
 	//Renvoie le nombre de cartes qu'il y a dans la main du joueur
 	//Résultat: renvoie un entier, 0 si vide
 	//Post-conditions: entier renvoyé supérieur ou égal à 0
+	
 	
 	func nombreCartes() -> Int {
 			return self.mains.count
