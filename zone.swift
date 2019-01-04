@@ -7,10 +7,10 @@
 import Foundation
 class zone{
 	// Carte ou nul
-    associatedtype Carte : CarteProtocol
+    associatedtype carte : CarteProtocol
 	
-	private var nom : String
-	private var carte : carte
+	private var nom: String
+	private var carte: carte
 
 	
 	//init: String -> ZoneProtocol
