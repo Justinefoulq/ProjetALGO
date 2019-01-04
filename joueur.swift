@@ -36,7 +36,7 @@ class joueur{
 	// Si la position choisie ne correspond pas à une position disponible sur le champs de bataille (utiliser getChampDeBtaille) du joueur alors échoue
 	//résultat: la carte indiquée est posée à la position choisie sur le champ de bataille
 	//post-conditions: 1 carte en moins dans la main, 1 carte en plus sur le champ de bataille (à la bonne position)
-	mutating func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
+	func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}		
 		if self.champDeBataille.checkPositionDispo(PositionCarte){
@@ -52,7 +52,7 @@ class joueur{
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	mutating func mobiliser(CarteMobilisee: Carte, nomZone: String) throws{
+	func mobiliser(CarteMobilisee: Carte, nomZone: String) throws{
 		self.royaume.retirerCarte(CarteMobilisee)
 		self.champDeBataille.ajouterCarte(carteMobilisee, nomZone.getZone())//pb de fonction manquante ---------------------
 	}
@@ -65,7 +65,7 @@ class joueur{
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	mutating func demobiliser( identifiantCarte: Int) throws -> Mains {
+	func demobiliser( identifiantCarte: Int) throws -> Mains {
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}
 		self.main.enleverCarte(identifiantCarte)
@@ -81,7 +81,7 @@ class joueur{
 	//pré-conditions: pioche non vide
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
-	mutating func piocherCarte() -> Carte{
+	func piocherCarte() -> Carte{
 		var carte = self.pioche.piocher()
 		self.main.ajouterCarte(carte)
 		return carte
@@ -100,7 +100,7 @@ class joueur{
 	// de la carte attaqué
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
-	mutating func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{
+	func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{
 		var test : int
 		if carteAttaquante.getAttaque()==carteCiblé.getDefPDef(){
 			test = 0
@@ -180,7 +180,7 @@ class joueur{
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	mutating func Capturer(carteCapturée : Carte){
+	func Capturer(carteCapturée : Carte){
 		self.champDeBataille.CapturerCarte(carteCapturée)
 	}
 	
