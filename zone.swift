@@ -19,7 +19,7 @@ class zone{
 	//Initialise le nom de la zone avec la chaine de caractère passé en paramètre
 	init(nomZone : String) throws{
 
-		if let nomZone =="F1"||nomZone =="F2"||nomZone=="F3"||nomZone=="A1"||nomZone=="A2"||nomZone=="A3"{
+		if let nomZone == "F1"||nomZone == "F2"|| nomZone == "F3"|| nomZone == "A1" || nomZone == "A2"|| nomZone == "A3" {
 			self.nom = nomZone
 		}else{
 			Error
@@ -36,7 +36,7 @@ class zone{
 
 	//setNomZone: String -> ZoneProtocol
 	//Initialise le nom de la zone avec la chaine de caractère passé en paramètre
-	mutating func setNomZone(nomZone: String) -> String{
+	 func setNomZone(nomZone: String) -> String{
 		self.nom = nomZone
 	}
 
@@ -53,7 +53,7 @@ class zone{
 	//setCarteZone: ZoneProtocol x carteProtocol -> Zone
 	//Met la carte passée en paramètre dans la zone passée en paramètre
 	//post-conditions: si la zone n'est pas vide, la carte qui était dedans est renvoyée dans la main et remplacée par celle passée en paramètre
-	mutating func setCarteZone(carteSelectionne : Carte){
+	func setCarteZone(carteSelectionne : Carte){
 		self.carte = carteSelectionne		
 	}
 
