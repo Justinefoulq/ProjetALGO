@@ -9,7 +9,7 @@ class mainsIterator : IteratorProtocol {
         self.ItMain = Main
     }
 
-    func next() -> Carte? {
+    func next() -> carte? {
     	let liste = self.ItMain.getMain()
         if self.i < 0 || self.i >= self.ItMain.getMain().count{
         	return nil 
@@ -52,7 +52,7 @@ class mains : MainsProtocol{
 
 	
 
-	func getMain() -> [Int : Carte]{
+	func getMain() -> [Int : carte]{
 		return self.mains
 	}
 
@@ -70,7 +70,7 @@ class mains : MainsProtocol{
 	//Ajoute la carte passée en paramètre dans la main
 	//Résultat: Une carte est ajoutée dans la main du joueur
 	//post-conditions nombreCartes augmente de 1
-	 func ajouterCarte(carte : Carte){
+	 func ajouterCarte(carte : carte){
 		self.mains[nombreCartes()] = carte
 	}
 
@@ -108,7 +108,7 @@ class mains : MainsProtocol{
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant( identifiantCarte : Int) throws -> Carte  {
+	func getCarteparIdentifiant( identifiantCarte : Int) throws -> carte  {
 		guard !estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
@@ -147,7 +147,7 @@ class mains : MainsProtocol{
 	//Pré-conditions:carte passée en paramètre est dans la main
 	//Résultat: entiern identifiant de la carte (attribué par setID)
 	
-	func getID(carte:Carte) throws -> Int  {
+	func getID(carte : carte) throws -> Int  {
 		guard !estDansMains(self.mains[carte]) else {
 			throw MainsError.pasDansMains
 		}

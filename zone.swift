@@ -42,7 +42,7 @@ class zone{
 
 	//getCarteZone: ZoneProtocol -> CarteProtocol | nil
 	//Renvoie la valeur (et description) de la carte présente dans la zone passée en paramètre, si la zone est vide, renvoie nil
-	func getCarteZone() -> Carte?{
+	func getCarteZone() -> carte?{
 		if (self.carte == nil){
 			return nil
 		}else{
@@ -53,7 +53,7 @@ class zone{
 	//setCarteZone: ZoneProtocol x carteProtocol -> Zone
 	//Met la carte passée en paramètre dans la zone passée en paramètre
 	//post-conditions: si la zone n'est pas vide, la carte qui était dedans est renvoyée dans la main et remplacée par celle passée en paramètre
-	func setCarteZone(carteSelectionne : Carte){
+	func setCarteZone(carteSelectionne : carte){
 		self.carte = carteSelectionne		
 	}
 

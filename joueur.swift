@@ -12,7 +12,7 @@ class joueur{
 	private var pioche : pioche
 	private var royaume : royaume
 	private var mains : mains
-	private var champDeBataille : ChampDeBataille
+	private var champDeBataille : champBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
@@ -166,7 +166,7 @@ class joueur{
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : ChampDeBataille) -> Bool{
+	func checkCible(champAdversaire : champBataille) -> Bool{
 		var tab=champAdversaire.listeAttaquant()
 		var test=false
 		if (tab!=nil){
@@ -208,7 +208,7 @@ class joueur{
     
     //getChampDeBataille: JoueurProtocol -> ChampDeBatailleProtocol
     //Renvoie le ChampDeBataille du JoueurProtocol
-    func getChampDeBataille() -> ChampDeBataille{
+    func getChampDeBataille() -> champBataille{
 	    return self.champDeBataille
     }
     

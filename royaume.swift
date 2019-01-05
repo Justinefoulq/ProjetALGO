@@ -42,7 +42,7 @@ class royaume : RoyaumeProtocol {
 
 	//getfirstCarte: -> CarteProtocol
 	//Résultat : renvoie la valeur de la première carte qui a été mise dans le royaume
-	func getfirstCarte() -> Carte {
+	func getfirstCarte() -> carte {
 		return nombrecitoyens[0]
 	}
 
@@ -50,7 +50,7 @@ class royaume : RoyaumeProtocol {
 	//estDansRoyaume : RoyaumeProtocol x CarteProtocol -> Bool
 	//preconditon: Le royaume n'est pas vide
 	//Resultat : true si la carte placé en parametre est dans le royaume, false sinon
-	func estDansRoyaume(carte : Carte) throws -> Bool  {
+	func estDansRoyaume(carte : carte) throws -> Bool  {
 		guard estVide() else {
 			throw RoyaumeError.royaumeVide
     	}
@@ -70,7 +70,7 @@ class royaume : RoyaumeProtocol {
 	//précondition: Carte est dans le Royaume
 	//Résultat enlève la carte du Royaume
 	//Post-conditions nombreCitoyens à baissé de 1
-	func removeCarte(carteSelectionne : Carte) throws { //-------------il faudrait une file -----------------------
+	func removeCarte(carteSelectionne : carte) throws { //-------------il faudrait une file -----------------------
 		guard !estDansRoyaume(carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
