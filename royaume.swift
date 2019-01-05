@@ -75,6 +75,12 @@ class royaume : RoyaumeProtocol {
 		guard !estDansRoyaume(carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
+		for i in 0..<self.royaume.count {
+				if self.royaume[i]==carteSelectionne {
+					self.royaume.remove(at : i)
+				}
+			}
+
 
 
 		
