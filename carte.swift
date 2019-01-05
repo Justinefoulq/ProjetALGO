@@ -3,6 +3,7 @@
 import Foundation
 class carte {
 	
+	typalias zone = zone
 	
 	private var Nom: String
 	private var DefPDef: Int 
