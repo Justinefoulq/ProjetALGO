@@ -67,5 +67,8 @@ class zone{
 		}
 	}
 
+enum zoneError: Error {
+    case zoneincorrecte
+
 
 }
