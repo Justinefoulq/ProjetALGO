@@ -12,30 +12,26 @@ class IteratorNomZone : IteratorProtocol {
     }
 
 
-    func next() -> Carte? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
+    func next() -> zone? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
-    	let liste = self.champ
-        if (self.i != "A1" || self.i != "A2" || self.i != "A3" || self.i != "F1" || self.i != "F2" || self.i != "F3" || {
-        	return nil
-        }
-        else{
-	    	var ret : String = self.i
-			if self.i == "A1" {
-				self.i = "A2"
-			}else if self.i == "A2" {
-				self.i = "A3" 
-			}else if self.i == "A3" {
-				self.i = "F1" 
-			}else if self.i == "F1" {
-				self.i = "F2" 
-			}else if self.i == "F2" {
-				self.i = "F3" 
-			}else if self.i == "F3" {
-				self.i = "A1" 
-			}
-	    	return liste[ret]
-        }
+		let liste = self.champ
+		var ret : String = self.i
+		if self.i == "A1" {
+			self.i = "A2"
+		}else if self.i == "A2" {
+			self.i = "A3" 
+		}else if self.i == "A3" {
+			self.i = "F1" 
+		}else if self.i == "F1" {
+			self.i = "F2" 
+		}else if self.i == "F2" {
+			self.i = "F3" 
+		}else if self.i == "F3" {
+			self.i = "A1" 
+		}
+		return liste[ret]
     }
+    
 
  
 

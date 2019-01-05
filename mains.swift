@@ -87,11 +87,12 @@ class mains : MainsProtocol{
 	//Résultat: Enleve la carte qui à pour identifiant celui passé en paramètre (utiliser getCarteparIdentifiant)
 	//post-conditions nombreCartes diminue de 1
 	
-	func enleverCarte( identifiantCarte : Int) throws -> {
+	func enleverCarte( identifiantCarte : Int) throws  {
 		guard !estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
 		mains.removeValue(forKey: identifiantCarte) 
+		
 	}
 	
 
@@ -152,7 +153,7 @@ class mains : MainsProtocol{
 	//A une fonction next qui renvoie l'identifiant de la carte parcourue  // C'ets quoi l'interet d'avoir un iterateur qui renvois que l'id de la carte ? sachant que ils veulent incrémenter a chaque fois que ce soit 1,2,3,4... bizarre
 
 	
-	func makeIterator() -> IteratorIdentifiantCarte {
+	func makeIterator() -> IteratorIdentifiantCarte { //--------------j'ai fait un iterateur sur les cartes et pas sur les id car id ca sert pas a grand chose
 		return MainIterator(main:self)
 	}
 
