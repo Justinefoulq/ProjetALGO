@@ -3,7 +3,6 @@
 import Foundation
 
 class carte {
-	associatedtype zone : SFZone
 
 	
 	private var Nom: String
