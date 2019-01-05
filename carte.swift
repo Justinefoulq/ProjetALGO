@@ -1,9 +1,10 @@
 
 //Carte
 import Foundation
+
 class carte {
-	
-	typalias zone = zone
+	associatedtype zone : SFZone
+
 	
 	private var Nom: String
 	private var DefPDef: Int 
@@ -12,7 +13,8 @@ class carte {
 	private var DefPOff: Int 
 	private var Portee: Int //OU String pb----------------------
 	private var Position: Bool // true carte en offensive ; false defensive
-	var Zone = zone() 
+	private var Zone : zone
+	
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
