@@ -11,7 +11,7 @@ class ChampBatailleIterator : IteratorProtocol {
         self.champ = champ
     }
 
-    func next() -> Carte? { // peut être changer dico avec A1=1 , A2=2 , A2=4 , F1=5 etC... pour faciliter iteratteur 
+    func next() -> Carte? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
     	let liste = self.front.fr
         while (self.i < 6) && (liste[i] == nil){
