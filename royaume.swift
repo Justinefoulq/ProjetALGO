@@ -1,5 +1,4 @@
 
-//Royaume
 import Foundation
    
 class royaume : RoyaumeProtocol {

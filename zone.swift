@@ -18,12 +18,11 @@ class zone{
 	//précondition: String passé en paramètre peut être (F1 , F2 , F3 , A1, A2 , A3)
 	//Initialise le nom de la zone avec la chaine de caractère passé en paramètre
 	init(nomZone : String) throws{
-
-		if let nomZone == "F1"||nomZone == "F2"|| nomZone == "F3"|| nomZone == "A1" || nomZone == "A2"|| nomZone == "A3" {
-			self.nom = nomZone
-		}else{
-			Error
+		guard nomZone == "F1"||nomZone == "F2"|| nomZone == "F3"|| nomZone == "A1" || nomZone == "A2"|| nomZone == "A3" 
+		else {throw zoneError.zoneincorrecte}		
+		self.nom = nomZone
 		}
+		
 	}
 
 
@@ -67,6 +66,9 @@ class zone{
 			return false
 		}
 	}
+
+enum zoneError: Error {
+    case zoneincorrecte
 
 
 }

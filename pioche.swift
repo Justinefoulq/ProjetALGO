@@ -46,7 +46,17 @@ class pioche{
 	func piocher()-> carte{           //----------------il faudrais pas enlever la carte de la pioche ? ------------------
 		var taille = self.pioche.count
 		let number = Int.random(in: 0 ..< taille-1)
-		return self.pioche[number];
+		var renvoyer=self.pioche[number];
+		if self.pioche[number].estArcher(){
+			nombreCarteArcher =nombreCarteArcher-1
+		}else{
+			if self.pioche[number].estSoldat(){
+				nombreCarteSoldat = nombreCarteSoldat-1
+			}else{
+				nombreCarteGarde = nombreCarteGarde-1
+			}
+		}
+		return renvoyer
 	}
 
 	
