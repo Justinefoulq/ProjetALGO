@@ -1,21 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- @Justinefoulq Sign out
-0
-0 0 Justinefoulq/ProjetALGO
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-ProjetALGO/carte.swift
-a2e7a61  14 minutes ago
-@arnaudmaesboyer arnaudmaesboyer Update carte.swift
-@arnaudmaesboyer @Justinefoulq
-     
-272 lines (238 sloc)  10.5 KB
 //Carte
 import Foundation
 class carte : CarteProtocol{
@@ -286,16 +269,3 @@ class carte : CarteProtocol{
 	}
 
 }
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
