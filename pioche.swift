@@ -48,7 +48,7 @@ class pioche{
 		let number = Int.random(in: 0 ..< taille-1)
 		var renvoyer=self.pioche[number];
 		if self.pioche[number].estArcher(){
-			nombreCarteArcher =nombreCarteArcher-1
+			nombreCarteArcher = nombreCarteArcher-1
 		}else{
 			if self.pioche[number].estSoldat(){
 				nombreCarteSoldat = nombreCarteSoldat-1
