@@ -3,28 +3,43 @@
 import Foundation
 
 
-class ChampBatailleIterator : IteratorProtocol {
+class IteratorNomZone : IteratorProtocol {
 	let champ: ChampBataille
-    var i : Int = 0
+    var i : String = "A1" //------Je sais pas a quoi initialiser
 
     init(champ: ChampBataille) {
         self.champ = champ
     }
 
+
     func next() -> Carte? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
-    	let liste = self.front.fr
-        while (self.i < 6) && (liste[i] == nil){
-        	self.i = self.i + 1
-        }
-        if self.i < 0 || self.i >= 6 {
+    	let liste = self.champ
+        if (self.i != "A1" || self.i != "A2" || self.i != "A3" || self.i != "F1" || self.i != "F2" || self.i != "F3" || {
         	return nil
         }
         else{
-        	self.i = self.i + 1
-        	return liste[self.i-1]
+	    	var ret : String = self.i
+			if self.i == "A1" {
+				self.i = "A2"
+			}else if self.i == "A2" {
+				self.i = "A3" 
+			}else if self.i == "A3" {
+				self.i = "F1" 
+			}else if self.i == "F1" {
+				self.i = "F2" 
+			}else if self.i == "F2" {
+				self.i = "F3" 
+			}else if self.i == "F3" {
+				self.i = "A1" 
+			}
+	    	return liste[ret]
         }
     }
+
+ 
+
+
 }
 
 
@@ -254,8 +269,8 @@ class ChampBataille : ChampDeBatailleProtocol {
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [Zone]
 	//Pré-conditions: Zone en entrée non vide
 	//Résultat: renvoie les zones non vides attaquables dans le champs de bataille de l'ennemie par la carte dans la zone dont le nom est entré en paramètre(utiliser getZone et getCarteZone) en fonction de la portée de la carte présente dans la zone
-   
-    func carteAttaquable(cdb: Self ,nomZone:String) throws -> [String] {}
+   	// problème car portée impossible 
+    func carteAttaquable(cdb: champBataille ,nomZone:String) throws -> [String] {}
     
     //getZone: String -> Zone
     //Renvoie la zone dont le nom est passé en paramètre
@@ -269,13 +284,21 @@ class ChampBataille : ChampDeBatailleProtocol {
     //Renvoie les cartes //pas possible la suite ------et toutes leurs propritétés détailées (point de défense restant...) //--- des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
     //Résultat: une chaîne de caractères
    
-    func affichageCible(carteAttaquable: [String]) -> String{}
+    func affichageCible(carteAttaquable: [String]) -> String{
+    	var str : String = ""
+
+    	for i in 0..<champBataille.count {
+    		str = str + carteAttaquable[i]
+    	}
+    }
 
 	// makeIterator : ChampDeBatailleProtocol -> IteratorNomZone
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur
 	
-	func makeIterator() -> IteratorNomZone{}
+	func makeIterator() -> IteratorNomZone{
+		return IteratorNomZone( champ : self)
+	}
 
 	enum ChampBatailleError: Error {
     	case ChampBatailleVide
