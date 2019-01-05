@@ -281,7 +281,7 @@ class ChampBataille : ChampDeBatailleProtocol {
     	case ChampBatailleVide
     	case CarteZoneAvant
 	}
-
+	
 }
 
 
