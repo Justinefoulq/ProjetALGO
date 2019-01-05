@@ -8,11 +8,11 @@ class joueur{
     associatedtype Royaume: RoyaumeProtocol
     associatedtype Pioche: PiocheProtocol
 	
-	private var nom: String // Joueur1 ou Joueur2
-	private var pioche: pioche
-	private var royaume: royaume
-	private var main: main
-	private var champDeBataille: champDeBataille
+	private var nom : String // Joueur1 ou Joueur2
+	private var pioche : pioche
+	private var royaume : royaume
+	private var mains : mains
+	private var champDeBataille : ChampDeBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
@@ -21,7 +21,7 @@ class joueur{
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
 	init(){
-		self.main.init()
+		self.mains.init()
 		self.champDeBataille.init()
 		self.royaume.init()
 		self.pioche.init()
@@ -39,9 +39,9 @@ class joueur{
 	func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}		
-		if self.champDeBataille.checkPositionDispo(PositionCarte){
+		if self.champDeBataille.checkPositionDispo(positionCarte){
 			self.champDeBataille.AjouterCarte(positionCarte.getZone())
-			self.main.enleverCarte(identifiantCarte)
+			self.mains.enleverCarte(identifiantCarte)
 			
 		}
 		
@@ -52,9 +52,9 @@ class joueur{
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	func mobiliser(CarteMobilisee: Carte, nomZone: String) throws{
+	func mobiliser(CarteMobilisee: carte, nomZone: String) throws{
 		self.royaume.retirerCarte(CarteMobilisee)
-		self.champDeBataille.ajouterCarte(carteMobilisee, nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
+		self.champDeBataille.ajouterCarte(CarteMobilisee, nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
 	}
 
 
@@ -65,10 +65,10 @@ class joueur{
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	func demobiliser( identifiantCarte: Int) throws -> Mains {
+	func demobiliser( identifiantCarte: Int) throws -> mains {
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}
-		self.main.enleverCarte(identifiantCarte)
+		self.mains.enleverCarte(identifiantCarte)
 		self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
 		return self.main
 	}
@@ -81,7 +81,7 @@ class joueur{
 	//pré-conditions: pioche non vide
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
-	func piocherCarte() -> Carte{
+	func piocherCarte() -> carte{
 		var carte = self.pioche.piocher()
 		self.main.ajouterCarte(carte)
 		return carte
@@ -101,7 +101,7 @@ class joueur{
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
 	func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{
-		var test : int
+		var test : Int
 		if carteAttaquante.getAttaque()==carteCiblé.getDefPDef(){
 			test = 0
 		}else{
@@ -180,20 +180,20 @@ class joueur{
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	func Capturer(carteCapturée : Carte){
+	func Capturer(carteCapturée : carte){
 		self.champDeBataille.CapturerCarte(carteCapturée)
 	}
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol
-    func getPioche() -> Pioche{
+    func getPioche() -> pioche{
 	    return self.pioche
     }
     	
 	
     //getRoyaume: JoueurProtocol -> RoyaumeProtocol
     //Renvoie le Royaume du JoueurProtocol
-    func getRoyaume() -> Royaume{
+    func getRoyaume() -> royaume{
 	    return self.royaume
     }
     
@@ -201,8 +201,8 @@ class joueur{
     
     //getMain: JoueurProtocol -> MainsProtocol
     //Renvoie la main du JoueurProtocol
-    func getMain() -> Main{
-	    return self.main
+    func getMain() -> mains {
+	    return self.mains
     }
     
     
@@ -218,6 +218,10 @@ class joueur{
 		return self.nom
 	}
     
+    enum joueurError: Error {
+    case mainincorrecte
+    
+	}
     
 
 }
