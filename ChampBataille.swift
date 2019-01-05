@@ -290,7 +290,7 @@ class ChampBataille : ChampDeBatailleProtocol {
 
 	// makeIterator : ChampDeBatailleProtocol -> IteratorNomZone
 	// crée un itérateur sur la collection de ZoneProtocol 
-	//Résultat: Renvoie un Iterateur
+	//Résultat: Renvoie un Iterateur  // ca sert pas a grand chose de faire un iterateur qui renvois le nom de la zone ? plutot renvoiyer les carte serais mieux...
 	
 	func makeIterator() -> IteratorNomZone{
 		return IteratorNomZone( champ : self)

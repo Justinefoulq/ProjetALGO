@@ -86,12 +86,19 @@ class mains : MainsProtocol{
 	//Pré-conditions: l'entier entré en paramètre est compris entre 0 et le nombre de cartes dans la main
 	//Résultat: Enleve la carte qui à pour identifiant celui passé en paramètre (utiliser getCarteparIdentifiant)
 	//post-conditions nombreCartes diminue de 1
+	//--------j'ai rajouter les propriete de la fonction setID ici : mettre a jour les identifiant quand on supprime une carte ( car set ID pas utilisé dans le main)
 	
 	func enleverCarte( identifiantCarte : Int) throws  {
 		guard !estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
-		mains.removeValue(forKey: identifiantCarte) 
+		var trans : carte
+		mains.removeValue(forKey: identifiantCarte)
+		for i in (identifiantCarte+1)..<self.mains.count {
+			trans = self.main[i]
+			mains.removeValue(forKey: i)
+			self.mains[i-1] = trans
+		}
 		
 	}
 	
@@ -124,12 +131,14 @@ class mains : MainsProtocol{
 	//Post-conditions: numérote les cartes de 1 à n (n=nombre de cartes de la main, entier) dans l'ordre dans lequel elles ont été piochées (le roi a pour id 1 après init)
 	//				   attribue un identifiant à chaque fois qu'on pioche une carte et met à jour quand on en pose une (si on a 5 cartes, lorsque l'on pose la 3, la 4 et 5 deviennent respectivement 3 et 4)
 	//Résultat: main avec ses cartes numérotées
-	//-----------------------------------------------------vois pas comment faire 
-	func setID(carte:Carte) { // nom mal apparoprié c'est plus ne mise a jour de la mains , comment on differencie de cas ou on enlevela carte ou le cas //soit fait plsr fonction soit on specifie mieux les fonction ajout et surpimmer elem de la mains pour que ca incremente ou decremente les id
-		var nbcarte : Int = nombreCartes() 
+	//-----------------------------------------------------vois pas comment faire -----j'ai fait direct dans enlevercarte car setId non utilisé dans le main donc plus simple pour moi
+	
+
+	//func setID(carte:Carte) { // nom mal apparoprié c'est plus ne mise a jour de la mains , comment on differencie de cas ou on enlevela carte ou le cas //soit fait plsr fonction soit on specifie mieux les fonction ajout et surpimmer elem de la mains pour que ca incremente ou decremente les id
+	//	var nbcarte : Int = nombreCartes() 
 
 
-	}
+	//}
 
 	
 
