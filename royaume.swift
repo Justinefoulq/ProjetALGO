@@ -84,6 +84,10 @@ class royaume : RoyaumeProtocol {
     case royaumeVide
     case cartePasDansRoyaume
 	}
+	
+	func ajouterCarte(carteSel : carte){
+		self.royaume.append(carteSel);
+	}
 
 }
 
