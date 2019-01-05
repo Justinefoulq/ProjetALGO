@@ -1,9 +1,8 @@
 
 //Carte
 import Foundation
-class carte : CarteProtocol{
+class carte {
 	
-	associatedtype Zone
 	
 	private var Nom: String
 	private var DefPDef: Int 
@@ -12,7 +11,7 @@ class carte : CarteProtocol{
 	private var DefPOff: Int 
 	private var Portee: Int //OU String pb----------------------
 	private var Position: Bool // true carte en offensive ; false defensive
-	private var Zone: zone
+	var Zone = zone() 
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init(){
@@ -249,11 +248,11 @@ class carte : CarteProtocol{
 		}
 	}
 
-	func getZone() ->Zone{
+	func getZone() -> zone{
 		return self.Zone		
 	}
 
-	func setZone(Zone : Zone){
+	func setZone(Zone : zone){
 		self.Zone=Zone	
 	}
 	//estGarde:CarteProtocol -> Bool
