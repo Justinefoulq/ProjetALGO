@@ -4,15 +4,17 @@ import Foundation
 
 
 public class IteratorNomZone : IteratorProtocol {
-	let champ: ChampBataille
+	typealias TZone = zone
+
+	let champ: champBataille
     var i : String = "A1" //------Je sais pas a quoi initialiser
 
-    public required init(champ: ChampBataille) {
+    public required init(champ: champBataille) {
         self.champ = champ
     }
 
 
-    func next() -> zone? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
+    public func next() -> zone? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
 		let liste = self.champ
 		var ret : String = self.i
@@ -41,16 +43,12 @@ public class IteratorNomZone : IteratorProtocol {
 
 
 public class champBataille : ChampDeBatailleProtocol {
+	typealias TZone = zone
+
 	//associatedtype Zone : ZoneProtocol
    // associatedtype IteratorNomZone : IteratorProtocol
     private var PositionDispo : [String]
 	private var champBataille : [String: zone]
-	private var ZoneA1 : zone
-	private var ZoneA2 : zone
-	private var ZoneA3 : zone
-	private var ZoneF1 : zone
-	private var ZoneF2 : zone
-	private var ZoneF3 : zone
 	private var Joueur : joueur
    
 
@@ -65,14 +63,8 @@ public class champBataille : ChampDeBatailleProtocol {
 	
 	public required init(){
 		self.PositionDispo = []
-		self.ZoneA1 = nil
-		self.ZoneA2 = nil
-		self.ZoneA3 = nil
-		self.ZoneF1 = nil
-		self.ZoneF2 = nil
-		self.ZoneF3 = nil
-		self.Joueur = nil
-		let champBataille = ["A1": ZoneA1, "A2": ZoneA2, "A3": ZoneA3, "F1": ZoneF1 , "F2": ZoneF2, "F3": ZoneF3]
+		self.Joueur = joueur()
+		self.champBataille = ["A1": zone(nomZone: "A1"), "A2": zone(nomZone: "A2"), "A3": zone(nomZone: "A3"), "F1": zone(nomZone: "F1") , "Fé": zone(nomZone: "F2"), "F3": zone(nomZone: "F3")]
     }
 
 
@@ -98,10 +90,10 @@ public class champBataille : ChampDeBatailleProtocol {
 		var liste : [String]
 		liste=["F1","F2","F3"]
 
-		if !(zone.estVide(self.champBataille["F1"])) { 
+		if !(self.champBataille["F1"].estVide()) { 
 			liste = liste + ["A1"]
 		}
-		if !(zone.estVide(self.champBataille["F2"])) { 
+		if !(self.champBataille["F2"])) { 
 			liste = liste + ["A2"]
 		}
 		if !(zone.estVide(self.champBataille["F3"])) { 
@@ -207,7 +199,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	//résultat: champ de bataille avec ses cartes en position défensive
 	
 	func replacerCarte() throws {
-		guard estVide() else {
+		guard !estVide() else {
 			throw ChampBatailleError.ChampBatailleVide
 		}
 
@@ -243,8 +235,8 @@ public class champBataille : ChampDeBatailleProtocol {
 	//pré-conditions: Zone passée en paramètre est une zone arrière (A1,A2 ou A3)
 	//Résultat: carte avancée dans la zone devant elle
 	//-------------est ce qu'il faut mettre let avat les condition de mon throw , Arnaud la mis dans Zone ----------------------------------------------------
-	func avancerCarte(nomZone:Zone) throws {
-		guard (nomZone=="F1" || nomZone=="F2" || nomZone=="F3") else {
+	func avancerCarte(nomZone : zone) throws {
+		guard (nomZone=="A1" || nomZone=="A2" || nomZone=="A3") else {
 			throw ChampBatailleError.CarteZoneAvant
 		}
 
@@ -266,7 +258,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	//Pré-conditions: Zone en entrée non vide
 	//Résultat: renvoie les zones non vides attaquables dans le champs de bataille de l'ennemie par la carte dans la zone dont le nom est entré en paramètre(utiliser getZone et getCarteZone) en fonction de la portée de la carte présente dans la zone
    	// problème car portée impossible 
-    func carteAttaquable(cdb: champBataille ,nomZone:String) throws -> [String] {}
+    func carteAttaquable(cdb : champBataille , nomZone : String) throws -> [String] {}
     
     //getZone: String -> Zone
     //Renvoie la zone dont le nom est passé en paramètre
@@ -280,7 +272,7 @@ public class champBataille : ChampDeBatailleProtocol {
     //Renvoie les cartes //pas possible la suite ------et toutes leurs propritétés détailées (point de défense restant...) //--- des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
     //Résultat: une chaîne de caractères
    
-    func affichageCible(carteAttaquable: [String]) -> String{
+    func affichageCible(carteAttaquable : [String]) -> String{
     	var str : String = ""
 
     	for i in 0..<champBataille.count {
@@ -292,17 +284,15 @@ public class champBataille : ChampDeBatailleProtocol {
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur  // ca sert pas a grand chose de faire un iterateur qui renvois le nom de la zone ? plutot renvoiyer les carte serais mieux...
 	
-	func makeIterator() -> IteratorNomZone{
+	public func makeIterator() -> IteratorNomZone{
 		return IteratorNomZone( champ : self)
-	}
-
-	enum ChampBatailleError: Error {
-    	case ChampBatailleVide
-    	case CarteZoneAvant
 	}
 	
 }
 
-
+enum ChampBatailleError: Error {
+    	case ChampBatailleVide
+    	case CarteZoneAvant
+	}
 
 

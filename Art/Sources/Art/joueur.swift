@@ -2,6 +2,12 @@
 import Foundation
 public class joueur : JoueurProtocol{
 	//main, champ de bataille, royaume, pioche
+	typealias TCarte = carte
+	typealias TChampDeBataille = champBataille
+	typealias TMains = mains
+	typealias TRoyaume = royaume
+	typealias TPioche = pioche
+
 
 	
 	private var nom : String // Joueur1 ou Joueur2
@@ -17,10 +23,10 @@ public class joueur : JoueurProtocol{
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
 	public required init(){
-		self.mains.init()
-		self.champDeBataille.init()
-		self.royaume.init()
-		self.pioche.init()
+		self.mains()
+		self.champDeBataille()
+		self.royaume()
+		self.pioche()
 	}
 
 
@@ -66,7 +72,7 @@ public class joueur : JoueurProtocol{
 			throw joueurError.mainincorrecte}
 		self.mains.enleverCarte(identifiantCarte)
 		self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
-		return self.main
+		return self.mains
 	}
 
 
@@ -79,7 +85,7 @@ public class joueur : JoueurProtocol{
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
 	func piocherCarte() -> carte{
 		var carte = self.pioche.piocher()
-		self.main.ajouterCarte(carte)
+		self.mains.ajouterCarte(carte)
 		return carte
 	}
 
@@ -96,7 +102,7 @@ public class joueur : JoueurProtocol{
 	// de la carte attaqué
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
-	func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int{
+	func attaque(carteAttaquante : carte, carteCiblé: carte) throws -> Int{
 		var test : Int
 		if carteAttaquante.getAttaque()==carteCiblé.getDefPDef(){
 			test = 0
@@ -214,10 +220,8 @@ public class joueur : JoueurProtocol{
 		return self.nom
 	}
     
-    enum joueurError: Error {
+}
+enum joueurError: Error {
     case mainincorrecte
     
 	}
-    
-
-}

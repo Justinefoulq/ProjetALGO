@@ -1,0 +1,215 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "carte"
+provides-nominal:
+- "3Art5carteC"
+provides-member:
+- ["3Art5carteC", ""]
+depends-top-level:
+- !private "=="
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CarteProtocol"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "String"
+- !private "StringLiteralType"
+- "carte"
+- "zone"
+- !private "||"
+depends-member:
+- !private ["SK", "init"]
+- !private ["SK", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["3Art13CarteProtocolP", "Attaque"]
+- !private ["3Art13CarteProtocolP", "DefPDef"]
+- !private ["3Art13CarteProtocolP", "DefPOff"]
+- !private ["3Art13CarteProtocolP", "Nom"]
+- !private ["3Art13CarteProtocolP", "PointdeDefduTour"]
+- !private ["3Art13CarteProtocolP", "Portee"]
+- !private ["3Art13CarteProtocolP", "Position"]
+- !private ["3Art13CarteProtocolP", "Zone"]
+- ["3Art13CarteProtocolP", ""]
+- ["3Art13CarteProtocolP", "creerArcher"]
+- ["3Art13CarteProtocolP", "creerGarde"]
+- ["3Art13CarteProtocolP", "creerRoi1"]
+- ["3Art13CarteProtocolP", "creerRoi2"]
+- ["3Art13CarteProtocolP", "creerSoldat"]
+- ["3Art13CarteProtocolP", "estDefensif"]
+- ["3Art13CarteProtocolP", "estRoi"]
+- ["3Art13CarteProtocolP", "estSoldat"]
+- ["3Art13CarteProtocolP", "getAttaque"]
+- ["3Art13CarteProtocolP", "getDefPDef"]
+- ["3Art13CarteProtocolP", "getDefPOff"]
+- ["3Art13CarteProtocolP", "getNom"]
+- ["3Art13CarteProtocolP", "getPointdeDefduTour"]
+- ["3Art13CarteProtocolP", "getPortee"]
+- ["3Art13CarteProtocolP", "init"]
+- ["3Art13CarteProtocolP", "initialiserPointdeDefTour"]
+- ["3Art13CarteProtocolP", "mettreEnPositionDefensive"]
+- ["3Art13CarteProtocolP", "mettreEnPositionOffensive"]
+- ["3Art13CarteProtocolP", "setAttaque"]
+- ["3Art13CarteProtocolP", "setDefPDef"]
+- ["3Art13CarteProtocolP", "setDefPOff"]
+- ["3Art13CarteProtocolP", "setPointsDefTour"]
+- !private ["3Art13CarteProtocolP", "zone"]
+- !private ["Sl", "init"]
+- !private ["Sl", "init"]
+- !private ["SL", "init"]
+- !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["Se", "_getBuiltinLogicValue"]
+- !private ["Se", "init"]
+- !private ["Se", "init"]
+- !private ["SE", "_getBuiltinLogicValue"]
+- !private ["SE", "init"]
+- !private ["SE", "init"]
+- !private ["SQ", "_getBuiltinLogicValue"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "_getBuiltinLogicValue"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["Sm", "init"]
+- !private ["Sm", "init"]
+- !private ["ST", "init"]
+- !private ["ST", "init"]
+- !private ["SS", "init"]
+- !private ["SS", "init"]
+- !private ["Sy", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation13_CFBridgeableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+- !private ["3Art5carteC", "Attaque"]
+- ["3Art5carteC", "Bool"]
+- !private ["3Art5carteC", "DefPDef"]
+- !private ["3Art5carteC", "DefPOff"]
+- ["3Art5carteC", "Int"]
+- !private ["3Art5carteC", "Nom"]
+- !private ["3Art5carteC", "PointdeDefduTour"]
+- !private ["3Art5carteC", "Portee"]
+- !private ["3Art5carteC", "Position"]
+- ["3Art5carteC", "String"]
+- !private ["3Art5carteC", "Zone"]
+- ["3Art5carteC", "creerArcher"]
+- ["3Art5carteC", "creerGarde"]
+- ["3Art5carteC", "creerRoi1"]
+- ["3Art5carteC", "creerRoi2"]
+- ["3Art5carteC", "creerSoldat"]
+- ["3Art5carteC", "deinit"]
+- ["3Art5carteC", "estDefensif"]
+- ["3Art5carteC", "estGarde"]
+- ["3Art5carteC", "estRoi"]
+- ["3Art5carteC", "estSoldat"]
+- ["3Art5carteC", "getAttaque"]
+- ["3Art5carteC", "getDefPDef"]
+- ["3Art5carteC", "getDefPOff"]
+- ["3Art5carteC", "getNom"]
+- ["3Art5carteC", "getPointdeDefduTour"]
+- ["3Art5carteC", "getPortee"]
+- ["3Art5carteC", "getZone"]
+- ["3Art5carteC", "init"]
+- ["3Art5carteC", "initialiserPointdeDefTour"]
+- ["3Art5carteC", "mettreEnPositionDefensive"]
+- ["3Art5carteC", "mettreEnPositionOffensive"]
+- ["3Art5carteC", "setAttaque"]
+- ["3Art5carteC", "setDefPDef"]
+- ["3Art5carteC", "setDefPOff"]
+- ["3Art5carteC", "setPointsDefTour"]
+- ["3Art5carteC", "setZone"]
+- ["3Art5carteC", "zone"]
+depends-nominal:
+- !private "SK"
+- !private "Sb"
+- !private "s7CVarArgP"
+- "3Art13CarteProtocolP"
+- !private "Sl"
+- !private "SL"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- !private "SQ"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "SH"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "Sm"
+- !private "ST"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "10Foundation13_CFBridgeableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "10Foundation13_NSBridgeableP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+- "3Art5carteC"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "bdb98386ae0eb3d9f5913cd769fd7859"

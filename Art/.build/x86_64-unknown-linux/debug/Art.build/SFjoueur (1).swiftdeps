@@ -1,0 +1,57 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JoueurProtocol"
+provides-nominal:
+- "3Art14JoueurProtocolP"
+provides-member:
+- ["3Art14JoueurProtocolP", ""]
+depends-top-level:
+- "Bool"
+- "Carte"
+- "CarteProtocol"
+- "ChampDeBataille"
+- "ChampDeBatailleProtocol"
+- "Int"
+- "JoueurProtocol"
+- "Mains"
+- "MainsProtocol"
+- "Pioche"
+- "PiocheProtocol"
+- "Royaume"
+- "RoyaumeProtocol"
+- "String"
+depends-member:
+- ["3Art14JoueurProtocolP", "Bool"]
+- ["3Art14JoueurProtocolP", "Carte"]
+- ["3Art14JoueurProtocolP", "CarteProtocol"]
+- ["3Art14JoueurProtocolP", "ChampDeBataille"]
+- ["3Art14JoueurProtocolP", "ChampDeBatailleProtocol"]
+- ["3Art14JoueurProtocolP", "Int"]
+- ["3Art14JoueurProtocolP", "Mains"]
+- ["3Art14JoueurProtocolP", "MainsProtocol"]
+- ["3Art14JoueurProtocolP", "Pioche"]
+- ["3Art14JoueurProtocolP", "PiocheProtocol"]
+- ["3Art14JoueurProtocolP", "Royaume"]
+- ["3Art14JoueurProtocolP", "RoyaumeProtocol"]
+- ["3Art14JoueurProtocolP", "String"]
+- ["3Art14JoueurProtocolP", "TCarte"]
+- ["3Art14JoueurProtocolP", "TChampDeBataille"]
+- ["3Art14JoueurProtocolP", "TMains"]
+- ["3Art14JoueurProtocolP", "TPioche"]
+- ["3Art14JoueurProtocolP", "TRoyaume"]
+- ["3Art14JoueurProtocolP", "attaquantDispo"]
+- ["3Art14JoueurProtocolP", "checkCarteAttaque"]
+- ["3Art14JoueurProtocolP", "estAPortee"]
+- ["3Art14JoueurProtocolP", "init"]
+- ["3Art14JoueurProtocolP", "poserCarte"]
+depends-nominal:
+- "3Art14JoueurProtocolP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "f84e5aae4514cf01ce1f26082b9d7709"

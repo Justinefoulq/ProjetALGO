@@ -2,6 +2,7 @@
 import Foundation
 
 public class mainsIterator : IteratorProtocol {
+	typealias TCarte = carte
     let ItMain: mains
     var i : Int = 0
 
@@ -42,10 +43,16 @@ public class mains : MainsProtocol{
 	//post-conditions: non vide
 	public required init(){
 		//---------------problème initialiser créerRoi1() ou créer roi 2 mais comment on sais c'est la main de quel joueur ?
-		self.carte0=carte.creerRoi1()
-		self.carte1=pioche.piocher()
-		self.carte2=pioche.piocher()
-		self.carte3=pioche.piocher()
+		self.carte0 = carte()
+		self.carte1 = carte()
+		self.carte2 = carte()
+		self.carte3 = carte()
+
+		self.carte0 = carte.creerRoi1()
+		self.carte1 = pioche.piocher()
+		self.carte2 = pioche.piocher()
+		self.carte3 = pioche.piocher()
+
 		let mains = ["0": carte0, "1": carte1, "2": carte2, "3": carte3 ]
 	}
 
@@ -89,7 +96,7 @@ public class mains : MainsProtocol{
 	//--------j'ai rajouter les propriete de la fonction setID ici : mettre a jour les identifiant quand on supprime une carte ( car set ID pas utilisé dans le main)
 	
 	func enleverCarte( identifiantCarte : Int) throws  {
-		guard !estDansMains(identifiantCarte: identifiantCarte) else {
+		guard estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
 		var trans : carte
@@ -109,7 +116,7 @@ public class mains : MainsProtocol{
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
 	func getCarteparIdentifiant( identifiantCarte : Int) throws -> carte  {
-		guard !estDansMains(identifiantCarte: identifiantCarte) else {
+		guard estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
 		return self.mains[identifiantCarte]
@@ -148,7 +155,7 @@ public class mains : MainsProtocol{
 	//Résultat: entiern identifiant de la carte (attribué par setID)
 	
 	func getID(carte : carte) throws -> Int  {
-		guard !estDansMains(self.mains[carte]) else {
+		guard estDansMains(self.mains[carte]) else {
 			throw MainsError.pasDansMains
 		}
 		return self.mains[carte]
@@ -166,15 +173,11 @@ public class mains : MainsProtocol{
 		return MainIterator(main:self)
 	}
 
-	enum MainsError: Error {
+}
+
+enum MainsError: Error {
     case pasDansMains
     
 	}
-
-		
-	
-}
-
-
 
 

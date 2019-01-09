@@ -3,8 +3,9 @@
 //Champs de Bataille est une collection contenant des ZoneProtocol
 import Foundation
 protocol ChampDeBatailleProtocol : Sequence {
-    associatedtype Zone : ZoneProtocol
-    associatedtype IteratorNomZone : IteratorProtocol
+    associatedtype TZone : ZoneProtocol
+
+    //associatedtype IteratorNomZone : IteratorProtocol
 
 
 	//ligne de front, ligne arriere
@@ -67,18 +68,20 @@ protocol ChampDeBatailleProtocol : Sequence {
 	//avance la carte qui se trouve dans la zone passée en paramètre en ligne de front, sur la zone juste devant
 	//pré-conditions: Zone passée en paramètre est une zone arrière (A1,A2 ou A3)
 	//Résultat: carte avancée dans la zone devant elle
-	func avancerCarte(nomZone:Zone) throws
+	func avancerCarte(nomZone 
 
-	//carteAttaquable: String X ChampDeBatailleProtocol -> [Zone]
+		: zone) throws
+
+	//carteAttaquable: String X ChampDeBatailleProtocol -> [TZone]
 	//Pré-conditions: Zone en entrée non vide
 	//Résultat: renvoie les zones non vides attaquables dans le champs de bataille de l'ennemie par la carte dans la zone dont le nom est entré en paramètre(utiliser getZone et getCarteZone) en fonction de la portée de la carte présente dans la zone
     func carteAttaquable(cdb: Self ,nomZone:String) throws -> [String]
     
-    //getZone: String -> Zone
+    //getZone: String -> TZone
     //Renvoie la zone dont le nom est passé en paramètre
     //pré-conditions: Chaîne de caactères entrée en paramètre correspond à une zone initialisée 
     //Resultat: renvoie un zone, celle dont le nom est passé en paramètre
-    func getZone(nomZone: String) -> Zone
+    //func getZone(nomZone: String) -> Zone-------------------------------inutile je pense -----------------------------------
 	
     //affichageCible: [String] ->
     //Renvoie les cartes et toutes leurs propritétés détailées (point de défense restant...) des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable
@@ -89,6 +92,7 @@ protocol ChampDeBatailleProtocol : Sequence {
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur
 	func makeIterator() -> IteratorNomZone
+
 
 }
 

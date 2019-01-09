@@ -2,6 +2,7 @@
 import Foundation
    
 public class royaume : RoyaumeProtocol {
+	typealias TCarte = carte
 	//typealias royaume = Carte
 	//associatedtype Carte : CarteProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
@@ -51,7 +52,7 @@ public class royaume : RoyaumeProtocol {
 	//preconditon: Le royaume n'est pas vide
 	//Resultat : true si la carte placé en parametre est dans le royaume, false sinon
 	func estDansRoyaume(carte : carte) throws -> Bool  {
-		guard estVide() else {
+		guard !estVide() else {
 			throw RoyaumeError.royaumeVide
     	}
     	var bool : Bool 
@@ -71,7 +72,7 @@ public class royaume : RoyaumeProtocol {
 	//Résultat enlève la carte du Royaume
 	//Post-conditions nombreCitoyens à baissé de 1
 	func removeCarte(carteSelectionne : carte) throws { //-------------il faudrait une file -----------------------
-		guard !estDansRoyaume(carteSelectionne) else {
+		guard estDansRoyaume(carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
 		for i in 0..<self.royaume.count {
@@ -85,14 +86,15 @@ public class royaume : RoyaumeProtocol {
 		
 	}
 
-	enum RoyaumeError: Error {
-    case royaumeVide
-    case cartePasDansRoyaume
-	}
 	
-	func ajouterCarte(carteSel : carte){
-		self.royaume.append(carteSel);
-	}
+	
+	//func ajouterCarte(carteSel : carte){
+	//	self.royaume.append(carteSel);
+	//}
 
 }
 
+enum RoyaumeError: Error {
+    case royaumeVide
+    case cartePasDansRoyaume
+	}

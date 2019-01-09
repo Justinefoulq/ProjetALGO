@@ -8,17 +8,17 @@ provides-member:
 depends-top-level:
 - "Bool"
 - "ChampDeBatailleProtocol"
-- "IteratorProtocol"
+- "IteratorNomZone"
 - "Sequence"
 - "String"
 - "ZoneProtocol"
+- "zone"
 depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "Bool"]
 - ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
-- ["3Art23ChampDeBatailleProtocolP", "IteratorProtocol"]
 - ["3Art23ChampDeBatailleProtocolP", "Self"]
 - ["3Art23ChampDeBatailleProtocolP", "String"]
-- ["3Art23ChampDeBatailleProtocolP", "Zone"]
+- ["3Art23ChampDeBatailleProtocolP", "TZone"]
 - ["3Art23ChampDeBatailleProtocolP", "ZoneProtocol"]
 - ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
 - ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
@@ -27,21 +27,20 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
 - ["3Art23ChampDeBatailleProtocolP", "estVide"]
 - ["3Art23ChampDeBatailleProtocolP", "getPositionDispo"]
-- ["3Art23ChampDeBatailleProtocolP", "getZone"]
 - ["3Art23ChampDeBatailleProtocolP", "init"]
 - ["3Art23ChampDeBatailleProtocolP", "initialiserAttaqueSoldat"]
 - ["3Art23ChampDeBatailleProtocolP", "initialiserPointdeDefTour"]
 - ["3Art23ChampDeBatailleProtocolP", "listeAttaquant"]
 - ["3Art23ChampDeBatailleProtocolP", "makeIterator"]
 - ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
+- ["3Art23ChampDeBatailleProtocolP", "zone"]
 - ["ST", "Bool"]
 - ["ST", "IteratorNomZone"]
-- ["ST", "IteratorProtocol"]
 - ["ST", "Self"]
 - ["ST", "String"]
-- ["ST", "Zone"]
 - ["ST", "ZoneProtocol"]
 - ["ST", ""]
+- ["ST", "zone"]
 depends-nominal:
 - "3Art23ChampDeBatailleProtocolP"
 - "ST"
@@ -53,4 +52,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "989e920a91458e11b27d233fdb961054"
+interface-hash: "15c23b6aee06630bccc8d571bf88bcb7"

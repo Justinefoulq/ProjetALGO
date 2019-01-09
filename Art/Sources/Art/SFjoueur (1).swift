@@ -2,11 +2,11 @@
 import Foundation
 protocol JoueurProtocol {
 	//main, champ de bataille, royaume, pioche
-    associatedtype ChampDeBataille : ChampDeBatailleProtocol
-    associatedtype Carte : CarteProtocol
-    associatedtype Mains : MainsProtocol
-    associatedtype Royaume : RoyaumeProtocol
-    associatedtype Pioche : PiocheProtocol
+    associatedtype TChampDeBataille : ChampDeBatailleProtocol
+    associatedtype TCarte : CarteProtocol
+    associatedtype TMains : MainsProtocol
+    associatedtype TRoyaume : RoyaumeProtocol
+    associatedtype TPioche : PiocheProtocol
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
 	//post-conditions pour la main: 1 roi, 3 unités piochées au hasard
@@ -31,7 +31,7 @@ protocol JoueurProtocol {
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	mutating func mobiliser(CarteMobilisee: Carte, nomZone: String) throws
+	mutating func mobiliser(CarteMobilisee: carte, nomZone: String) throws
 
 
 
@@ -41,7 +41,7 @@ protocol JoueurProtocol {
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	mutating func demobiliser( identifiantCarte: Int) throws -> Mains
+	mutating func demobiliser( identifiantCarte: Int) throws -> mains
 
 
 
@@ -51,7 +51,7 @@ protocol JoueurProtocol {
 	//pré-conditions: pioche non vide
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
-	mutating func piocherCarte() -> Carte
+	mutating func piocherCarte() -> carte
 
 	 
 
@@ -66,7 +66,7 @@ protocol JoueurProtocol {
 	// de la carte attaqué
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
-	mutating func attaque(carteAttaquante : Carte, carteCiblé: Carte) throws -> Int
+	mutating func attaque(carteAttaquante : carte, carteCiblé: carte) throws -> Int
 	
 	
 	
@@ -91,34 +91,34 @@ protocol JoueurProtocol {
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : ChampDeBataille) -> Bool
+	func checkCible(champAdversaire : champBataille) -> Bool
 
 
 
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	mutating func Capturer(carteCapturée : Carte)
+	mutating func Capturer(carteCapturée : carte)
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol
-    func getPioche() -> Pioche
+    func getPioche() -> pioche
     
 	
     //getRoyaume: JoueurProtocol -> RoyaumeProtocol
     //Renvoie le Royaume du JoueurProtocol
-    func getRoyaume() -> Royaume
+    func getRoyaume() -> royaume
     
     
     
     //getMain: JoueurProtocol -> MainsProtocol
     //Renvoie la main du JoueurProtocol
-    func getMain() -> Mains
+    func getMain() -> mains
     
     
     //getChampDeBataille: JoueurProtocol -> ChampDeBatailleProtocol
     //Renvoie le ChampDeBataille du JoueurProtocol
-    func getChampDeBataille() -> ChampDeBataille
+    func getChampDeBataille() -> champBataille
     
     
     

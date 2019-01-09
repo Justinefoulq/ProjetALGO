@@ -2,7 +2,7 @@
 import Foundation
 protocol PiocheProtocol {
     
-    associatedtype Carte : CarteProtocol
+    associatedtype TCarte : CarteProtocol
 	//init:  -> PiocheProtocol
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5
@@ -18,7 +18,7 @@ protocol PiocheProtocol {
 	// postCondition : nombreCarteSoldat est >=0
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
-	mutating func piocher()-> Carte
+	mutating func piocher()-> carte
 
 	
 	//nombreCartes: PiocheProtocol -> Int

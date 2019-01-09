@@ -5,9 +5,12 @@
 //ZoneProtocol est un couple (nomZone, Carte)
 
 import Foundation
+
+
+
 public class zone : ZoneProtocol {
 	// Carte ou nul
-
+	typealias TCarte = carte
 	
 	fileprivate var nom : String
 	fileprivate var carte : carte?
@@ -22,9 +25,9 @@ public class zone : ZoneProtocol {
 			throw zoneError.zoneincorrecte
 		}		
 		self.nom = nomZone
-		}
-		
 	}
+		
+	
 
 
 
@@ -67,9 +70,12 @@ public class zone : ZoneProtocol {
 			return false
 		}
 	}
+}
+
+
 
 enum zoneError: Error {
     case zoneincorrecte
 
-
 }
+

@@ -12,30 +12,32 @@ depends-top-level:
 - "IteratorProtocol"
 - "MainsProtocol"
 - "Sequence"
+- "carte"
 depends-member:
 - ["3Art13MainsProtocolP", "Bool"]
-- ["3Art13MainsProtocolP", "Carte"]
 - ["3Art13MainsProtocolP", "CarteProtocol"]
 - ["3Art13MainsProtocolP", "Int"]
 - ["3Art13MainsProtocolP", "IteratorIdentifiantCarte"]
 - ["3Art13MainsProtocolP", "IteratorProtocol"]
+- ["3Art13MainsProtocolP", "TCarte"]
 - ["3Art13MainsProtocolP", "ajouterCarte"]
+- ["3Art13MainsProtocolP", "carte"]
 - ["3Art13MainsProtocolP", "enleverCarte"]
 - ["3Art13MainsProtocolP", "estDansMain"]
 - ["3Art13MainsProtocolP", "estVide"]
 - ["3Art13MainsProtocolP", "getCarteparIdentifiant"]
 - ["3Art13MainsProtocolP", "getID"]
+- ["3Art13MainsProtocolP", "getmain"]
 - ["3Art13MainsProtocolP", "init"]
 - ["3Art13MainsProtocolP", "makeIterator"]
 - ["3Art13MainsProtocolP", "nombreCartes"]
-- ["3Art13MainsProtocolP", "setID"]
 - ["ST", "Bool"]
-- ["ST", "Carte"]
 - ["ST", "CarteProtocol"]
 - ["ST", "Int"]
 - ["ST", "IteratorIdentifiantCarte"]
 - ["ST", "IteratorProtocol"]
 - ["ST", ""]
+- ["ST", "carte"]
 depends-nominal:
 - "3Art13MainsProtocolP"
 - "ST"
@@ -47,4 +49,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "29acf4a96b6a0d4e579a38aabc1cf7fa"
+interface-hash: "2676bd833d75e039e93f412422f44d84"
