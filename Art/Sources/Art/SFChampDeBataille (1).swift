@@ -70,7 +70,7 @@ protocol ChampDeBatailleProtocol : Sequence {
 	//Résultat: carte avancée dans la zone devant elle
 	func avancerCarte(nomZone 
 
-		: zone) throws
+		: TZone) throws
 
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [TZone]
 	//Pré-conditions: Zone en entrée non vide

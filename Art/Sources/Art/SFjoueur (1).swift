@@ -31,7 +31,7 @@ protocol JoueurProtocol {
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	mutating func mobiliser(CarteMobilisee: carte, nomZone: String) throws
+	mutating func mobiliser(CarteMobilisee: TCarte, nomZone: String) throws
 
 
 
@@ -51,7 +51,7 @@ protocol JoueurProtocol {
 	//pré-conditions: pioche non vide
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
-	mutating func piocherCarte() -> carte
+	mutating func piocherCarte() -> TCarte
 
 	 
 
@@ -66,7 +66,7 @@ protocol JoueurProtocol {
 	// de la carte attaqué
 	// renvoie 2 si la première carte correspondant à la carte attaquante à plus d'attaque que les points de défense actuels ( suivant qu'elles soit en position verticale ou horizontale)
 	// de la carte attaqué et change les pointdeDefduTour de la carte attaqué
-	mutating func attaque(carteAttaquante : carte, carteCiblé: carte) throws -> Int
+	mutating func attaque(carteAttaquante : TCarte, carteCiblé: TCarte) throws -> Int
 	
 	
 	
@@ -91,34 +91,34 @@ protocol JoueurProtocol {
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : champBataille) -> Bool
+	func checkCible(champAdversaire : TChampDeBataille) -> Bool
 
 
 
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	mutating func Capturer(carteCapturée : carte)
+	mutating func Capturer(carteCapturée : TCarte)
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol
-    func getPioche() -> pioche
+    func getPioche() -> TPioche
     
 	
     //getRoyaume: JoueurProtocol -> RoyaumeProtocol
     //Renvoie le Royaume du JoueurProtocol
-    func getRoyaume() -> royaume
+    func getRoyaume() -> TRoyaume
     
     
     
     //getMain: JoueurProtocol -> MainsProtocol
     //Renvoie la main du JoueurProtocol
-    func getMain() -> mains
+    func getMain() -> TMains
     
     
     //getChampDeBataille: JoueurProtocol -> ChampDeBatailleProtocol
     //Renvoie le ChampDeBataille du JoueurProtocol
-    func getChampDeBataille() -> champBataille
+    func getChampDeBataille() -> TChampDeBataille
     
     
     

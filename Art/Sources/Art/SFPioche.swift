@@ -18,7 +18,7 @@ protocol PiocheProtocol {
 	// postCondition : nombreCarteSoldat est >=0
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
-	mutating func piocher()-> carte
+	mutating func piocher()-> TCarte
 
 	
 	//nombreCartes: PiocheProtocol -> Int

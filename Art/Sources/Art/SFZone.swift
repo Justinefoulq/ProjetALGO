@@ -24,12 +24,12 @@ protocol ZoneProtocol {
 
 	//getCarteZone: ZoneProtocol -> CarteProtocol | nil
 	//Renvoie la valeur (et description) de la carte présente dans la zone passée en paramètre, si la zone est vide, renvoie nil
-	func getCarteZone() -> carte?
+	func getCarteZone() -> TCarte?
 
 	//setCarteZone: ZoneProtocol x carteProtocol -> zone
 	//Met la carte passée en paramètre dans la zone passée en paramètre
 	//post-conditions: si la zone n'est pas vide, la carte qui était dedans est renvoyée dans la main et remplacée par celle passée en paramètre
-	mutating func setCarteZone(carteSelectionné : carte)
+	mutating func setCarteZone(carteSelectionné : TCarte)
 
 	//estVide: ZoneProtocol -> Bool
 	//Renvoie vrai si la zone est vide

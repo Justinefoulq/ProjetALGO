@@ -29,7 +29,7 @@ protocol MainsProtocol : Sequence {
 	//Ajoute la carte passée en paramètre dans la main
 	//Résultat: Une carte est ajoutée dans la main du joueur
 	//post-conditions nombreCartes augmente de 1
-	mutating func ajouterCarte(carte : carte)
+	mutating func ajouterCarte(carte : TCarte)
 
 
 	//enleverCarte: Int ->MainsProtocol
@@ -51,7 +51,7 @@ protocol MainsProtocol : Sequence {
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant(identifiantCarte : Int) -> carte
+	func getCarteparIdentifiant(identifiantCarte : Int) -> TCarte
 	
 
 	//estDansMain: Int -> Bool
@@ -75,7 +75,7 @@ protocol MainsProtocol : Sequence {
 	//Renvoie l'identifiant de la carte passée en paramètre
 	//Pré-conditions:carte passée en paramètre est dans la main
 	//Résultat: entiern identifiant de la carte (attribué par setID)
-	func getID(carte:carte) -> Int
+	func getID(carte:TCarte) -> Int
 	
 	
 	// makeIterator : Mains -> IteratorIdentifiantCarte
