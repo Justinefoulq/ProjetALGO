@@ -23,6 +23,7 @@ public class mainsIterator : IteratorProtocol {
 }
    
 public class mains : MainsProtocol{
+	typealias TCarte = carte
 	//associatedtype Carte : CarteProtocol
 	//associatedtype IteratorIdentifiantCarte : IteratorProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
