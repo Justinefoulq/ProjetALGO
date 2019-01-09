@@ -86,22 +86,24 @@ public class champBataille : ChampDeBatailleProtocol {
 	func getPositionDispo()->[String] {
 		var liste : [String]
 		liste=["F1","F2","F3"]
-		var z : zone? = self.champBataille["F1"]
-		guard (z==nil) else {
-			return
+
+
+		if var z = self.champBataille["F1"]{
+			if z.estVide() {
+				liste = liste + ["A1"]
+			}
 		}
-		if z.estVide() {
-			liste = liste + ["A1"]
+
+		if var z = self.champBataille["F2"]{
+			if z.estVide() {
+				liste = liste + ["A2"]
+			}
 		}
-		
-		//if !(self.champBataille["F1"].estVide()) { 
-		//	liste = liste + ["A1"]
-		//}
-		if !(self.champBataille["F2"].estVide()) { 
-			liste = liste + ["A2"]
-		}
-		if !(self.champBataille["F3"].estVide()) { 
-			liste = liste + ["A3"]
+
+		if var z = self.champBataille["F3"]{
+			if z.estVide() {
+				liste = liste + ["A3"]
+			}
 		}
 
 	}
@@ -133,7 +135,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	func listeAttaquant()-> [String]? {
 		var liste = [String]() 
 		for (cle, valeur) in self.champBataille {
-			if valeur.getCarteZone.estDefensif() {
+			if valeur.getCarteZone().estDefensif() {
 				liste=liste + [cle]
 			}
 		}
@@ -146,11 +148,12 @@ public class champBataille : ChampDeBatailleProtocol {
 
 		for (cle, valeur) in self.champBataille {
 			//Pour le joueur 1 et 2 roi different-------creation Joueur dans champ bataille + fonction getnom() dans joueur.swift
-			if valeur.getCarteZone.estRoi() {
+			var cartes = valeur.getCarteZone()
+			if cartes.estRoi() {
 				if self.Joueur.getNomJoueur()=="Joueur1"{
-					valeur.getCarteZone(setPointsDefTour(4))	
+					cartes.setPointsDefTour(4)	
 					}else {
-						valeur.getCarteZone(setPointsDefTour(5))
+						cartes.setPointsDefTour(5)
 					}
 					
 			}else{

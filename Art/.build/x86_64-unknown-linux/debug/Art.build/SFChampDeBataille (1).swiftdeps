@@ -12,7 +12,6 @@ depends-top-level:
 - "Sequence"
 - "String"
 - "ZoneProtocol"
-- "zone"
 depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "Bool"]
 - ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
@@ -33,14 +32,13 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "listeAttaquant"]
 - ["3Art23ChampDeBatailleProtocolP", "makeIterator"]
 - ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
-- ["3Art23ChampDeBatailleProtocolP", "zone"]
 - ["ST", "Bool"]
 - ["ST", "IteratorNomZone"]
 - ["ST", "Self"]
 - ["ST", "String"]
+- ["ST", "TZone"]
 - ["ST", "ZoneProtocol"]
 - ["ST", ""]
-- ["ST", "zone"]
 depends-nominal:
 - "3Art23ChampDeBatailleProtocolP"
 - "ST"
@@ -52,4 +50,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "7d3fd6a4e085d210b737a73b236ce5d1"
+interface-hash: "c26660defa0d154886cd9600b1922d6c"

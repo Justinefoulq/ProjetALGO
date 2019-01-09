@@ -12,7 +12,6 @@ depends-top-level:
 - "IteratorProtocol"
 - "MainsProtocol"
 - "Sequence"
-- "carte"
 depends-member:
 - ["3Art13MainsProtocolP", "Bool"]
 - ["3Art13MainsProtocolP", "CarteProtocol"]
@@ -21,7 +20,6 @@ depends-member:
 - ["3Art13MainsProtocolP", "IteratorProtocol"]
 - ["3Art13MainsProtocolP", "TCarte"]
 - ["3Art13MainsProtocolP", "ajouterCarte"]
-- ["3Art13MainsProtocolP", "carte"]
 - ["3Art13MainsProtocolP", "enleverCarte"]
 - ["3Art13MainsProtocolP", "estDansMain"]
 - ["3Art13MainsProtocolP", "estVide"]
@@ -36,8 +34,8 @@ depends-member:
 - ["ST", "Int"]
 - ["ST", "IteratorIdentifiantCarte"]
 - ["ST", "IteratorProtocol"]
+- ["ST", "TCarte"]
 - ["ST", ""]
-- ["ST", "carte"]
 depends-nominal:
 - "3Art13MainsProtocolP"
 - "ST"
@@ -49,4 +47,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "2676bd833d75e039e93f412422f44d84"
+interface-hash: "6919b73a13e71835ccb11a3d6c2f4f5e"

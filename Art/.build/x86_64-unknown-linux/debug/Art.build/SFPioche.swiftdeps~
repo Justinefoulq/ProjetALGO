@@ -10,13 +10,11 @@ depends-top-level:
 - "CarteProtocol"
 - "Int"
 - "PiocheProtocol"
-- "carte"
 depends-member:
 - ["3Art14PiocheProtocolP", "Bool"]
 - ["3Art14PiocheProtocolP", "CarteProtocol"]
 - ["3Art14PiocheProtocolP", "Int"]
 - ["3Art14PiocheProtocolP", "TCarte"]
-- ["3Art14PiocheProtocolP", "carte"]
 - ["3Art14PiocheProtocolP", "estVide"]
 - ["3Art14PiocheProtocolP", "getNombreCarteArcher"]
 - ["3Art14PiocheProtocolP", "getNombreCarteGarde"]
@@ -34,4 +32,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "7d38e6d35bc3e9672e024612ddeed12d"
+interface-hash: "b26b6db399572d3624196058f0530ed6"

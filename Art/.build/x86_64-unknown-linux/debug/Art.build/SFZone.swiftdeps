@@ -10,13 +10,11 @@ depends-top-level:
 - "CarteProtocol"
 - "String"
 - "ZoneProtocol"
-- "carte"
 depends-member:
 - ["3Art12ZoneProtocolP", "Bool"]
 - ["3Art12ZoneProtocolP", "CarteProtocol"]
 - ["3Art12ZoneProtocolP", "String"]
 - ["3Art12ZoneProtocolP", "TCarte"]
-- ["3Art12ZoneProtocolP", "carte"]
 - ["3Art12ZoneProtocolP", "estVide"]
 - ["3Art12ZoneProtocolP", "getCarteZone"]
 - ["3Art12ZoneProtocolP", "getNomZone"]
@@ -33,4 +31,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "1467e356ac89dee1868a0e6915a5bad8"
+interface-hash: "4281463d049284824112bad734da21b5"
