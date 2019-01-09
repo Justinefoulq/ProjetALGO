@@ -7,19 +7,21 @@ provides-member:
 - ["3Art15RoyaumeProtocolP", ""]
 depends-top-level:
 - "Bool"
-- "Carte"
 - "CarteProtocol"
 - "Int"
 - "RoyaumeProtocol"
+- "carte"
 depends-member:
 - ["3Art15RoyaumeProtocolP", "Bool"]
-- ["3Art15RoyaumeProtocolP", "Carte"]
 - ["3Art15RoyaumeProtocolP", "CarteProtocol"]
 - ["3Art15RoyaumeProtocolP", "Int"]
 - ["3Art15RoyaumeProtocolP", "TCarte"]
+- ["3Art15RoyaumeProtocolP", "carte"]
 - ["3Art15RoyaumeProtocolP", "estVide"]
+- ["3Art15RoyaumeProtocolP", "getfirstCarte"]
 - ["3Art15RoyaumeProtocolP", "init"]
 - ["3Art15RoyaumeProtocolP", "nombreCitoyens"]
+- ["3Art15RoyaumeProtocolP", "removeCarte"]
 depends-nominal:
 - "3Art15RoyaumeProtocolP"
 depends-dynamic-lookup:
@@ -30,4 +32,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "7e02e9d3d42cb6c7b1e74954dec860cd"
+interface-hash: "96a91d7b95298497d2b1d70ffb53d09e"

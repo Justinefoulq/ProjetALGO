@@ -16,7 +16,7 @@ public class IteratorNomZone : IteratorProtocol {
 
     public func next() -> zone? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
-		let liste = self.champ
+		let liste : champBataille = self.champ
 		var ret : String = self.i
 		if self.i == "A1" {
 			self.i = "A2"
@@ -61,7 +61,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	public required init(){
 		self.PositionDispo = []
 		self.Joueur = joueur()
-		self.champBataille = ["A1": zone(nomZone: "A1"), "A2": zone(nomZone: "A2"), "A3": zone(nomZone: "A3"), "F1": zone(nomZone: "F1") , "Fé": zone(nomZone: "F2"), "F3": zone(nomZone: "F3")]
+		try! self.champBataille = ["A1": zone(nomZone: "A1"), "A2": zone(nomZone: "A2"), "A3": zone(nomZone: "A3"), "F1": zone(nomZone: "F1") , "Fé": zone(nomZone: "F2"), "F3": zone(nomZone: "F3")]
     }
 
 
@@ -228,13 +228,13 @@ public class champBataille : ChampDeBatailleProtocol {
 	
 	func checkAvancement() {
 		if (self.champBataille["F1"]!.estVide()) && !(self.champBataille["A1"]!.estVide()) { 
-			avancerCarte(nomZone : self.champBataille["A1"]!)	
+			try! avancerCarte(nomZone : self.champBataille["A1"]!)	
 		}
 		if (self.champBataille["F2"]!.estVide()) && !(self.champBataille["A2"]!.estVide()){ 
-			avancerCarte(nomZone : self.champBataille["A2"]!)	
+			try! avancerCarte(nomZone : self.champBataille["A2"]!)	
 		}
 		if (self.champBataille["F3"]!.estVide()) && !(self.champBataille["A3"]!.estVide()) { 
-			avancerCarte(nomZone: self.champBataille["A3"]!)	
+			try! avancerCarte(nomZone: self.champBataille["A3"]!)	
 		}
 
 
@@ -294,6 +294,9 @@ public class champBataille : ChampDeBatailleProtocol {
     	}
     }
 
+    
+
+
 	// makeIterator : ChampDeBatailleProtocol -> IteratorNomZone
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur  // ca sert pas a grand chose de faire un iterateur qui renvois le nom de la zone ? plutot renvoiyer les carte serais mieux...
@@ -302,6 +305,7 @@ public class champBataille : ChampDeBatailleProtocol {
 		return IteratorNomZone( champ : self)
 	}
 	
+
 }
 
 enum ChampBatailleError: Error {

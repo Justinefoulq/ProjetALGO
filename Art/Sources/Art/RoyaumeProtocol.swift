@@ -35,7 +35,7 @@ protocol RoyaumeProtocol {
 	//précondition: Carte est dans le Royaume
 	//Résultat enlève la carte du Royaume
 	//Post-conditions nombreCitoyens à baissé de 1
-	func removeCarte(carteSelectionné : carte) throws
+	func removeCarte(carteSelectionne : carte) throws
 
 	//ajouterCarte : --> RoyaumeProtocol
 	//fonction qui ajoute la carte en parametre au royaume

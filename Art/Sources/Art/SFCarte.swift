@@ -106,7 +106,7 @@ protocol CarteProtocol {
 	//																   		 Soldat: la position devant lui; 
 	//																   		 Garde: la position devant lui;
 	//																   		 Archer: les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale
-	func getPortee() -> String
+	func getPortee() -> Int
 
 	//setAttaque: Int -> CarteProtocol
 	//Attribue la valeur de la force d'attaque à une carte
@@ -152,9 +152,10 @@ protocol CarteProtocol {
 	
 	func getZone() -> TZone
 	
-	mutating func setZone(zone:TZone)
+	mutating func setZone(Zone : TZone)
 	
 	func estGarde() -> Bool
+	func estArcher() -> Bool
 	
 
 }

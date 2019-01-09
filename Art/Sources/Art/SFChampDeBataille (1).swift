@@ -93,6 +93,7 @@ protocol ChampDeBatailleProtocol : Sequence {
 	//Résultat: Renvoie un Iterateur
 	func makeIterator() -> IteratorNomZone
 
+	
 
 }
 

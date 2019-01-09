@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class mainsIterator : IteratorProtocol {
+public class IteratorIdentifiantCarte : IteratorProtocol {
 	typealias TCarte = carte
 	let ItMain: mains
     var i : Int = 0
@@ -11,7 +11,7 @@ public class mainsIterator : IteratorProtocol {
         self.ItMain = Main
     }
 
-    func next() -> carte? {
+    public func next() -> carte? {
     	let liste = self.ItMain.getMain()
         if self.i < 0 || self.i >= self.ItMain.getMain().count{
         	return nil 
@@ -108,7 +108,7 @@ public class mains : MainsProtocol{
 		var trans : carte
 		mains.removeValue(forKey: identifiantCarte)
 		for i in (identifiantCarte+1)..<self.mains.count {
-			trans = self.main[i]
+			trans = self.mains[i]!
 			mains.removeValue(forKey: i)
 			self.mains[i-1] = trans
 		}
@@ -125,7 +125,7 @@ public class mains : MainsProtocol{
 		guard estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}
-		return self.mains[identifiantCarte]
+		return self.mains[identifiantCarte]!
 	}
 	
 
@@ -161,7 +161,7 @@ public class mains : MainsProtocol{
 	//Résultat: entiern identifiant de la carte (attribué par setID)
 	
 	func getID(carte : carte) throws -> Int  {
-		guard estDansMains(self.mains[carte]) else {
+		guard estDansMains(identifiantCarte : self.mains[carte]) else {
 			throw MainsError.pasDansMains
 		}
 		return self.mains[carte]
@@ -176,7 +176,7 @@ public class mains : MainsProtocol{
 
 	
 	func makeIterator() -> IteratorIdentifiantCarte { //--------------j'ai fait un iterateur sur les cartes et pas sur les id car id ca sert pas a grand chose
-		return MainIterator(main:self)
+		return IteratorIdentifiantCarte(Main:self)
 	}
 
 }

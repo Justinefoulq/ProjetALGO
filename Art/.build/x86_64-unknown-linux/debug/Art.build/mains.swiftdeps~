@@ -28,6 +28,7 @@ depends-top-level:
 - "IntegerLiteralType"
 - "IteratorIdentifiantCarte"
 - "IteratorProtocol"
+- !private "MainIterator"
 - "MainsError"
 - "MainsProtocol"
 - !private "StringLiteralType"
@@ -145,7 +146,6 @@ depends-member:
 - ["St", ""]
 - ["St", "_Default_Element"]
 - !private ["St", "i"]
-- !private ["St", "init"]
 - ["St", "next"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
@@ -161,6 +161,7 @@ depends-member:
 - ["3Art13MainsProtocolP", "Element"]
 - ["3Art13MainsProtocolP", "Iterator"]
 - ["3Art13MainsProtocolP", "IteratorIdentifiantCarte"]
+- !private ["3Art13MainsProtocolP", "MainIterator"]
 - !private ["3Art13MainsProtocolP", "MainsError"]
 - ["3Art13MainsProtocolP", "SubSequence"]
 - ["3Art13MainsProtocolP", "TCarte"]
@@ -204,6 +205,7 @@ depends-member:
 - ["ST", "Element"]
 - ["ST", "Iterator"]
 - ["ST", "IteratorIdentifiantCarte"]
+- !private ["ST", "MainIterator"]
 - !private ["ST", "MainsError"]
 - ["ST", "SubSequence"]
 - ["ST", "TCarte"]
@@ -293,6 +295,7 @@ depends-member:
 - ["3Art5mainsC", "Int"]
 - ["3Art5mainsC", "Iterator"]
 - ["3Art5mainsC", "IteratorIdentifiantCarte"]
+- !private ["3Art5mainsC", "MainIterator"]
 - !private ["3Art5mainsC", "MainsError"]
 - ["3Art5mainsC", "SubSequence"]
 - ["3Art5mainsC", "TCarte"]

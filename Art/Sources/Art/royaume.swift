@@ -44,7 +44,7 @@ public class royaume : RoyaumeProtocol {
 	//getfirstCarte: -> CarteProtocol
 	//Résultat : renvoie la valeur de la première carte qui a été mise dans le royaume
 	func getfirstCarte() -> carte {
-		return nombrecitoyens[0]
+		return nombreCitoyens[0]
 	}
 
 	//créer une fonction estDansRoyaume pour faire la fonction removeCarte ( le throws)
@@ -59,7 +59,7 @@ public class royaume : RoyaumeProtocol {
 		bool=false
 		
     	for i in 0..<self.royaume.count {
-				if self.royaume[i]==carte {
+				if self.royaume[i]===carte {
 					bool=true
 				}
 			}
@@ -72,11 +72,11 @@ public class royaume : RoyaumeProtocol {
 	//Résultat enlève la carte du Royaume
 	//Post-conditions nombreCitoyens à baissé de 1
 	func removeCarte(carteSelectionne : carte) throws { //-------------il faudrait une file -----------------------
-		guard estDansRoyaume(carteSelectionne) else {
+		guard try! estDansRoyaume(carte : carteSelectionne) else {
 			throw RoyaumeError.cartePasDansRoyaume
 		}
 		for i in 0..<self.royaume.count {
-				if self.royaume[i]==carteSelectionne {
+				if self.royaume[i]===carteSelectionne {
 					self.royaume.remove(at : i)
 				}
 			}

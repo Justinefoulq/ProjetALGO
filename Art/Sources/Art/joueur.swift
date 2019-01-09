@@ -42,9 +42,9 @@ public class joueur : JoueurProtocol{
 	func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}		
-		if self.champDeBataille.checkPositionDispo(positionCarte){
-			self.champDeBataille.AjouterCarte(positionCarte.getZone())
-			self.mains.enleverCarte(identifiantCarte)
+		if self.champDeBataille.checkPositionDispo(nomZone : positionCarte){
+			try! self.champDeBataille.ajouterCarte(positionCarte.getZone())
+			try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
 			
 		}
 		
@@ -56,7 +56,7 @@ public class joueur : JoueurProtocol{
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
 	func mobiliser(CarteMobilisee: carte, nomZone: String) throws{
-		self.royaume.retirerCarte(CarteMobilisee)
+		self.royaume.removeCarte(carteSelectionne :  CarteMobilisee)
 		self.champDeBataille.ajouterCarte(CarteMobilisee, nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
 	}
 
@@ -71,8 +71,8 @@ public class joueur : JoueurProtocol{
 	func demobiliser( identifiantCarte: Int) throws -> mains {
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}
-		self.mains.enleverCarte(identifiantCarte)
-		self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
+		try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
+		try! self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
 		return self.mains
 	}
 
@@ -86,7 +86,7 @@ public class joueur : JoueurProtocol{
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
 	func piocherCarte() -> carte{
 		var carte = self.pioche.piocher()
-		self.mains.ajouterCarte(carte)
+		self.mains.ajouterCarte(carte : carte)
 		return carte
 	}
 
@@ -125,7 +125,7 @@ public class joueur : JoueurProtocol{
 	func attaquantDispo(carteAttaquante: String) -> Bool{
 		var test=false
 		var liste=self.champDeBataille.listeAttaquant()
-		for (carte) in liste{
+		for (carte) in liste! {
 			if carte==carteAttaquante{
 				test=true
 			}

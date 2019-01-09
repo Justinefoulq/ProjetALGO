@@ -10,11 +10,13 @@ depends-top-level:
 - "CarteProtocol"
 - "Int"
 - "RoyaumeProtocol"
+- "carte"
 depends-member:
 - ["3Art15RoyaumeProtocolP", "Bool"]
-- ["3Art15RoyaumeProtocolP", "Carte"]
 - ["3Art15RoyaumeProtocolP", "CarteProtocol"]
 - ["3Art15RoyaumeProtocolP", "Int"]
+- ["3Art15RoyaumeProtocolP", "TCarte"]
+- ["3Art15RoyaumeProtocolP", "carte"]
 - ["3Art15RoyaumeProtocolP", "estVide"]
 - ["3Art15RoyaumeProtocolP", "getfirstCarte"]
 - ["3Art15RoyaumeProtocolP", "init"]
@@ -30,4 +32,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "cf79bfeb005384cd09704605b7000a8a"
+interface-hash: "96a91d7b95298497d2b1d70ffb53d09e"

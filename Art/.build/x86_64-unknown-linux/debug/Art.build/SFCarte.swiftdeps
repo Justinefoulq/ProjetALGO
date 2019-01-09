@@ -10,16 +10,21 @@ depends-top-level:
 - "CarteProtocol"
 - "Int"
 - "String"
+- "ZoneProtocol"
 depends-member:
 - ["3Art13CarteProtocolP", "Bool"]
 - ["3Art13CarteProtocolP", "Int"]
 - ["3Art13CarteProtocolP", "String"]
+- ["3Art13CarteProtocolP", "TZone"]
+- ["3Art13CarteProtocolP", "ZoneProtocol"]
 - ["3Art13CarteProtocolP", "creerArcher"]
 - ["3Art13CarteProtocolP", "creerGarde"]
 - ["3Art13CarteProtocolP", "creerRoi1"]
 - ["3Art13CarteProtocolP", "creerRoi2"]
 - ["3Art13CarteProtocolP", "creerSoldat"]
+- ["3Art13CarteProtocolP", "estArcher"]
 - ["3Art13CarteProtocolP", "estDefensif"]
+- ["3Art13CarteProtocolP", "estGarde"]
 - ["3Art13CarteProtocolP", "estRoi"]
 - ["3Art13CarteProtocolP", "estSoldat"]
 - ["3Art13CarteProtocolP", "getAttaque"]
@@ -28,6 +33,7 @@ depends-member:
 - ["3Art13CarteProtocolP", "getNom"]
 - ["3Art13CarteProtocolP", "getPointdeDefduTour"]
 - ["3Art13CarteProtocolP", "getPortee"]
+- ["3Art13CarteProtocolP", "getZone"]
 - ["3Art13CarteProtocolP", "init"]
 - ["3Art13CarteProtocolP", "initialiserPointdeDefTour"]
 - ["3Art13CarteProtocolP", "mettreEnPositionDefensive"]
@@ -36,6 +42,7 @@ depends-member:
 - ["3Art13CarteProtocolP", "setDefPDef"]
 - ["3Art13CarteProtocolP", "setDefPOff"]
 - ["3Art13CarteProtocolP", "setPointsDefTour"]
+- ["3Art13CarteProtocolP", "setZone"]
 depends-nominal:
 - "3Art13CarteProtocolP"
 depends-dynamic-lookup:
@@ -46,4 +53,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "eefc39fe7ca00da8101deaa15c341c66"
+interface-hash: "f1c35e24018a3a70e28ec9edd07f44ea"
