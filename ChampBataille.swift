@@ -3,7 +3,7 @@
 import Foundation
 
 
-class IteratorNomZone : IteratorProtocol {
+public class IteratorNomZone : IteratorProtocol {
 	let champ: ChampBataille
     var i : String = "A1" //------Je sais pas a quoi initialiser
 
@@ -40,7 +40,7 @@ class IteratorNomZone : IteratorProtocol {
 
 
 
-class ChampBataille : ChampDeBatailleProtocol {
+public class ChampBataille : ChampDeBatailleProtocol {
 	//associatedtype Zone : ZoneProtocol
    // associatedtype IteratorNomZone : IteratorProtocol
     private var PositionDispo : [String]

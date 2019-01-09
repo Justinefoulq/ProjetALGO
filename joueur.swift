@@ -1,12 +1,8 @@
 //JoueurProtocol
 import Foundation
-class joueur{
+public class joueur : JoueurProtocol{
 	//main, champ de bataille, royaume, pioche
-    associatedtype ChampDeBataille: ChampDeBatailleProtocol
-    associatedtype Carte: CarteProtocol
-    associatedtype Mains: MainsProtocol
-    associatedtype Royaume: RoyaumeProtocol
-    associatedtype Pioche: PiocheProtocol
+
 	
 	private var nom : String // Joueur1 ou Joueur2
 	private var pioche : pioche

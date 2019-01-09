@@ -2,17 +2,17 @@
 //Carte
 import Foundation
 
-class carte {
+public class carte : CarteProtocol{
 
 	
-	private var Nom: String
-	private var DefPDef: Int 
-	private var Attaque: Int 
-	private var PointdeDefduTour: Int 
-	private var DefPOff: Int 
-	private var Portee: Int //OU String pb----------------------
-	private var Position: Bool // true carte en offensive ; false defensive
-	private var Zone : zone
+	fileprivate var Nom: String
+	fileprivate var DefPDef: Int 
+	fileprivate var Attaque: Int 
+	fileprivate var PointdeDefduTour: Int 
+	fileprivate var DefPOff: Int 
+	fileprivate var Portee: Int //OU String pb----------------------
+	fileprivate var Position: Bool // true carte en offensive ; false defensive
+	fileprivate var Zone : zone
 	
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
@@ -99,7 +99,7 @@ class carte {
 	//Résultat: 1 carte de type Soldat
 	//Post-conditions: caractéristiques: attaque = autant que d’cartes dans la Main ; défense/position défensive=2 ; défense/position oﬀensive= 1 ; portée =la position devant lui ; nom=Soldat ; positionDéfensive=true
 	func creerSoldat(){
-		self.Attaque=nil//PB on sait pas quel main appartient la carte --------------------------------------------------
+		self.Attaque=0//PB on sait pas quel main appartient la carte --------------------------------------------------
 		self.DefPDef=2
 		self.DefPOff=2
 		self.Position=true

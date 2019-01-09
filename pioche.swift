@@ -1,8 +1,8 @@
 // Pioche
 import Foundation
-class pioche{
+public class pioche : PiocheProtocol{
     
-    associatedtype carte: CarteProtocol
+   
 	private var nombreCarteSoldat: Int 
 	private var nombreCarteArcher: Int
 	private var nombreCarteGarde: Int

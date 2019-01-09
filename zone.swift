@@ -5,12 +5,12 @@
 //ZoneProtocol est un couple (nomZone, Carte)
 
 import Foundation
-class zone{
+public class zone : ZoneProtocol {
 	// Carte ou nul
-    associatedtype carte : CarteProtocol
+
 	
-	private var nom: String
-	private var carte: carte
+	fileprivate var nom : String
+	fileprivate var carte : carte
 
 	
 	//init: String -> ZoneProtocol

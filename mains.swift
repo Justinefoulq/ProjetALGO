@@ -1,7 +1,7 @@
 
 import Foundation
 
-class mainsIterator : IteratorProtocol {
+public class mainsIterator : IteratorProtocol {
     let ItMain: mains
     var i : Int = 0
 
@@ -21,7 +21,7 @@ class mainsIterator : IteratorProtocol {
     }
 }
    
-class mains : MainsProtocol{
+public class mains : MainsProtocol{
 	//associatedtype Carte : CarteProtocol
 	//associatedtype IteratorIdentifiantCarte : IteratorProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------

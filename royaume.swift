@@ -1,7 +1,7 @@
 
 import Foundation
    
-class royaume : RoyaumeProtocol {
+public class royaume : RoyaumeProtocol {
 	//typealias royaume = Carte
 	//associatedtype Carte : CarteProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
