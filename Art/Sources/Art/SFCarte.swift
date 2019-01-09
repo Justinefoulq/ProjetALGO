@@ -147,6 +147,12 @@ protocol CarteProtocol {
 	//Résultat: retourne true si carte en position défensive, false sinon
 	func estDefensif() -> Bool
 	
+	func getZone() -> TZone
+	
+	mutating func setZone(zone:TZone)
+	
+	func estGarde() -> Bool
+	
 
 }
 
