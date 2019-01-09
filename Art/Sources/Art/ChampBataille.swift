@@ -35,9 +35,6 @@ public class IteratorNomZone : IteratorProtocol {
     }
     
 
-
-
-
 }
 
 
@@ -89,10 +86,17 @@ public class champBataille : ChampDeBatailleProtocol {
 	func getPositionDispo()->[String] {
 		var liste : [String]
 		liste=["F1","F2","F3"]
-
-		if !(self.champBataille["F1"].estVide()) { 
+		var z : zone? = self.champBataille["F1"]
+		guard (z==nil) else {
+			return
+		}
+		if z.estVide() {
 			liste = liste + ["A1"]
 		}
+		
+		//if !(self.champBataille["F1"].estVide()) { 
+		//	liste = liste + ["A1"]
+		//}
 		if !(self.champBataille["F2"].estVide()) { 
 			liste = liste + ["A2"]
 		}

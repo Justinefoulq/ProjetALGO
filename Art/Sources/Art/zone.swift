@@ -13,7 +13,7 @@ public class zone : ZoneProtocol {
 	typealias TCarte = carte
 	
 	fileprivate var nom : String
-	fileprivate var carte : carte?
+	fileprivate var carte : carte
 
 	
 	//init: String -> ZoneProtocol
