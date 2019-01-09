@@ -5,16 +5,17 @@
 // Cette collection peut être parcourue par 1 itérateur.
 import Foundation
 protocol MainsProtocol : Sequence {
-
+	associatedtype TPioche : PiocheProtocol
     associatedtype TCarte : CarteProtocol
     associatedtype IteratorIdentifiantCarte : IteratorProtocol
+
     
     
 	//init:  ->MainSProtocol
 	//Creation de la main d'un joueur
 	//Résultat: Renvoie une MainsProtocol avec 1 roi et 3 cartes piochées au hasard dans la pioche
 	//post-conditions: non vide
-	init()
+	init(Pioche : TPioche)
 
 
 	// getmain() -> MainsProtocol
@@ -25,7 +26,7 @@ protocol MainsProtocol : Sequence {
 
 	
 
-	//ajouterCarte: CarteProtocol ->MainsProtocol
+	//ajouterCarte: CarteProtocol -> MainsProtocol
 	//Ajoute la carte passée en paramètre dans la main
 	//Résultat: Une carte est ajoutée dans la main du joueur
 	//post-conditions nombreCartes augmente de 1

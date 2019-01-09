@@ -13,7 +13,7 @@ public class zone : ZoneProtocol {
 	typealias TCarte = carte
 	
 	fileprivate var nom : String
-	fileprivate var carte : carte
+	fileprivate var carte : carte?
 
 	
 	//init: String -> ZoneProtocol
@@ -56,8 +56,12 @@ public class zone : ZoneProtocol {
 	//setCarteZone: ZoneProtocol x carteProtocol -> Zone
 	//Met la carte passée en paramètre dans la zone passée en paramètre
 	//post-conditions: si la zone n'est pas vide, la carte qui était dedans est renvoyée dans la main et remplacée par celle passée en paramètre
-	func setCarteZone(carteSelectionne : carte){
+	func setCarteZone(carteSelectionne : carte ){
 		self.carte = carteSelectionne		
+	}
+
+	func setCarteZone (){
+		self.carte = nil		
 	}
 
 	//estVide: ZoneProtocol -> Bool

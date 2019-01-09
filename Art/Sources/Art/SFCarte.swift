@@ -2,6 +2,8 @@
 import Foundation
 protocol CarteProtocol {
 
+	associatedtype TZone : ZoneProtocol
+
     //init: -> CarteProtocol
     //Crée une carte vide (en attendant d'appeler les fonctions creer, creerRoi1 par exemple)
     init()

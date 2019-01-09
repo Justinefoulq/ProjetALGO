@@ -134,10 +134,13 @@ public class champBataille : ChampDeBatailleProtocol {
 	
 	func listeAttaquant()-> [String]? {
 		var liste = [String]() 
+
 		for (cle, valeur) in self.champBataille {
-			if valeur.getCarteZone().estDefensif() {
-				liste=liste + [cle]
+				if valeur.getCarteZone()!.estDefensif() {
+					liste=liste + [cle]
 			}
+ 
+			
 		}
 	}
 
@@ -149,33 +152,33 @@ public class champBataille : ChampDeBatailleProtocol {
 		for (cle, valeur) in self.champBataille {
 			//Pour le joueur 1 et 2 roi different-------creation Joueur dans champ bataille + fonction getnom() dans joueur.swift
 			var cartes = valeur.getCarteZone()
-			if cartes.estRoi() {
+			if cartes!.estRoi() {
 				if self.Joueur.getNomJoueur()=="Joueur1"{
-					cartes.setPointsDefTour(4)	
+					cartes!.setPointsDefTour(valeur: 4)	
 					}else {
-						cartes.setPointsDefTour(5)
+						cartes!.setPointsDefTour(valeur: 5)
 					}
 					
 			}else{
-				if valeur.getCarteZone(estSoldat()) {
-					if valeur.getCarteZone(estDefensif()){
-						valeur.getCarteZone(setPointsDefTour(2))
+				if valeur.getCarteZone()!.estSoldat() {
+					if valeur.getCarteZone()!.estDefensif(){
+						valeur.getCarteZone()!.setPointsDefTour(valeur: 2)
 					}else {
-						valeur.getCarteZone(setPointsDefTour(1))
+						valeur.getCarteZone()!.setPointsDefTour(valeur: 1)
 					}					
 				}else{
-					if valeur.getCarteZone(estGarde()) { //EstGarde n'existais pas : creation dans carte de la fonction
-						if valeur.getCarteZone(estDefensif()){
-							valeur.getCarteZone(setPointsDefTour(3))
+					if valeur.getCarteZone()!.estGarde() { //EstGarde n'existais pas : creation dans carte de la fonction
+						if valeur.getCarteZone()!.estDefensif(){
+							valeur.getCarteZone()!.setPointsDefTour(valeur: 3)
 						}else {
-							valeur.getCarteZone(setPointsDefTour(1))
+							valeur.getCarteZone()!.setPointsDefTour(valeur: 1)
 						}		
 
 					}else{ //cas si la carte est un archer 
-						if valeur.getCarteZone(estDefensif()){
-							valeur.getCarteZone(setPointsDefTour(2))
+						if valeur.getCarteZone()!.estDefensif(){
+							valeur.getCarteZone()!.setPointsDefTour(valeur: 2)
 						}else {
-							valeur.getCarteZone(setPointsDefTour(1))
+							valeur.getCarteZone()!.setPointsDefTour(valeur: 1)
 						}	
 					}
 				}
@@ -192,8 +195,8 @@ public class champBataille : ChampDeBatailleProtocol {
    //----------Comment je trouve le nombre de cartes dans la main ? J'ai un champ de bataille mais comment je sais a quel joueur il appartient ? Un joueur a une main et un champ de bataille mais comment relis chp bataille a main
     func initialiserAttaqueSoldat() {
     	for (cle, valeur) in self.champBataille {
-    		if valeur.getCarteZone(estSoldat()) {
-    			valeur.getCarteZone(setAttaque(Joueur.getMain.nombreCartes())) //--------- pb nbcartemain
+    		if valeur.getCarteZone()!.estSoldat() {
+    			valeur.getCarteZone()!.setAttaque(valeur: Joueur.getMain().nombreCartes()) //--------- pb nbcartemain
     		}
     	}
     }
@@ -212,7 +215,7 @@ public class champBataille : ChampDeBatailleProtocol {
 
 		for (cle, valeur) in self.champBataille {
 			if !(valeur.estVide()) {
-				valeur.getCarteZone(mettreEnPositionDefensive())
+				valeur.getCarteZone()!.mettreEnPositionDefensive()
 			} 
 		}			
     	
@@ -224,14 +227,14 @@ public class champBataille : ChampDeBatailleProtocol {
 	// Parcourt le champ de bataille et vérifie si une carte doit avancer(si une zone du front vide alors que celle derrière non), et appelle la fct avancerCarte() si c'est le cas
 	
 	func checkAvancement() {
-		if (zone.estVide(self.champBataille["F1"])) && !(zone.estVide(self.champBataille["A1"])) { 
-			avancerCarte("A1")	
+		if (self.champBataille["F1"]!.estVide()) && !(self.champBataille["A1"]!.estVide()) { 
+			avancerCarte(nomZone : self.champBataille["A1"]!)	
 		}
-		if (zone.estVide(self.champBataille["F2"])) && !(zone.estVide(self.champBataille["A2"])){ 
-			avancerCarte("A2")	
+		if (self.champBataille["F2"]!.estVide()) && !(self.champBataille["A2"]!.estVide()){ 
+			avancerCarte(nomZone : self.champBataille["A2"]!)	
 		}
-		if (zone.estVide(self.champBataille["F3"])) && !(zone.estVide(self.champBataille["A3"])) { 
-			avancerCarte("A3")	
+		if (self.champBataille["F3"]!.estVide()) && !(self.champBataille["A3"]!.estVide()) { 
+			avancerCarte(nomZone: self.champBataille["A3"]!)	
 		}
 
 
@@ -242,24 +245,28 @@ public class champBataille : ChampDeBatailleProtocol {
 	//pré-conditions: Zone passée en paramètre est une zone arrière (A1,A2 ou A3)
 	//Résultat: carte avancée dans la zone devant elle
 	//-------------est ce qu'il faut mettre let avat les condition de mon throw , Arnaud la mis dans Zone ----------------------------------------------------
-	func avancerCarte(nomZone : zone) throws {
-		guard (nomZone=="A1" || nomZone=="A2" || nomZone=="A3") else {
+	func avancerCarte(nomZone : zone ) throws {
+		guard (nomZone.getNomZone()=="A1" || nomZone.getNomZone()=="A2" || nomZone.getNomZone()=="A3") else {
 			throw ChampBatailleError.CarteZoneAvant
 		}
 
-		if nomZone=="A1" {
-			self.champBataille["F1"].setCarteZone(getCarteZone(self.champBataille["A1"]))
-			self.champBataille["A1"].setCarteZone(nil)
+		if nomZone.getNomZone()=="A1" {
+			var carte : carte = self.champBataille["A1"]!.getCarteZone()!
+			self.champBataille["F1"]!.setCarteZone(carteSelectionne : carte)
+			self.champBataille["A1"]!.setCarteZone()
 		}else {
-			if nomZone=="A2" {
-				self.champBataille["F2"].setCarteZone(getCarteZone(self.champBataille["A2"]))
-				self.champBataille["A2"].setCarteZone(nil)
+			if nomZone.getNomZone()=="A2" {
+				var carte2 : carte = self.champBataille["A2"]!.getCarteZone()!
+				self.champBataille["F2"]!.setCarteZone(carteSelectionne : carte2)
+				self.champBataille["A1"]!.setCarteZone()
 			}else {
-				self.champBataille["F3"].setCarteZone(getCarteZone(self.champBataille["A3"]))
-				self.champBataille["A3"].setCarteZone(nil)
+				var carte3 : carte = self.champBataille["A3"]!.getCarteZone()!
+				self.champBataille["F3"]!.setCarteZone(carteSelectionne : carte3)
+				self.champBataille["A1"]!.setCarteZone()
 			}
 		}	
 	}
+		//setCarteZone(carteSelectionne : carte){
 
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [Zone]
 	//Pré-conditions: Zone en entrée non vide

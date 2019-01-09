@@ -23,10 +23,11 @@ public class joueur : JoueurProtocol{
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
 	public required init(){
-		self.mains()
+		self.pioche()
+		self.mains(Pioche : pioche)
 		self.champDeBataille()
 		self.royaume()
-		self.pioche()
+		
 	}
 
 

@@ -3,8 +3,9 @@ import Foundation
 
 public class mainsIterator : IteratorProtocol {
 	typealias TCarte = carte
-    let ItMain: mains
+	let ItMain: mains
     var i : Int = 0
+    
 
     public required init(Main: mains) {
         self.ItMain = Main
@@ -24,6 +25,8 @@ public class mainsIterator : IteratorProtocol {
    
 public class mains : MainsProtocol{
 	typealias TCarte = carte
+	typealias TPioche = pioche 
+    
 	//associatedtype Carte : CarteProtocol
 	//associatedtype IteratorIdentifiantCarte : IteratorProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
@@ -35,6 +38,7 @@ public class mains : MainsProtocol{
 	private var carte2 : carte 
 	private var carte3 : carte 
 
+
 	
 
     
@@ -42,17 +46,18 @@ public class mains : MainsProtocol{
 	//Creation de la main d'un joueur
 	//Résultat: Renvoie une MainsProtocol avec 1 roi et 3 cartes piochées au hasard dans la pioche
 	//post-conditions: non vide
-	public required init(){
+	public required init( Pioche : pioche){
+
 		//---------------problème initialiser créerRoi1() ou créer roi 2 mais comment on sais c'est la main de quel joueur ?
 		self.carte0 = carte()
 		self.carte1 = carte()
 		self.carte2 = carte()
 		self.carte3 = carte()
 
-		self.carte0 = carte.creerRoi1()
-		self.carte1 = pioche.piocher()
-		self.carte2 = pioche.piocher()
-		self.carte3 = pioche.piocher()
+		self.carte0 = carte0.creerRoi1()
+		self.carte1 = Pioche.piocher()
+		self.carte2 = Pioche.piocher()
+		self.carte3 = Pioche.piocher()
 
 		let mains = ["0": carte0, "1": carte1, "2": carte2, "3": carte3 ]
 	}
