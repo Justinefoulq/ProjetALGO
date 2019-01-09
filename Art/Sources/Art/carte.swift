@@ -4,7 +4,7 @@ import Foundation
 
 public class carte : CarteProtocol{
 
-	
+	typealias TZone = zone
 	fileprivate var Nom: String
 	fileprivate var DefPDef: Int 
 	fileprivate var Attaque: Int 
