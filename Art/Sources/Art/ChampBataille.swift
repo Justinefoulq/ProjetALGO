@@ -93,10 +93,10 @@ public class champBataille : ChampDeBatailleProtocol {
 		if !(self.champBataille["F1"].estVide()) { 
 			liste = liste + ["A1"]
 		}
-		if !(self.champBataille["F2"])) { 
+		if !(self.champBataille["F2"].estVide()) { 
 			liste = liste + ["A2"]
 		}
-		if !(zone.estVide(self.champBataille["F3"])) { 
+		if !(self.champBataille["F3"].estVide()) { 
 			liste = liste + ["A3"]
 		}
 
