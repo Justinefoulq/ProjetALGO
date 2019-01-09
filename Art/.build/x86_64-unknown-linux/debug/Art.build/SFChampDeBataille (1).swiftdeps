@@ -1,0 +1,56 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ChampDeBatailleProtocol"
+provides-nominal:
+- "3Art23ChampDeBatailleProtocolP"
+provides-member:
+- ["3Art23ChampDeBatailleProtocolP", ""]
+depends-top-level:
+- "Bool"
+- "ChampDeBatailleProtocol"
+- "IteratorProtocol"
+- "Sequence"
+- "String"
+- "ZoneProtocol"
+depends-member:
+- ["3Art23ChampDeBatailleProtocolP", "Bool"]
+- ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
+- ["3Art23ChampDeBatailleProtocolP", "IteratorProtocol"]
+- ["3Art23ChampDeBatailleProtocolP", "Self"]
+- ["3Art23ChampDeBatailleProtocolP", "String"]
+- ["3Art23ChampDeBatailleProtocolP", "Zone"]
+- ["3Art23ChampDeBatailleProtocolP", "ZoneProtocol"]
+- ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
+- ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
+- ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
+- ["3Art23ChampDeBatailleProtocolP", "checkAvancement"]
+- ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
+- ["3Art23ChampDeBatailleProtocolP", "estVide"]
+- ["3Art23ChampDeBatailleProtocolP", "getPositionDispo"]
+- ["3Art23ChampDeBatailleProtocolP", "getZone"]
+- ["3Art23ChampDeBatailleProtocolP", "init"]
+- ["3Art23ChampDeBatailleProtocolP", "initialiserAttaqueSoldat"]
+- ["3Art23ChampDeBatailleProtocolP", "initialiserPointdeDefTour"]
+- ["3Art23ChampDeBatailleProtocolP", "listeAttaquant"]
+- ["3Art23ChampDeBatailleProtocolP", "makeIterator"]
+- ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
+- ["ST", "Bool"]
+- ["ST", "IteratorNomZone"]
+- ["ST", "IteratorProtocol"]
+- ["ST", "Self"]
+- ["ST", "String"]
+- ["ST", "Zone"]
+- ["ST", "ZoneProtocol"]
+- ["ST", ""]
+depends-nominal:
+- "3Art23ChampDeBatailleProtocolP"
+- "ST"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "989e920a91458e11b27d233fdb961054"

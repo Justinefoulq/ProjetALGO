@@ -1,0 +1,34 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ZoneProtocol"
+provides-nominal:
+- "3Art12ZoneProtocolP"
+provides-member:
+- ["3Art12ZoneProtocolP", ""]
+depends-top-level:
+- "Bool"
+- "CarteProtocol"
+- "String"
+- "ZoneProtocol"
+depends-member:
+- ["3Art12ZoneProtocolP", "Bool"]
+- ["3Art12ZoneProtocolP", "Carte"]
+- ["3Art12ZoneProtocolP", "CarteProtocol"]
+- ["3Art12ZoneProtocolP", "String"]
+- ["3Art12ZoneProtocolP", "estVide"]
+- ["3Art12ZoneProtocolP", "getCarteZone"]
+- ["3Art12ZoneProtocolP", "getNomZone"]
+- ["3Art12ZoneProtocolP", "init"]
+- ["3Art12ZoneProtocolP", "setCarteZone"]
+- ["3Art12ZoneProtocolP", "setNomZone"]
+depends-nominal:
+- "3Art12ZoneProtocolP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "671f0779c83fca44bc7203d67c07f5a5"

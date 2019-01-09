@@ -1,0 +1,35 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "PiocheProtocol"
+provides-nominal:
+- "3Art14PiocheProtocolP"
+provides-member:
+- ["3Art14PiocheProtocolP", ""]
+depends-top-level:
+- "Bool"
+- "CarteProtocol"
+- "Int"
+- "PiocheProtocol"
+depends-member:
+- ["3Art14PiocheProtocolP", "Bool"]
+- ["3Art14PiocheProtocolP", "Carte"]
+- ["3Art14PiocheProtocolP", "CarteProtocol"]
+- ["3Art14PiocheProtocolP", "Int"]
+- ["3Art14PiocheProtocolP", "estVide"]
+- ["3Art14PiocheProtocolP", "getNombreCarteArcher"]
+- ["3Art14PiocheProtocolP", "getNombreCarteGarde"]
+- ["3Art14PiocheProtocolP", "getNombreCarteSoldat"]
+- ["3Art14PiocheProtocolP", "init"]
+- ["3Art14PiocheProtocolP", "nombreCarte"]
+- ["3Art14PiocheProtocolP", "piocher"]
+depends-nominal:
+- "3Art14PiocheProtocolP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "7965ad322407b5335fb66914135e9abc"

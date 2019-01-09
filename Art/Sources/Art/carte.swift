@@ -24,7 +24,7 @@ public class carte : CarteProtocol{
 	self.DefPOff = 0   
 	self.Portee = 0    
 	self.Position = true
-	self.Zone : zone 
+	self.Zone = zone 
 	    }
     
     //getNom: CarteProtocol -> String

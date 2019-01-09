@@ -1,0 +1,488 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "IteratorNomZone"
+- "champBataille"
+provides-nominal:
+- "3Art15IteratorNomZoneC"
+- "3Art13champBatailleC"
+- "3Art13champBatailleC05ChampC5ErrorO"
+provides-member:
+- ["3Art15IteratorNomZoneC", ""]
+- ["3Art13champBatailleC", ""]
+- ["3Art13champBatailleC05ChampC5ErrorO", ""]
+depends-top-level:
+- !private "!"
+- !private "!="
+- !private "&&"
+- !private "+"
+- !private "..<"
+- "=="
+- !private "Array"
+- "AssignmentPrecedence"
+- "Bool"
+- "ChampBataille"
+- "ChampDeBatailleProtocol"
+- !private "Dictionary"
+- "Error"
+- !private "FloatLiteralType"
+- !private "Int"
+- !private "IntegerLiteralType"
+- "IteratorNomZone"
+- "IteratorProtocol"
+- "String"
+- "StringLiteralType"
+- "Zone"
+- "champBataille"
+- !private "estDefensif"
+- !private "estGarde"
+- !private "estSoldat"
+- !private "getCarteZone"
+- "joueur"
+- !private "mettreEnPositionDefensive"
+- !private "setAttaque"
+- !private "setPointsDefTour"
+- "zone"
+- !private "||"
+depends-member:
+- !private ["Sa", "count"]
+- !private ["Sa", "init"]
+- !private ["Sa", "subscript"]
+- !private ["s13ArrayProtocolP", "count"]
+- !private ["s13ArrayProtocolP", "init"]
+- !private ["s13ArrayProtocolP", "subscript"]
+- !private ["SK", "count"]
+- ["SK", "init"]
+- ["SK", "init"]
+- !private ["SK", "subscript"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "CarteZoneAvant"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "ChampBatailleVide"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "__derived_enum_equals"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "_code"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "_domain"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "_userInfo"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "deinit"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "hash"]
+- ["3Art13champBatailleC05ChampC5ErrorO", "hashValue"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ChampBatailleError"]
+- ["3Art23ChampDeBatailleProtocolP", "Element"]
+- ["3Art23ChampDeBatailleProtocolP", "Iterator"]
+- ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
+- !private ["3Art23ChampDeBatailleProtocolP", "Joueur"]
+- !private ["3Art23ChampDeBatailleProtocolP", "PositionDispo"]
+- !private ["3Art23ChampDeBatailleProtocolP", "String"]
+- ["3Art23ChampDeBatailleProtocolP", "SubSequence"]
+- ["3Art23ChampDeBatailleProtocolP", "Zone"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneA1"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneA2"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneA3"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneF1"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneF2"]
+- !private ["3Art23ChampDeBatailleProtocolP", "ZoneF3"]
+- ["3Art23ChampDeBatailleProtocolP", ""]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_Element"]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_Iterator"]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_IteratorNomZone"]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_SubSequence"]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_Zone"]
+- ["3Art23ChampDeBatailleProtocolP", "_copyContents"]
+- ["3Art23ChampDeBatailleProtocolP", "_copyToContiguousArray"]
+- ["3Art23ChampDeBatailleProtocolP", "_customContainsEquatableElement"]
+- ["3Art23ChampDeBatailleProtocolP", "_preprocessingPass"]
+- ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
+- ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
+- ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
+- !private ["3Art23ChampDeBatailleProtocolP", "champBataille"]
+- ["3Art23ChampDeBatailleProtocolP", "checkAvancement"]
+- ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
+- ["3Art23ChampDeBatailleProtocolP", "drop"]
+- ["3Art23ChampDeBatailleProtocolP", "dropFirst"]
+- ["3Art23ChampDeBatailleProtocolP", "dropLast"]
+- !private ["3Art23ChampDeBatailleProtocolP", "estDefensif"]
+- !private ["3Art23ChampDeBatailleProtocolP", "estGarde"]
+- !private ["3Art23ChampDeBatailleProtocolP", "estSoldat"]
+- ["3Art23ChampDeBatailleProtocolP", "estVide"]
+- ["3Art23ChampDeBatailleProtocolP", "filter"]
+- ["3Art23ChampDeBatailleProtocolP", "forEach"]
+- !private ["3Art23ChampDeBatailleProtocolP", "getCarteZone"]
+- ["3Art23ChampDeBatailleProtocolP", "getPositionDispo"]
+- ["3Art23ChampDeBatailleProtocolP", "getZone"]
+- ["3Art23ChampDeBatailleProtocolP", "init"]
+- ["3Art23ChampDeBatailleProtocolP", "initialiserAttaqueSoldat"]
+- ["3Art23ChampDeBatailleProtocolP", "initialiserPointdeDefTour"]
+- ["3Art23ChampDeBatailleProtocolP", "listeAttaquant"]
+- ["3Art23ChampDeBatailleProtocolP", "makeIterator"]
+- ["3Art23ChampDeBatailleProtocolP", "map"]
+- !private ["3Art23ChampDeBatailleProtocolP", "mettreEnPositionDefensive"]
+- ["3Art23ChampDeBatailleProtocolP", "prefix"]
+- ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
+- !private ["3Art23ChampDeBatailleProtocolP", "setAttaque"]
+- !private ["3Art23ChampDeBatailleProtocolP", "setPointsDefTour"]
+- ["3Art23ChampDeBatailleProtocolP", "split"]
+- ["3Art23ChampDeBatailleProtocolP", "suffix"]
+- ["3Art23ChampDeBatailleProtocolP", "underestimatedCount"]
+- !private ["3Art23ChampDeBatailleProtocolP", "zone"]
+- !private ["Sl", "count"]
+- ["Sl", "init"]
+- ["Sl", "init"]
+- !private ["Sl", "subscript"]
+- ["SL", "init"]
+- ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "setCarteZone"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "count"]
+- ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "setCarteZone"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["Se", "_getBuiltinLogicValue"]
+- !private ["Se", "count"]
+- ["Se", "init"]
+- ["Se", "init"]
+- !private ["Se", "setCarteZone"]
+- !private ["Se", "subscript"]
+- !private ["SD", "count"]
+- !private ["SD", "subscript"]
+- !private ["SE", "_getBuiltinLogicValue"]
+- !private ["SE", "count"]
+- ["SE", "init"]
+- ["SE", "init"]
+- !private ["SE", "setCarteZone"]
+- !private ["SE", "subscript"]
+- !private ["SQ", "CarteZoneAvant"]
+- !private ["SQ", "ChampBatailleVide"]
+- ["SQ", ""]
+- ["SQ", "_code"]
+- ["SQ", "_domain"]
+- !private ["SQ", "_getBuiltinLogicValue"]
+- ["SQ", "_userInfo"]
+- !private ["SQ", "count"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- ["SQ", "init"]
+- !private ["SQ", "setCarteZone"]
+- !private ["SQ", "subscript"]
+- !private ["s5ErrorP", "CarteZoneAvant"]
+- !private ["s5ErrorP", "ChampBatailleVide"]
+- ["s5ErrorP", ""]
+- ["s5ErrorP", "_code"]
+- ["s5ErrorP", "_domain"]
+- ["s5ErrorP", "_userInfo"]
+- ["s5ErrorP", "hash"]
+- ["s5ErrorP", "hashValue"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "count"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "setCarteZone"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "CarteZoneAvant"]
+- !private ["SH", "ChampBatailleVide"]
+- ["SH", ""]
+- ["SH", "_code"]
+- ["SH", "_domain"]
+- !private ["SH", "_getBuiltinLogicValue"]
+- ["SH", "_userInfo"]
+- !private ["SH", "count"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- ["SH", "init"]
+- !private ["SH", "setCarteZone"]
+- !private ["SH", "subscript"]
+- !private ["s6HasherV", "combine"]
+- ["3Art15IteratorNomZoneC", "ChampBataille"]
+- ["3Art15IteratorNomZoneC", "Element"]
+- ["3Art15IteratorNomZoneC", "String"]
+- ["3Art15IteratorNomZoneC", "_Default_Element"]
+- !private ["3Art15IteratorNomZoneC", "champ"]
+- ["3Art15IteratorNomZoneC", "deinit"]
+- ["3Art15IteratorNomZoneC", "i"]
+- ["3Art15IteratorNomZoneC", "next"]
+- ["3Art15IteratorNomZoneC", "zone"]
+- ["St", "ChampBataille"]
+- ["St", "Element"]
+- ["St", ""]
+- ["St", "_Default_Element"]
+- !private ["St", "champ"]
+- !private ["St", "i"]
+- ["St", "next"]
+- !private ["3Art14JoueurProtocolP", "getNomJoueur"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["SM", "count"]
+- !private ["SM", "init"]
+- !private ["SM", "subscript"]
+- !private ["Sq", "setCarteZone"]
+- !private ["Sk", "count"]
+- !private ["Sk", "init"]
+- !private ["Sk", "subscript"]
+- !private ["Sm", "count"]
+- ["Sm", "init"]
+- ["Sm", "init"]
+- !private ["Sm", "subscript"]
+- !private ["ST", "ChampBatailleError"]
+- ["ST", "Element"]
+- ["ST", "Iterator"]
+- ["ST", "IteratorNomZone"]
+- !private ["ST", "Joueur"]
+- !private ["ST", "PositionDispo"]
+- !private ["ST", "String"]
+- ["ST", "SubSequence"]
+- ["ST", "Zone"]
+- !private ["ST", "ZoneA1"]
+- !private ["ST", "ZoneA2"]
+- !private ["ST", "ZoneA3"]
+- !private ["ST", "ZoneF1"]
+- !private ["ST", "ZoneF2"]
+- !private ["ST", "ZoneF3"]
+- ["ST", ""]
+- ["ST", "_Default_Element"]
+- ["ST", "_Default_Iterator"]
+- ["ST", "_Default_IteratorNomZone"]
+- ["ST", "_Default_SubSequence"]
+- ["ST", "_Default_Zone"]
+- ["ST", "_copyContents"]
+- ["ST", "_copyToContiguousArray"]
+- ["ST", "_customContainsEquatableElement"]
+- ["ST", "_preprocessingPass"]
+- ["ST", "affichageCible"]
+- ["ST", "avancerCarte"]
+- ["ST", "carteAttaquable"]
+- !private ["ST", "champBataille"]
+- ["ST", "checkAvancement"]
+- ["ST", "checkPositionDispo"]
+- !private ["ST", "count"]
+- ["ST", "drop"]
+- ["ST", "dropFirst"]
+- ["ST", "dropLast"]
+- !private ["ST", "estDefensif"]
+- !private ["ST", "estGarde"]
+- !private ["ST", "estSoldat"]
+- ["ST", "estVide"]
+- ["ST", "filter"]
+- ["ST", "forEach"]
+- !private ["ST", "getCarteZone"]
+- ["ST", "getPositionDispo"]
+- ["ST", "getZone"]
+- ["ST", "init"]
+- ["ST", "init"]
+- ["ST", "initialiserAttaqueSoldat"]
+- ["ST", "initialiserPointdeDefTour"]
+- ["ST", "listeAttaquant"]
+- ["ST", "makeIterator"]
+- ["ST", "map"]
+- !private ["ST", "mettreEnPositionDefensive"]
+- ["ST", "prefix"]
+- ["ST", "replacerCarte"]
+- !private ["ST", "setAttaque"]
+- !private ["ST", "setPointsDefTour"]
+- ["ST", "split"]
+- !private ["ST", "subscript"]
+- ["ST", "suffix"]
+- ["ST", "underestimatedCount"]
+- !private ["ST", "zone"]
+- ["SS", "init"]
+- ["SS", "init"]
+- ["Sy", "init"]
+- ["Sy", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["3Art12ZoneProtocolP", "estVide"]
+- !private ["3Art12ZoneProtocolP", "getCarteZone"]
+- !private ["3Art12ZoneProtocolP", "setCarteZone"]
+- !private ["10Foundation13_CFBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation13_CFBridgeableP", "count"]
+- ["10Foundation13_CFBridgeableP", "init"]
+- ["10Foundation13_CFBridgeableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation13_NSBridgeableP", "count"]
+- ["10Foundation13_NSBridgeableP", "init"]
+- ["10Foundation13_NSBridgeableP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- ["s16_SwiftStringViewP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+- !private ["s12_UnwrappableP", "setCarteZone"]
+- ["3Art13champBatailleC", "Bool"]
+- ["3Art13champBatailleC", "ChampBatailleError"]
+- ["3Art13champBatailleC", "Element"]
+- ["3Art13champBatailleC", "Error"]
+- !private ["3Art13champBatailleC", "Int"]
+- ["3Art13champBatailleC", "Iterator"]
+- ["3Art13champBatailleC", "IteratorNomZone"]
+- !private ["3Art13champBatailleC", "Joueur"]
+- !private ["3Art13champBatailleC", "PositionDispo"]
+- ["3Art13champBatailleC", "String"]
+- ["3Art13champBatailleC", "SubSequence"]
+- ["3Art13champBatailleC", "Zone"]
+- !private ["3Art13champBatailleC", "ZoneA1"]
+- !private ["3Art13champBatailleC", "ZoneA2"]
+- !private ["3Art13champBatailleC", "ZoneA3"]
+- !private ["3Art13champBatailleC", "ZoneF1"]
+- !private ["3Art13champBatailleC", "ZoneF2"]
+- !private ["3Art13champBatailleC", "ZoneF3"]
+- ["3Art13champBatailleC", "_Default_Element"]
+- ["3Art13champBatailleC", "_Default_Iterator"]
+- ["3Art13champBatailleC", "_Default_IteratorNomZone"]
+- ["3Art13champBatailleC", "_Default_SubSequence"]
+- ["3Art13champBatailleC", "_Default_Zone"]
+- ["3Art13champBatailleC", "_copyContents"]
+- ["3Art13champBatailleC", "_copyToContiguousArray"]
+- ["3Art13champBatailleC", "_customContainsEquatableElement"]
+- ["3Art13champBatailleC", "_preprocessingPass"]
+- ["3Art13champBatailleC", "affichageCible"]
+- ["3Art13champBatailleC", "avancerCarte"]
+- ["3Art13champBatailleC", "carteAttaquable"]
+- ["3Art13champBatailleC", "champBataille"]
+- ["3Art13champBatailleC", "checkAvancement"]
+- ["3Art13champBatailleC", "checkPositionDispo"]
+- ["3Art13champBatailleC", "deinit"]
+- ["3Art13champBatailleC", "drop"]
+- ["3Art13champBatailleC", "dropFirst"]
+- ["3Art13champBatailleC", "dropLast"]
+- !private ["3Art13champBatailleC", "estDefensif"]
+- !private ["3Art13champBatailleC", "estGarde"]
+- !private ["3Art13champBatailleC", "estSoldat"]
+- ["3Art13champBatailleC", "estVide"]
+- ["3Art13champBatailleC", "filter"]
+- ["3Art13champBatailleC", "forEach"]
+- !private ["3Art13champBatailleC", "getCarteZone"]
+- ["3Art13champBatailleC", "getPositionDispo"]
+- ["3Art13champBatailleC", "getZone"]
+- ["3Art13champBatailleC", "init"]
+- ["3Art13champBatailleC", "initialiserAttaqueSoldat"]
+- ["3Art13champBatailleC", "initialiserPointdeDefTour"]
+- ["3Art13champBatailleC", "joueur"]
+- ["3Art13champBatailleC", "listeAttaquant"]
+- ["3Art13champBatailleC", "makeIterator"]
+- ["3Art13champBatailleC", "map"]
+- !private ["3Art13champBatailleC", "mettreEnPositionDefensive"]
+- ["3Art13champBatailleC", "prefix"]
+- ["3Art13champBatailleC", "replacerCarte"]
+- !private ["3Art13champBatailleC", "setAttaque"]
+- !private ["3Art13champBatailleC", "setPointsDefTour"]
+- ["3Art13champBatailleC", "split"]
+- ["3Art13champBatailleC", "suffix"]
+- ["3Art13champBatailleC", "underestimatedCount"]
+- ["3Art13champBatailleC", "zone"]
+- !private ["3Art6joueurC", "getNomJoueur"]
+- !private ["3Art4zoneC", "deinit"]
+- !private ["3Art4zoneC", "estVide"]
+- !private ["3Art4zoneC", "getCarteZone"]
+- !private ["3Art4zoneC", "setCarteZone"]
+depends-nominal:
+- !private "Sa"
+- !private "s13ArrayProtocolP"
+- "SK"
+- !private "Sb"
+- !private "s7CVarArgP"
+- "3Art13champBatailleC05ChampC5ErrorO"
+- "3Art23ChampDeBatailleProtocolP"
+- "Sl"
+- "SL"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "Se"
+- !private "SD"
+- "SE"
+- "SQ"
+- "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "s6HasherV"
+- "3Art15IteratorNomZoneC"
+- "St"
+- !private "3Art14JoueurProtocolP"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "SM"
+- !private "Sq"
+- !private "Sk"
+- "Sm"
+- "ST"
+- "SS"
+- "Sy"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "3Art12ZoneProtocolP"
+- "10Foundation13_CFBridgeableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation13_NSBridgeableP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+- !private "s12_UnwrappableP"
+- "3Art13champBatailleC"
+- !private "3Art6joueurC"
+- !private "3Art4zoneC"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "cc36548d7ec92a3c3381fcf87f8c2ae2"

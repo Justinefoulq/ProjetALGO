@@ -1,0 +1,95 @@
+{
+  "": {
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/master.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/Art.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/Art.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/Art.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/Art~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/Art.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/ChampBataille.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/ChampBataille.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/ChampBataille.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/ChampBataille~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/ChampBataille.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/RoyaumeProtocol.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/RoyaumeProtocol.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/RoyaumeProtocol.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/RoyaumeProtocol~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/RoyaumeProtocol.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFCarte.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFCarte.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFCarte.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFCarte~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFCarte.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFChampDeBataille (1).swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFChampDeBataille (1).d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFChampDeBataille (1).swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFChampDeBataille (1)~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFChampDeBataille (1).swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFMains.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFMains.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFMains.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFMains~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFMains.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFPioche.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFPioche.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFPioche.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFPioche~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFPioche.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFZone.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFZone.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFZone.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFZone~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFZone.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/SFjoueur (1).swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFjoueur (1).d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFjoueur (1).swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFjoueur (1)~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/SFjoueur (1).swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/carte.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/carte.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/carte.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/carte~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/carte.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/joueur.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/joueur.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/joueur.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/joueur~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/joueur.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/mains.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/mains.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/mains.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/mains~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/mains.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/pioche.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/pioche.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/pioche.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/pioche~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/pioche.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/royaume.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/royaume.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/royaume.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/royaume~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/royaume.swiftdeps"
+  },
+  "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/Sources/Art/zone.swift": {
+    "dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/zone.d",
+    "object": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/zone.swift.o",
+    "swiftmodule": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/zone~partial.swiftmodule",
+    "swift-dependencies": "/mnt/c/Users/justi/Documents/Cours/IG3/Nouveau dossier/ProjetALGO/Art/.build/x86_64-unknown-linux/debug/Art.build/zone.swiftdeps"
+  }
+}

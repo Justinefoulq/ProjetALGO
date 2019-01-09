@@ -11,7 +11,7 @@ public class pioche : PiocheProtocol{
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5
 	public required init(){
-		self.pioche.append(carte.init().creerSoldat())
+		self.pioche.append(carte.creerSoldat())
 		self.pioche.append(carte.creerSoldat())
 		self.pioche.append(carte.creerSoldat())
 		self.pioche.append(carte.creerSoldat())

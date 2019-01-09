@@ -1,0 +1,33 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RoyaumeProtocol"
+provides-nominal:
+- "3Art15RoyaumeProtocolP"
+provides-member:
+- ["3Art15RoyaumeProtocolP", ""]
+depends-top-level:
+- "Bool"
+- "CarteProtocol"
+- "Int"
+- "RoyaumeProtocol"
+depends-member:
+- ["3Art15RoyaumeProtocolP", "Bool"]
+- ["3Art15RoyaumeProtocolP", "Carte"]
+- ["3Art15RoyaumeProtocolP", "CarteProtocol"]
+- ["3Art15RoyaumeProtocolP", "Int"]
+- ["3Art15RoyaumeProtocolP", "estVide"]
+- ["3Art15RoyaumeProtocolP", "getfirstCarte"]
+- ["3Art15RoyaumeProtocolP", "init"]
+- ["3Art15RoyaumeProtocolP", "nombreCitoyens"]
+- ["3Art15RoyaumeProtocolP", "removeCarte"]
+depends-nominal:
+- "3Art15RoyaumeProtocolP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "cf79bfeb005384cd09704605b7000a8a"
