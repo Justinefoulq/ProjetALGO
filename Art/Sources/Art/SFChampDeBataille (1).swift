@@ -4,6 +4,7 @@
 import Foundation
 protocol ChampDeBatailleProtocol : Sequence {
     associatedtype TZone : ZoneProtocol
+    associatedtype TCarte : CarteProtocol
 
     //associatedtype IteratorNomZone : IteratorProtocol
 
@@ -68,9 +69,7 @@ protocol ChampDeBatailleProtocol : Sequence {
 	//avance la carte qui se trouve dans la zone passée en paramètre en ligne de front, sur la zone juste devant
 	//pré-conditions: Zone passée en paramètre est une zone arrière (A1,A2 ou A3)
 	//Résultat: carte avancée dans la zone devant elle
-	func avancerCarte(nomZone 
-
-		: TZone) throws
+	func avancerCarte(nomZone : TZone) throws
 
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [TZone]
 	//Pré-conditions: Zone en entrée non vide
@@ -92,6 +91,9 @@ protocol ChampDeBatailleProtocol : Sequence {
 	// crée un itérateur sur la collection de ZoneProtocol 
 	//Résultat: Renvoie un Iterateur
 	func makeIterator() -> IteratorNomZone
+
+	//ajouterCarte TCarte x String -> ChampDeBatailleProtocol
+	mutating func ajouterCarte(carte : TCarte, zone : String) throws
 
 	
 

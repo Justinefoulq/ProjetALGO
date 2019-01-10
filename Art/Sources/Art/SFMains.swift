@@ -22,7 +22,7 @@ protocol MainsProtocol : Sequence {
 	// getmain() -> MainsProtocol
 	//fonction qui renvois la main 
 	//
-	func getmain() 
+	func getmain()
 
 
 	
@@ -38,7 +38,7 @@ protocol MainsProtocol : Sequence {
 	//Pré-conditions: l'entier entré en paramètre est compris entre 0 et le nombre de cartes dans la main
 	//Résultat: Enleve la carte qui à pour identifiant celui passé en paramètre (utiliser getCarteparIdentifiant)
 	//post-conditions nombreCartes diminue de 1
-	mutating func enleverCarte(identifiantCarte : Int)
+	mutating func enleverCarte(identifiantCarte : Int) throws
 	
 
 
@@ -53,12 +53,14 @@ protocol MainsProtocol : Sequence {
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant(identifiantCarte : Int) -> TCarte
+	func getCarteparIdentifiant(identifiantCarte : Int) throws -> TCarte 
 	
 
 	//estDansMain: Int -> Bool
 	//Résultat: renvoie vrai si l'entier est compris entre 1 et le nb deCartes
-	func estDansMain(identifiantCarte : Int ) -> Bool
+	func estDansMains(identifiantCarte : Int ) -> Bool
+
+	func estDansMainsCarte(carte : TCarte) -> Bool
 	
 
 	//estVide: -> Bool
@@ -77,7 +79,7 @@ protocol MainsProtocol : Sequence {
 	//Renvoie l'identifiant de la carte passée en paramètre
 	//Pré-conditions:carte passée en paramètre est dans la main
 	//Résultat: entiern identifiant de la carte (attribué par setID)
-	func getID(carte:TCarte) -> Int
+	func getID(carte:TCarte) throws -> Int  
 	
 	
 	// makeIterator : Mains -> IteratorIdentifiantCarte

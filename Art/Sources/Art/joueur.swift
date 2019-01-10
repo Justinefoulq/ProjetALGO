@@ -23,10 +23,10 @@ public class joueur : JoueurProtocol{
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
 	public required init(){
-		self.pioche()
-		self.mains(Pioche : pioche)
-		self.champDeBataille()
-		self.royaume()
+		self.pioche = pioche()
+		self.mains = mains(Pioche : pioche)
+		self.champDeBataille = champBataille()
+		self.royaume = royaume()
 		
 	}
 
@@ -40,10 +40,13 @@ public class joueur : JoueurProtocol{
 	//résultat: la carte indiquée est posée à la position choisie sur le champ de bataille
 	//post-conditions: 1 carte en moins dans la main, 1 carte en plus sur le champ de bataille (à la bonne position)
 	func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
-		guard identifiantCarte>0 || identifiantCarte<7 else {
+		guard self.mains.estDansMains(identifiantCarte : identifiantCarte ) else {
 			throw joueurError.mainincorrecte}		
-		if self.champDeBataille.checkPositionDispo(nomZone : positionCarte){
-			try! self.champDeBataille.ajouterCarte(positionCarte.getZone())
+		
+		if self.champDeBataille.checkPositionDispo(nomZone : positionCarte) {
+			var carte : carte = try! self.mains.getCarteparIdentifiant( identifiantCarte : identifiantCarte)
+			
+			try! self.champDeBataille.ajouterCarte(carte : carte , zone : positionCarte)
 			try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
 			
 		}
@@ -55,9 +58,9 @@ public class joueur : JoueurProtocol{
 	//Prend la carte passée en paramètre dans le royaume (utiliser getRoyaume) et la place sur le champs de bataille (utiliser getChampDeBataille) à la position indiquée (utiliser getZone)
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
-	func mobiliser(CarteMobilisee: carte, nomZone: String) throws{
-		self.royaume.removeCarte(carteSelectionne :  CarteMobilisee)
-		self.champDeBataille.ajouterCarte(CarteMobilisee, nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
+	func mobiliser(CarteMobilisee : carte, nomZone : String) throws{
+		try! self.royaume.removeCarte(carteSelectionne :  CarteMobilisee)
+		try! self.champDeBataille.ajouterCarte(carte : CarteMobilisee, zone : nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
 	}
 
 
@@ -68,15 +71,14 @@ public class joueur : JoueurProtocol{
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	func demobiliser( identifiantCarte: Int) throws -> mains {
+	func demobiliser( identifiantCarte : Int) throws -> mains {
 		guard identifiantCarte>0 || identifiantCarte<7 else {
 			throw joueurError.mainincorrecte}
+		var carte : carte = try! getCarteparIdentifiant( identifiantCarte : identifiantCarte)
 		try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
-		try! self.royaume.AjouterCarte(identifiantCarte) //pb manque cette fonction dans royaume ------------------------
+		try! self.royaume.ajouterCarte(carteSel : carte) //pb manque cette fonction dans royaume ------------------------
 		return self.mains
 	}
-
-
 
 	//piocherCarte:  Joueur-> CarteProtocol
 	// pioche une carte au hasard dans la pioche (utiliser getPioche), la créer suivant la chaine de caractère renvoyé par la fonction piocher de PiocheProtocol

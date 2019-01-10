@@ -20,7 +20,7 @@ protocol ZoneProtocol {
 
 	//setNomZone: String -> ZoneProtocol
 	//Initialise le nom de la zone avec la chaine de caractère passé en paramètre
-	mutating func setNomZone(nomZone: String)
+	mutating func setNomZone(nomZone : String)
 
 	//getCarteZone: ZoneProtocol -> CarteProtocol | nil
 	//Renvoie la valeur (et description) de la carte présente dans la zone passée en paramètre, si la zone est vide, renvoie nil

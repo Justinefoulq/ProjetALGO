@@ -94,6 +94,15 @@ public class mains : MainsProtocol{
 		return (identifiantCarte>=0) && (identifiantCarte<nombreCartes())
 	}
 	
+	func estDansMainsCarte(carte : carte) ->Bool{
+		var res : Bool = false 
+		for i in 0..<self.nombreCartes() {
+			if carte === self.mains[i] {
+				res = true
+			}
+		}
+		return res
+	}
 
 	//enleverCarte: Int ->MainsProtocol
 	//Pré-conditions: l'entier entré en paramètre est compris entre 0 et le nombre de cartes dans la main
@@ -161,13 +170,19 @@ public class mains : MainsProtocol{
 	//Résultat: entiern identifiant de la carte (attribué par setID)
 	
 	func getID(carte : carte) throws -> Int  {
-		guard estDansMains(identifiantCarte : self.mains[carte]) else {
+		guard estDansMainsCarte(carte : carte) else {
 			throw MainsError.pasDansMains
 		}
-		return self.mains[carte]
-		
+		for i in 0 ..< self.nombreCartes() {
+			if carte === self.mains[i] {
+				return i 
+			}
+		}
 	}
+
+
 	
+
 	
 	// makeIterator : Mains -> IteratorIdentifiantCarte
 	// crée un itérateur sur la collection de couple (identifiantCarte, Carte)
@@ -175,7 +190,7 @@ public class mains : MainsProtocol{
 	//A une fonction next qui renvoie l'identifiant de la carte parcourue  // C'ets quoi l'interet d'avoir un iterateur qui renvois que l'id de la carte ? sachant que ils veulent incrémenter a chaque fois que ce soit 1,2,3,4... bizarre
 
 	
-	func makeIterator() -> IteratorIdentifiantCarte { //--------------j'ai fait un iterateur sur les cartes et pas sur les id car id ca sert pas a grand chose
+	public func makeIterator() -> IteratorIdentifiantCarte { //--------------j'ai fait un iterateur sur les cartes et pas sur les id car id ca sert pas a grand chose
 		return IteratorIdentifiantCarte(Main:self)
 	}
 

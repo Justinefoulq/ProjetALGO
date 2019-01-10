@@ -3,6 +3,7 @@ import Foundation
    
 public class royaume : RoyaumeProtocol {
 	typealias TCarte = carte
+	typealias TPioche = pioche
 	//typealias royaume = Carte
 	//associatedtype Carte : CarteProtocol
 	//associatedtype Pioche :  PiocheProtocol // Rajout car on ne peut pas initilaliser en piochant une carte si on a pas acces a la pioche----------------------------
@@ -16,8 +17,8 @@ public class royaume : RoyaumeProtocol {
 	//Post-conditions: non vide, 1 carte piochée au hasard 
 	//le royaume se comporte comme une file d'attente, on peut reprendre les cartes qu'il y a dedans dans l'ordre où on les y a mises
 	//Résultat: Royaume non vide
-	public required init() {
-		self.royaume=[pioche.piocher()]
+	public required init(Pioche : pioche) {
+		self.royaume=[Pioche.piocher()]
 
 	}
 
@@ -44,7 +45,7 @@ public class royaume : RoyaumeProtocol {
 	//getfirstCarte: -> CarteProtocol
 	//Résultat : renvoie la valeur de la première carte qui a été mise dans le royaume
 	func getfirstCarte() -> carte {
-		return nombreCitoyens[0]
+		return self.royaume[0]
 	}
 
 	//créer une fonction estDansRoyaume pour faire la fonction removeCarte ( le throws)
@@ -88,9 +89,9 @@ public class royaume : RoyaumeProtocol {
 
 	
 	
-	//func ajouterCarte(carteSel : carte){
-	//	self.royaume.append(carteSel);
-	//}
+	func ajouterCarte(carteSel : carte){
+		self.royaume.append(carteSel);
+	}
 
 }
 

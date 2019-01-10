@@ -2,12 +2,13 @@
 import Foundation
 protocol RoyaumeProtocol {
     associatedtype TCarte : CarteProtocol
+    associatedtype TPioche : PiocheProtocol
 	//init:  ->RoyaumeProtocol
 	//Création d'un royaume
 	//Post-conditions: non vide, 1 carte piochée au hasard 
 	//le royaume se comporte comme une file d'attente, on peut reprendre les cartes qu'il y a dedans dans l'ordre où on les y a mises
 	//Résultat: Royaume non vide
-	init()
+	init(Pioche : TPioche)
 	
 
 
@@ -28,18 +29,18 @@ protocol RoyaumeProtocol {
 
 	//getfirstCarte: -> CarteProtocol
 	//Résultat : renvoie la valeur de la première carte qui a été mise dans le royaume
-	func getfirstCarte() -> carte
+	func getfirstCarte() -> TCarte
 
 
 	//removeCarte: CarteProtocol ->
 	//précondition: Carte est dans le Royaume
 	//Résultat enlève la carte du Royaume
 	//Post-conditions nombreCitoyens à baissé de 1
-	func removeCarte(carteSelectionne : carte) throws
+	func removeCarte(carteSelectionne : TCarte) throws
 
-	//ajouterCarte : --> RoyaumeProtocol
+	//ajouterCarte : Tcarte --> RoyaumeProtocol
 	//fonction qui ajoute la carte en parametre au royaume
-	//func ajouterCarte() -> royaume
+	mutating func ajouterCarte(carteSel : TCarte)
 
 
 }
