@@ -18,9 +18,11 @@ depends-top-level:
 - !private "..<"
 - !private "<"
 - "=="
+- !private "==="
 - !private ">="
 - "AssignmentPrecedence"
 - "Bool"
+- !private "BooleanLiteralType"
 - !private "Dictionary"
 - "Error"
 - "FloatLiteralType"
@@ -28,7 +30,6 @@ depends-top-level:
 - "IntegerLiteralType"
 - "IteratorIdentifiantCarte"
 - "IteratorProtocol"
-- !private "MainIterator"
 - "MainsError"
 - "MainsProtocol"
 - !private "StringLiteralType"
@@ -146,6 +147,7 @@ depends-member:
 - ["St", ""]
 - ["St", "_Default_Element"]
 - !private ["St", "i"]
+- !private ["St", "init"]
 - ["St", "next"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
@@ -161,7 +163,6 @@ depends-member:
 - ["3Art13MainsProtocolP", "Element"]
 - ["3Art13MainsProtocolP", "Iterator"]
 - ["3Art13MainsProtocolP", "IteratorIdentifiantCarte"]
-- !private ["3Art13MainsProtocolP", "MainIterator"]
 - !private ["3Art13MainsProtocolP", "MainsError"]
 - ["3Art13MainsProtocolP", "SubSequence"]
 - ["3Art13MainsProtocolP", "TCarte"]
@@ -185,10 +186,16 @@ depends-member:
 - ["3Art13MainsProtocolP", "dropFirst"]
 - ["3Art13MainsProtocolP", "dropLast"]
 - ["3Art13MainsProtocolP", "enleverCarte"]
-- !private ["3Art13MainsProtocolP", "estDansMains"]
+- ["3Art13MainsProtocolP", "estDansMains"]
+- ["3Art13MainsProtocolP", "estDansMainsCarte"]
+- ["3Art13MainsProtocolP", "estVide"]
 - ["3Art13MainsProtocolP", "filter"]
 - ["3Art13MainsProtocolP", "forEach"]
+- ["3Art13MainsProtocolP", "getCarteparIdentifiant"]
+- ["3Art13MainsProtocolP", "getID"]
 - !private ["3Art13MainsProtocolP", "getMain"]
+- ["3Art13MainsProtocolP", "getmain"]
+- ["3Art13MainsProtocolP", "init"]
 - !private ["3Art13MainsProtocolP", "mains"]
 - ["3Art13MainsProtocolP", "makeIterator"]
 - ["3Art13MainsProtocolP", "map"]
@@ -205,7 +212,6 @@ depends-member:
 - ["ST", "Element"]
 - ["ST", "Iterator"]
 - ["ST", "IteratorIdentifiantCarte"]
-- !private ["ST", "MainIterator"]
 - !private ["ST", "MainsError"]
 - ["ST", "SubSequence"]
 - ["ST", "TCarte"]
@@ -230,11 +236,16 @@ depends-member:
 - ["ST", "dropFirst"]
 - ["ST", "dropLast"]
 - ["ST", "enleverCarte"]
-- !private ["ST", "estDansMains"]
+- ["ST", "estDansMains"]
+- ["ST", "estDansMainsCarte"]
+- ["ST", "estVide"]
 - ["ST", "filter"]
 - ["ST", "forEach"]
+- ["ST", "getCarteparIdentifiant"]
+- ["ST", "getID"]
 - !private ["ST", "getMain"]
-- !private ["ST", "init"]
+- ["ST", "getmain"]
+- ["ST", "init"]
 - !private ["ST", "init"]
 - !private ["ST", "mains"]
 - ["ST", "makeIterator"]
@@ -295,7 +306,6 @@ depends-member:
 - ["3Art5mainsC", "Int"]
 - ["3Art5mainsC", "Iterator"]
 - ["3Art5mainsC", "IteratorIdentifiantCarte"]
-- !private ["3Art5mainsC", "MainIterator"]
 - !private ["3Art5mainsC", "MainsError"]
 - ["3Art5mainsC", "SubSequence"]
 - ["3Art5mainsC", "TCarte"]
@@ -320,12 +330,14 @@ depends-member:
 - ["3Art5mainsC", "dropLast"]
 - ["3Art5mainsC", "enleverCarte"]
 - ["3Art5mainsC", "estDansMains"]
+- ["3Art5mainsC", "estDansMainsCarte"]
 - ["3Art5mainsC", "estVide"]
 - ["3Art5mainsC", "filter"]
 - ["3Art5mainsC", "forEach"]
 - ["3Art5mainsC", "getCarteparIdentifiant"]
 - ["3Art5mainsC", "getID"]
 - ["3Art5mainsC", "getMain"]
+- ["3Art5mainsC", "getmain"]
 - ["3Art5mainsC", "init"]
 - !private ["3Art5mainsC", "mains"]
 - ["3Art5mainsC", "makeIterator"]
@@ -396,4 +408,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "20191e64526284286dc40332f9c76f58"
+interface-hash: "84056a1286304f36601688f7f5e93984"

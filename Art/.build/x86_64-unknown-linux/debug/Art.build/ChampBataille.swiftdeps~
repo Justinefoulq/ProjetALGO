@@ -21,7 +21,6 @@ depends-top-level:
 - !private "Array"
 - "AssignmentPrecedence"
 - "Bool"
-- "CastingPrecedence"
 - "ChampBatailleError"
 - "ChampDeBatailleProtocol"
 - !private "Dictionary"
@@ -33,7 +32,7 @@ depends-top-level:
 - "IteratorProtocol"
 - "String"
 - "StringLiteralType"
-- !private "carte"
+- "carte"
 - "champBataille"
 - "joueur"
 - "zone"
@@ -67,6 +66,7 @@ depends-member:
 - ["3Art18ChampBatailleErrorO", "deinit"]
 - ["3Art18ChampBatailleErrorO", "hash"]
 - ["3Art18ChampBatailleErrorO", "hashValue"]
+- ["3Art18ChampBatailleErrorO", "zonePasDansChampBat"]
 - !private ["3Art23ChampDeBatailleProtocolP", "ChampBatailleError"]
 - ["3Art23ChampDeBatailleProtocolP", "Element"]
 - ["3Art23ChampDeBatailleProtocolP", "Iterator"]
@@ -75,16 +75,19 @@ depends-member:
 - !private ["3Art23ChampDeBatailleProtocolP", "PositionDispo"]
 - !private ["3Art23ChampDeBatailleProtocolP", "String"]
 - ["3Art23ChampDeBatailleProtocolP", "SubSequence"]
+- ["3Art23ChampDeBatailleProtocolP", "TCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "TZone"]
 - ["3Art23ChampDeBatailleProtocolP", ""]
 - ["3Art23ChampDeBatailleProtocolP", "_Default_Element"]
 - ["3Art23ChampDeBatailleProtocolP", "_Default_Iterator"]
 - ["3Art23ChampDeBatailleProtocolP", "_Default_SubSequence"]
+- ["3Art23ChampDeBatailleProtocolP", "_Default_TCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "_copyContents"]
 - ["3Art23ChampDeBatailleProtocolP", "_copyToContiguousArray"]
 - ["3Art23ChampDeBatailleProtocolP", "_customContainsEquatableElement"]
 - ["3Art23ChampDeBatailleProtocolP", "_preprocessingPass"]
 - ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
+- ["3Art23ChampDeBatailleProtocolP", "ajouterCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
 - !private ["3Art23ChampDeBatailleProtocolP", "champBataille"]
@@ -159,6 +162,7 @@ depends-member:
 - ["SQ", "init"]
 - ["SQ", "init"]
 - !private ["SQ", "subscript"]
+- !private ["SQ", "zonePasDansChampBat"]
 - !private ["s5ErrorP", "CarteZoneAvant"]
 - !private ["s5ErrorP", "ChampBatailleVide"]
 - ["s5ErrorP", ""]
@@ -167,6 +171,7 @@ depends-member:
 - ["s5ErrorP", "_userInfo"]
 - ["s5ErrorP", "hash"]
 - ["s5ErrorP", "hashValue"]
+- !private ["s5ErrorP", "zonePasDansChampBat"]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
 - !private ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
@@ -192,11 +197,14 @@ depends-member:
 - ["SH", "init"]
 - ["SH", "init"]
 - !private ["SH", "subscript"]
+- !private ["SH", "zonePasDansChampBat"]
 - !private ["s6HasherV", "combine"]
 - ["3Art15IteratorNomZoneC", "Element"]
 - ["3Art15IteratorNomZoneC", "String"]
+- ["3Art15IteratorNomZoneC", "TCarte"]
 - ["3Art15IteratorNomZoneC", "TZone"]
 - ["3Art15IteratorNomZoneC", "_Default_Element"]
+- ["3Art15IteratorNomZoneC", "carte"]
 - ["3Art15IteratorNomZoneC", "champ"]
 - ["3Art15IteratorNomZoneC", "champBataille"]
 - ["3Art15IteratorNomZoneC", "deinit"]
@@ -238,16 +246,19 @@ depends-member:
 - !private ["ST", "PositionDispo"]
 - !private ["ST", "String"]
 - ["ST", "SubSequence"]
+- ["ST", "TCarte"]
 - ["ST", "TZone"]
 - ["ST", ""]
 - ["ST", "_Default_Element"]
 - ["ST", "_Default_Iterator"]
 - ["ST", "_Default_SubSequence"]
+- ["ST", "_Default_TCarte"]
 - ["ST", "_copyContents"]
 - ["ST", "_copyToContiguousArray"]
 - ["ST", "_customContainsEquatableElement"]
 - ["ST", "_preprocessingPass"]
 - ["ST", "affichageCible"]
+- ["ST", "ajouterCarte"]
 - ["ST", "avancerCarte"]
 - ["ST", "carteAttaquable"]
 - !private ["ST", "champBataille"]
@@ -323,7 +334,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - ["s16_SwiftStringViewP", "init"]
 - ["s16_SwiftStringViewP", "init"]
-- !private ["3Art5carteC", "deinit"]
+- ["3Art5carteC", "deinit"]
 - !private ["3Art5carteC", "estDefensif"]
 - !private ["3Art5carteC", "estGarde"]
 - !private ["3Art5carteC", "estRoi"]
@@ -341,17 +352,20 @@ depends-member:
 - !private ["3Art13champBatailleC", "PositionDispo"]
 - ["3Art13champBatailleC", "String"]
 - ["3Art13champBatailleC", "SubSequence"]
+- ["3Art13champBatailleC", "TCarte"]
 - ["3Art13champBatailleC", "TZone"]
 - ["3Art13champBatailleC", "_Default_Element"]
 - ["3Art13champBatailleC", "_Default_Iterator"]
 - ["3Art13champBatailleC", "_Default_SubSequence"]
+- ["3Art13champBatailleC", "_Default_TCarte"]
 - ["3Art13champBatailleC", "_copyContents"]
 - ["3Art13champBatailleC", "_copyToContiguousArray"]
 - ["3Art13champBatailleC", "_customContainsEquatableElement"]
 - ["3Art13champBatailleC", "_preprocessingPass"]
 - ["3Art13champBatailleC", "affichageCible"]
+- ["3Art13champBatailleC", "ajouterCarte"]
 - ["3Art13champBatailleC", "avancerCarte"]
-- !private ["3Art13champBatailleC", "carte"]
+- ["3Art13champBatailleC", "carte"]
 - ["3Art13champBatailleC", "carteAttaquable"]
 - ["3Art13champBatailleC", "champBataille"]
 - ["3Art13champBatailleC", "checkAvancement"]
@@ -445,7 +459,7 @@ depends-nominal:
 - "10Foundation13_NSBridgeableP"
 - "s21_ObjectiveCBridgeableP"
 - "s16_SwiftStringViewP"
-- !private "3Art5carteC"
+- "3Art5carteC"
 - "3Art13champBatailleC"
 - !private "3Art6joueurC"
 - !private "3Art5mainsC"
@@ -458,4 +472,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "2f41940f7ba1e9d69f64ff3e04397e32"
+interface-hash: "94f65821d3a7ca08cb504809514b0ed1"
