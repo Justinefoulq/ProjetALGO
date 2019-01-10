@@ -7,6 +7,7 @@ provides-member:
 - ["3Art23ChampDeBatailleProtocolP", ""]
 depends-top-level:
 - "Bool"
+- "CarteProtocol"
 - "ChampDeBatailleProtocol"
 - "IteratorNomZone"
 - "Sequence"
@@ -14,12 +15,15 @@ depends-top-level:
 - "ZoneProtocol"
 depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "Bool"]
+- ["3Art23ChampDeBatailleProtocolP", "CarteProtocol"]
 - ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
 - ["3Art23ChampDeBatailleProtocolP", "Self"]
 - ["3Art23ChampDeBatailleProtocolP", "String"]
+- ["3Art23ChampDeBatailleProtocolP", "TCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "TZone"]
 - ["3Art23ChampDeBatailleProtocolP", "ZoneProtocol"]
 - ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
+- ["3Art23ChampDeBatailleProtocolP", "ajouterCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
 - ["3Art23ChampDeBatailleProtocolP", "checkAvancement"]
@@ -33,9 +37,11 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "makeIterator"]
 - ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
 - ["ST", "Bool"]
+- ["ST", "CarteProtocol"]
 - ["ST", "IteratorNomZone"]
 - ["ST", "Self"]
 - ["ST", "String"]
+- ["ST", "TCarte"]
 - ["ST", "TZone"]
 - ["ST", "ZoneProtocol"]
 - ["ST", ""]
@@ -50,4 +56,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "c26660defa0d154886cd9600b1922d6c"
+interface-hash: "65469de6a1a07d782f61095f683252fd"

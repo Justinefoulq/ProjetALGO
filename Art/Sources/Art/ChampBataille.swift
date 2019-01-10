@@ -5,6 +5,7 @@ import Foundation
 
 public class IteratorNomZone : IteratorProtocol {
 	typealias TZone = zone
+	typealias TCarte = carte
 
 	let champ: champBataille
     var i : String = "A1" //------Je sais pas a quoi initialiser
@@ -294,6 +295,13 @@ public class champBataille : ChampDeBatailleProtocol {
     	}
     }
 
+    func ajouterCarte(carte : carte, zone : String) throws {
+    	guard zone=="A1" || zone=="A2" || zone=="A3" || zone=="F1" || zone=="F2" || zone=="F3" else {
+    		throw ChampBatailleError.zonePasDansChampBat
+    	}
+    	self.champBataille[zone]!.setCarteZone(carteSelectionne : carte)
+
+    }
     
 
 
@@ -304,6 +312,8 @@ public class champBataille : ChampDeBatailleProtocol {
 	public func makeIterator() -> IteratorNomZone{
 		return IteratorNomZone( champ : self)
 	}
+
+
 	
 
 }
@@ -311,6 +321,8 @@ public class champBataille : ChampDeBatailleProtocol {
 enum ChampBatailleError: Error {
     	case ChampBatailleVide
     	case CarteZoneAvant
+    	case zonePasDansChampBat
+    	
 	}
 
 

@@ -24,7 +24,8 @@ depends-member:
 - ["3Art13MainsProtocolP", "TPioche"]
 - ["3Art13MainsProtocolP", "ajouterCarte"]
 - ["3Art13MainsProtocolP", "enleverCarte"]
-- ["3Art13MainsProtocolP", "estDansMain"]
+- ["3Art13MainsProtocolP", "estDansMains"]
+- ["3Art13MainsProtocolP", "estDansMainsCarte"]
 - ["3Art13MainsProtocolP", "estVide"]
 - ["3Art13MainsProtocolP", "getCarteparIdentifiant"]
 - ["3Art13MainsProtocolP", "getID"]
@@ -52,4 +53,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "0b389d7f8a63cdf4aade4bb925a6df84"
+interface-hash: "ae3a9819518acc6f6569c872c41c83bb"
