@@ -13,6 +13,7 @@ depends-top-level:
 - !private "..<"
 - "=="
 - !private "==="
+- !private "Array"
 - "AssignmentPrecedence"
 - "Bool"
 - !private "BooleanLiteralType"
@@ -23,40 +24,49 @@ depends-top-level:
 - "RoyaumeError"
 - "RoyaumeProtocol"
 - "carte"
-- !private "pioche"
+- "pioche"
 - "royaume"
 depends-member:
+- !private ["Sa", "append"]
 - !private ["Sa", "count"]
 - !private ["Sa", "remove"]
 - !private ["Sa", "subscript"]
+- !private ["s13ArrayProtocolP", "append"]
 - !private ["s13ArrayProtocolP", "count"]
 - !private ["s13ArrayProtocolP", "remove"]
 - !private ["s13ArrayProtocolP", "subscript"]
+- !private ["SK", "append"]
 - !private ["SK", "count"]
 - !private ["SK", "remove"]
 - !private ["SK", "subscript"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["Sl", "append"]
 - !private ["Sl", "count"]
 - !private ["Sl", "remove"]
 - !private ["Sl", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
 - !private ["s28CustomDebugStringConvertibleP", "remove"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "append"]
 - !private ["s17CustomReflectableP", "count"]
 - !private ["s17CustomReflectableP", "remove"]
 - !private ["s17CustomReflectableP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "remove"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["Se", "_getBuiltinLogicValue"]
+- !private ["Se", "append"]
 - !private ["Se", "count"]
 - !private ["Se", "remove"]
 - !private ["Se", "subscript"]
 - !private ["SE", "_getBuiltinLogicValue"]
+- !private ["SE", "append"]
 - !private ["SE", "count"]
 - !private ["SE", "remove"]
 - !private ["SE", "subscript"]
@@ -65,6 +75,7 @@ depends-member:
 - ["SQ", "_domain"]
 - !private ["SQ", "_getBuiltinLogicValue"]
 - ["SQ", "_userInfo"]
+- !private ["SQ", "append"]
 - !private ["SQ", "cartePasDansRoyaume"]
 - !private ["SQ", "count"]
 - ["SQ", "hash"]
@@ -80,6 +91,7 @@ depends-member:
 - ["s5ErrorP", "hash"]
 - ["s5ErrorP", "hashValue"]
 - !private ["s5ErrorP", "royaumeVide"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
 - !private ["s25ExpressibleByArrayLiteralP", "remove"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
@@ -89,6 +101,7 @@ depends-member:
 - ["SH", "_domain"]
 - !private ["SH", "_getBuiltinLogicValue"]
 - ["SH", "_userInfo"]
+- !private ["SH", "append"]
 - !private ["SH", "cartePasDansRoyaume"]
 - !private ["SH", "count"]
 - ["SH", "hash"]
@@ -98,13 +111,16 @@ depends-member:
 - !private ["SH", "subscript"]
 - !private ["s6HasherV", "combine"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["SM", "append"]
 - !private ["SM", "count"]
 - !private ["SM", "remove"]
 - !private ["SM", "subscript"]
 - !private ["3Art14PiocheProtocolP", "piocher"]
+- !private ["Sk", "append"]
 - !private ["Sk", "count"]
 - !private ["Sk", "remove"]
 - !private ["Sk", "subscript"]
+- !private ["Sm", "append"]
 - !private ["Sm", "count"]
 - !private ["Sm", "remove"]
 - !private ["Sm", "subscript"]
@@ -119,43 +135,52 @@ depends-member:
 - ["3Art12RoyaumeErrorO", "royaumeVide"]
 - !private ["3Art15RoyaumeProtocolP", "RoyaumeError"]
 - ["3Art15RoyaumeProtocolP", "TCarte"]
+- ["3Art15RoyaumeProtocolP", "TPioche"]
 - ["3Art15RoyaumeProtocolP", ""]
+- ["3Art15RoyaumeProtocolP", "ajouterCarte"]
 - !private ["3Art15RoyaumeProtocolP", "estDansRoyaume"]
 - ["3Art15RoyaumeProtocolP", "estVide"]
 - ["3Art15RoyaumeProtocolP", "getfirstCarte"]
 - ["3Art15RoyaumeProtocolP", "init"]
 - ["3Art15RoyaumeProtocolP", "nombreCitoyens"]
-- !private ["3Art15RoyaumeProtocolP", "pioche"]
 - ["3Art15RoyaumeProtocolP", "removeCarte"]
 - !private ["3Art15RoyaumeProtocolP", "royaume"]
+- !private ["ST", "append"]
 - !private ["ST", "count"]
 - !private ["ST", "remove"]
 - !private ["ST", "subscript"]
 - !private ["10Foundation13_CFBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation13_CFBridgeableP", "append"]
 - !private ["10Foundation13_CFBridgeableP", "count"]
 - !private ["10Foundation13_CFBridgeableP", "remove"]
 - !private ["10Foundation13_CFBridgeableP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "append"]
 - !private ["s24_DestructorSafeContainerP", "count"]
 - !private ["s24_DestructorSafeContainerP", "remove"]
 - !private ["s24_DestructorSafeContainerP", "subscript"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "remove"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation13_NSBridgeableP", "append"]
 - !private ["10Foundation13_NSBridgeableP", "count"]
 - !private ["10Foundation13_NSBridgeableP", "remove"]
 - !private ["10Foundation13_NSBridgeableP", "subscript"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
 - !private ["s21_ObjectiveCBridgeableP", "count"]
 - !private ["s21_ObjectiveCBridgeableP", "remove"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - ["3Art5carteC", "deinit"]
-- !private ["3Art6piocheC", "deinit"]
+- ["3Art6piocheC", "deinit"]
 - !private ["3Art6piocheC", "piocher"]
 - ["3Art7royaumeC", "Bool"]
 - ["3Art7royaumeC", "Int"]
 - !private ["3Art7royaumeC", "RoyaumeError"]
 - ["3Art7royaumeC", "TCarte"]
+- ["3Art7royaumeC", "TPioche"]
+- ["3Art7royaumeC", "ajouterCarte"]
 - ["3Art7royaumeC", "carte"]
 - ["3Art7royaumeC", "deinit"]
 - ["3Art7royaumeC", "estDansRoyaume"]
@@ -163,7 +188,7 @@ depends-member:
 - ["3Art7royaumeC", "getfirstCarte"]
 - ["3Art7royaumeC", "init"]
 - ["3Art7royaumeC", "nombreCitoyens"]
-- !private ["3Art7royaumeC", "pioche"]
+- ["3Art7royaumeC", "pioche"]
 - ["3Art7royaumeC", "removeCarte"]
 - !private ["3Art7royaumeC", "royaume"]
 depends-nominal:
@@ -200,7 +225,7 @@ depends-nominal:
 - !private "10Foundation13_NSBridgeableP"
 - !private "s21_ObjectiveCBridgeableP"
 - "3Art5carteC"
-- !private "3Art6piocheC"
+- "3Art6piocheC"
 - "3Art7royaumeC"
 depends-dynamic-lookup:
 depends-external:
@@ -210,4 +235,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "57eb84d5dd4bac65246081a5f78406ea"
+interface-hash: "231edf12230567afb8c461de07b61a93"
