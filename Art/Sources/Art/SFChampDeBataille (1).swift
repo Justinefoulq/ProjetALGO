@@ -74,7 +74,7 @@ protocol ChampDeBatailleProtocol : Sequence {
 	//carteAttaquable: String X ChampDeBatailleProtocol -> [TZone]
 	//Pré-conditions: Zone en entrée non vide
 	//Résultat: renvoie les zones non vides attaquables dans le champs de bataille de l'ennemie par la carte dans la zone dont le nom est entré en paramètre(utiliser getZone et getCarteZone) en fonction de la portée de la carte présente dans la zone
-    func carteAttaquable(cdb: Self ,nomZone:String) throws -> [String]
+    //func carteAttaquable(cdb: Self ,nomZone:String) throws -> [String]
     
     //getZone: String -> TZone
     //Renvoie la zone dont le nom est passé en paramètre

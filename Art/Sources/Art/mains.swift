@@ -54,12 +54,12 @@ public class mains : MainsProtocol{
 		self.carte2 = carte()
 		self.carte3 = carte()
 
-		self.carte0 = carte0.creerRoi2()
+		self.carte0.creerRoi2()
 		self.carte1 = Pioche.piocher()
 		self.carte2 = Pioche.piocher()
 		self.carte3 = Pioche.piocher()
 
-		let mains = ["0": carte0, "1": carte1, "2": carte2, "3": carte3 ]
+		self.mains = [0: carte0, 1: carte1, 2: carte2, 3: carte3 ]
 	}
 
 
@@ -173,11 +173,13 @@ public class mains : MainsProtocol{
 		guard estDansMainsCarte(carte : carte) else {
 			throw MainsError.pasDansMains
 		}
+		var res : Int = -1
 		for i in 0 ..< self.nombreCartes() {
 			if carte === self.mains[i] {
-				return i 
+				res = i 
 			}
 		}
+		return res 
 	}
 
 

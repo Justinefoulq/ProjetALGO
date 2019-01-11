@@ -89,7 +89,6 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
 - ["3Art23ChampDeBatailleProtocolP", "ajouterCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
-- ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
 - !private ["3Art23ChampDeBatailleProtocolP", "champBataille"]
 - ["3Art23ChampDeBatailleProtocolP", "checkAvancement"]
 - ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
@@ -111,7 +110,6 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "prefix"]
 - ["3Art23ChampDeBatailleProtocolP", "replacerCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "split"]
-- !private ["3Art23ChampDeBatailleProtocolP", "subscript"]
 - ["3Art23ChampDeBatailleProtocolP", "suffix"]
 - ["3Art23ChampDeBatailleProtocolP", "underestimatedCount"]
 - !private ["3Art23ChampDeBatailleProtocolP", "zone"]
@@ -261,7 +259,6 @@ depends-member:
 - ["ST", "affichageCible"]
 - ["ST", "ajouterCarte"]
 - ["ST", "avancerCarte"]
-- ["ST", "carteAttaquable"]
 - !private ["ST", "champBataille"]
 - ["ST", "checkAvancement"]
 - ["ST", "checkPositionDispo"]
@@ -368,7 +365,6 @@ depends-member:
 - ["3Art13champBatailleC", "ajouterCarte"]
 - ["3Art13champBatailleC", "avancerCarte"]
 - ["3Art13champBatailleC", "carte"]
-- ["3Art13champBatailleC", "carteAttaquable"]
 - ["3Art13champBatailleC", "champBataille"]
 - ["3Art13champBatailleC", "checkAvancement"]
 - ["3Art13champBatailleC", "checkPositionDispo"]
@@ -391,7 +387,6 @@ depends-member:
 - ["3Art13champBatailleC", "prefix"]
 - ["3Art13champBatailleC", "replacerCarte"]
 - ["3Art13champBatailleC", "split"]
-- !private ["3Art13champBatailleC", "subscript"]
 - ["3Art13champBatailleC", "suffix"]
 - ["3Art13champBatailleC", "underestimatedCount"]
 - ["3Art13champBatailleC", "zone"]
@@ -475,4 +470,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "896c7fa4c1c224e8a4fad56aeda8be00"
+interface-hash: "71d5ba0753c74ca3d8ddf11bd6638e78"

@@ -4,10 +4,10 @@ public class pioche : PiocheProtocol{
 	typealias TCarte = carte
     
    
-	private var nombreCarteSoldat: Int 
-	private var nombreCarteArcher: Int
-	private var nombreCarteGarde: Int
-	private var pioche: [carte]
+	private var nombreCarteSoldat: Int = 0
+	private var nombreCarteArcher: Int = 0
+	private var nombreCarteGarde: Int = 0
+	private var Pioche: [carte] = []
 	//init:  -> PiocheProtocol
 	// créer une pioche
 	//postCondition: nombreCarte = 20, nombreCarteSoldat=9 , nombreCarteGarde=6,  nombreCarteArcher=5
@@ -17,55 +17,55 @@ public class pioche : PiocheProtocol{
 
         carte1.creerSoldat()
 
-        self.pioche.append(carte1)
+        self.Pioche.append(carte1)
 
         var carte2 : carte = carte()
 
         carte2.creerSoldat()
 
-        self.pioche.append(carte2)
+        self.Pioche.append(carte2)
 
         var carte3 : carte = carte()
 
         carte3.creerSoldat()
 
-        self.pioche.append(carte3)
+        self.Pioche.append(carte3)
 
         var carte4 : carte = carte()
 
         carte4.creerSoldat()
 
-        self.pioche.append(carte4)
+        self.Pioche.append(carte4)
 
         var carte5 : carte = carte()
 
         carte5.creerSoldat()
 
-        self.pioche.append(carte5)
+        self.Pioche.append(carte5)
 
         var carte6 : carte = carte()
 
         carte6.creerSoldat()
 
-        self.pioche.append(carte6)
+        self.Pioche.append(carte6)
 
         var carte7 : carte = carte()
 
         carte7.creerSoldat()
 
-        self.pioche.append(carte7)
+        self.Pioche.append(carte7)
 
         var carte8 : carte = carte()
 
         carte8.creerSoldat()
 
-        self.pioche.append(carte8)
+        self.Pioche.append(carte8)
 
         var carte9 : carte = carte()
 
         carte9.creerSoldat()
 
-        self.pioche.append(carte9)
+        self.Pioche.append(carte9)
 
         
 
@@ -73,37 +73,37 @@ public class pioche : PiocheProtocol{
 
         carte10.creerGarde()
 
-		self.pioche.append(carte10)
+		self.Pioche.append(carte10)
 
         var carte11 :carte = carte()
 
         carte11.creerGarde()
 
-		self.pioche.append(carte11)
+		self.Pioche.append(carte11)
 
         var carte12 :carte = carte()
 
         carte12.creerGarde()
 
-		self.pioche.append(carte12)
+		self.Pioche.append(carte12)
 
         var carte13 :carte = carte()
 
         carte13.creerGarde()
 
-		self.pioche.append(carte13)
+		self.Pioche.append(carte13)
 
         var carte14 :carte = carte()
 
         carte14.creerGarde()
 
-		self.pioche.append(carte14)
+		self.Pioche.append(carte14)
 
         var carte15 :carte = carte()
 
         carte15.creerGarde()
 
-		self.pioche.append(carte15)
+		self.Pioche.append(carte15)
 
         
 
@@ -111,31 +111,31 @@ public class pioche : PiocheProtocol{
 
         carte16.creerArcher()
 
-		self.pioche.append(carte16)
+		self.Pioche.append(carte16)
 
         var carte17 :carte = carte()
 
         carte17.creerArcher()
 
-        self.pioche.append(carte16)
+        self.Pioche.append(carte16)
 
         var carte18 :carte = carte()
 
         carte18.creerArcher()
 
-        self.pioche.append(carte16)
+        self.Pioche.append(carte16)
 
         var carte19 :carte = carte()
 
         carte19.creerArcher()
 
-        self.pioche.append(carte16)
+        self.Pioche.append(carte16)
 
         var carte20 :carte = carte()
 
         carte20.creerArcher()
 
-        self.pioche.append(carte16)
+        self.Pioche.append(carte16)
 
 	}
 
@@ -150,13 +150,13 @@ public class pioche : PiocheProtocol{
 	// postCondition : nombreCarteGarde est  >=0
 	// postCondition : nombreCarteArcher est >=0
 	func piocher()-> carte{           //----------------il faudrais pas enlever la carte de la pioche ? ------------------
-		var taille = self.pioche.count
+		var taille = self.Pioche.count
 		let number = Int.random(in: 0 ..< taille-1)
-		var renvoyer=self.pioche[number];
-		if self.pioche[number].estArcher(){
+		var renvoyer=self.Pioche[number];
+		if self.Pioche[number].estArcher(){
 			nombreCarteArcher = nombreCarteArcher-1
 		}else{
-			if self.pioche[number].estSoldat(){
+			if self.Pioche[number].estSoldat(){
 				nombreCarteSoldat = nombreCarteSoldat-1
 			}else{
 				nombreCarteGarde = nombreCarteGarde-1
@@ -169,14 +169,14 @@ public class pioche : PiocheProtocol{
 	//nombreCartes: PiocheProtocol -> Int
 	//renvoie le nombre de cartes qu'il y a dans la pioche
 	func nombreCarte()-> Int{
-		return self.pioche.count
+		return self.Pioche.count
 	}
 	
 	//getNombreCarteSoldat: Piocheprotocol-> Int
 	//renvoie le nombre de cartes soldat restant dans la pioche
 	func getNombreCarteSoldat()->Int{
 		var compteur = 0
-		for carte in pioche {
+		for carte in Pioche {
     			if (carte.getNom()=="Soldat"){
 				compteur = compteur+1
 			}
@@ -189,7 +189,7 @@ public class pioche : PiocheProtocol{
 	//renvoie le nombre de cartes garde restant dans la pioche
 	func getNombreCarteGarde()-> Int{
 		var compteur = 0
-		for carte in pioche {
+		for carte in Pioche {
     			if (carte.getNom()=="Garde"){
 				compteur = compteur+1
 			}
@@ -201,7 +201,7 @@ public class pioche : PiocheProtocol{
 	//renvoie le nombre de cartes archer restant dans la pioche
 	func getNombreCarteArcher()-> Int{
 		var compteur = 0
-		for carte in pioche {
+		for carte in Pioche {
     			if (carte.getNom()=="Archer"){
 				compteur = compteur+1
 			}
@@ -213,7 +213,7 @@ public class pioche : PiocheProtocol{
 	//renvoie vrai si la pioche est vide
 	//postCondition Si estVide renvoie vrai alors nombreCarte = 0
 	func estVide()-> Bool{
-		if(pioche.count == 0){
+		if(self.Pioche.count == 0){
 			return true
 		}else{
 			return false

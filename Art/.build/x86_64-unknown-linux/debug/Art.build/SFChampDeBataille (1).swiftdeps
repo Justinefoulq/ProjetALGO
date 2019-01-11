@@ -17,7 +17,6 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "Bool"]
 - ["3Art23ChampDeBatailleProtocolP", "CarteProtocol"]
 - ["3Art23ChampDeBatailleProtocolP", "IteratorNomZone"]
-- ["3Art23ChampDeBatailleProtocolP", "Self"]
 - ["3Art23ChampDeBatailleProtocolP", "String"]
 - ["3Art23ChampDeBatailleProtocolP", "TCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "TZone"]
@@ -25,7 +24,6 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "affichageCible"]
 - ["3Art23ChampDeBatailleProtocolP", "ajouterCarte"]
 - ["3Art23ChampDeBatailleProtocolP", "avancerCarte"]
-- ["3Art23ChampDeBatailleProtocolP", "carteAttaquable"]
 - ["3Art23ChampDeBatailleProtocolP", "checkAvancement"]
 - ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
 - ["3Art23ChampDeBatailleProtocolP", "estVide"]
@@ -40,7 +38,6 @@ depends-member:
 - ["ST", "Bool"]
 - ["ST", "CarteProtocol"]
 - ["ST", "IteratorNomZone"]
-- ["ST", "Self"]
 - ["ST", "String"]
 - ["ST", "TCarte"]
 - ["ST", "TZone"]
@@ -57,4 +54,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "d4ab361403cf457bf1ee2516b7095cd2"
+interface-hash: "d85321c6f521f3211c5ca068b89dbc6f"

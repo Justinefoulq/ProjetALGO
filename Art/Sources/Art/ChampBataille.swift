@@ -18,7 +18,8 @@ public class IteratorNomZone : IteratorProtocol {
     public func next() -> zone? { // peut être changer dico avec A1=1 , A2=2 , A2=3 , F1=4,F2=5,F3=6 etC... pour faciliter iteratteur 
     	
 		let liste : champBataille = self.champ
-		var ret : String = self.i
+		//var ret : String = self.i
+		var res : zone = liste.champBataille[ self.i]!
 		if self.i == "A1" {
 			self.i = "A2"
 		}else if self.i == "A2" {
@@ -32,7 +33,7 @@ public class IteratorNomZone : IteratorProtocol {
 		}else if self.i == "F3" {
 			self.i = "A1" 
 		}
-		return liste[ret]
+		return res
     }
     
 
@@ -46,7 +47,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	//associatedtype Zone : ZoneProtocol
    // associatedtype IteratorNomZone : IteratorProtocol
     private var PositionDispo : [String]
-	private var champBataille : [String: zone]
+	var champBataille : [String: zone]
 	private var Joueur : joueur
    
 
@@ -106,6 +107,7 @@ public class champBataille : ChampDeBatailleProtocol {
 				liste = liste + ["A3"]
 			}
 		}
+		return liste 
 
 	}
 
@@ -143,6 +145,7 @@ public class champBataille : ChampDeBatailleProtocol {
  
 			
 		}
+		return liste
 	}
 
 	//initialiserPointdeDefTour: ChampDeBatailleProtocol -> ChampDeBatailleProtocol
@@ -273,7 +276,7 @@ public class champBataille : ChampDeBatailleProtocol {
 	//Pré-conditions: Zone en entrée non vide
 	//Résultat: renvoie les zones non vides attaquables dans le champs de bataille de l'ennemie par la carte dans la zone dont le nom est entré en paramètre(utiliser getZone et getCarteZone) en fonction de la portée de la carte présente dans la zone
    	// problème car portée impossible 
-    func carteAttaquable(cdb : champBataille , nomZone : String) throws -> [String] {}
+    //func carteAttaquable(cdb : champBataille , nomZone : String) throws -> [String] {}
     
     //getZone: String -> Zone
     //Renvoie la zone dont le nom est passé en paramètre
@@ -298,6 +301,7 @@ public class champBataille : ChampDeBatailleProtocol {
     	for i in 0..<champBataille.count {
     		str = str + carteAttaquable[i]
     	}
+    	return str 
     }
 
     func ajouterCarte(carte : carte, zone : String) throws {
