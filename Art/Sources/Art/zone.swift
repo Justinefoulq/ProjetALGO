@@ -39,7 +39,7 @@ public class zone : ZoneProtocol {
 
 	//setNomZone: String -> ZoneProtocol
 	//Initialise le nom de la zone avec la chaine de caractère passé en paramètre
-	 func setNomZone(nomZone : String) {
+	func setNomZone(nomZone : String) {
 		self.nom = nomZone
 	}
 

@@ -13,6 +13,7 @@ depends-top-level:
 - "MainsProtocol"
 - "PiocheProtocol"
 - "Sequence"
+- "carte"
 depends-member:
 - ["3Art13MainsProtocolP", "Bool"]
 - ["3Art13MainsProtocolP", "CarteProtocol"]
@@ -23,13 +24,14 @@ depends-member:
 - ["3Art13MainsProtocolP", "TCarte"]
 - ["3Art13MainsProtocolP", "TPioche"]
 - ["3Art13MainsProtocolP", "ajouterCarte"]
+- ["3Art13MainsProtocolP", "carte"]
 - ["3Art13MainsProtocolP", "enleverCarte"]
 - ["3Art13MainsProtocolP", "estDansMains"]
 - ["3Art13MainsProtocolP", "estDansMainsCarte"]
 - ["3Art13MainsProtocolP", "estVide"]
 - ["3Art13MainsProtocolP", "getCarteparIdentifiant"]
 - ["3Art13MainsProtocolP", "getID"]
-- ["3Art13MainsProtocolP", "getmain"]
+- ["3Art13MainsProtocolP", "getMain"]
 - ["3Art13MainsProtocolP", "init"]
 - ["3Art13MainsProtocolP", "makeIterator"]
 - ["3Art13MainsProtocolP", "nombreCartes"]
@@ -42,6 +44,7 @@ depends-member:
 - ["ST", "TCarte"]
 - ["ST", "TPioche"]
 - ["ST", ""]
+- ["ST", "carte"]
 depends-nominal:
 - "3Art13MainsProtocolP"
 - "ST"
@@ -53,4 +56,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "ae3a9819518acc6f6569c872c41c83bb"
+interface-hash: "7326f8945878a4a1aea72dc7ab0ea532"

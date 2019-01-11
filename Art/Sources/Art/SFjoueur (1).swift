@@ -41,7 +41,7 @@ protocol JoueurProtocol {
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	mutating func demobiliser( identifiantCarte: Int) throws -> mains
+	mutating func demobiliser( IdentifiantCarte: Int) throws -> mains
 
 
 
@@ -91,14 +91,14 @@ protocol JoueurProtocol {
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : TChampDeBataille) -> Bool
+	//func checkCible(champAdversaire : TChampDeBataille) -> Bool
 
 
 
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	mutating func Capturer(carteCapturée : TCarte)
+	//mutating func Capturer(carteCapturée : TCarte)
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol

@@ -18,7 +18,6 @@ depends-top-level:
 - "mains"
 depends-member:
 - ["3Art14JoueurProtocolP", "Bool"]
-- ["3Art14JoueurProtocolP", "Capturer"]
 - ["3Art14JoueurProtocolP", "CarteProtocol"]
 - ["3Art14JoueurProtocolP", "ChampDeBatailleProtocol"]
 - ["3Art14JoueurProtocolP", "Int"]
@@ -34,7 +33,6 @@ depends-member:
 - ["3Art14JoueurProtocolP", "attaquantDispo"]
 - ["3Art14JoueurProtocolP", "attaque"]
 - ["3Art14JoueurProtocolP", "checkCarteAttaque"]
-- ["3Art14JoueurProtocolP", "checkCible"]
 - ["3Art14JoueurProtocolP", "demobiliser"]
 - ["3Art14JoueurProtocolP", "estAPortee"]
 - ["3Art14JoueurProtocolP", "getChampDeBataille"]
@@ -56,4 +54,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "b1e1ff0d2166ff7c632810da047bc4d6"
+interface-hash: "d8f44c9d8e3c2f828b13fc6de2d581d8"

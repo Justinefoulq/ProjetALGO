@@ -10,11 +10,11 @@ public class joueur : JoueurProtocol{
 
 
 	
-	private var nom : String // Joueur1 ou Joueur2
-	private var pioche : pioche
-	private var royaume : royaume
-	private var mains : mains
-	private var champDeBataille : champBataille
+	private var Nom : String // Joueur1 ou Joueur2
+	private var Pioche : pioche
+	private var Royaume : royaume
+	private var Mains : mains
+	private var ChampDeBataille : champBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche
@@ -23,10 +23,11 @@ public class joueur : JoueurProtocol{
 	//post-conditions pourle royaume: 1 carte piochée au hasard dedans, les cartes devront être reprises dans le royaume dans l'ordre où elles sont arrivées, c'est-à-dire par exemple, 1ere carte placée dans le royaume=1ere carte à pouvoir être déployée
 	//post-conditions pour la pioche: 16 carte au hasard, au debut du jeu chaque joueur a 21 cartes dont: 1 roi, 9 soldats, 6 gardes, 5archers, dans les 16 cartes de la pioche il ne peut donc pas avoir de roi
 	public required init(){
-		self.pioche = pioche()
-		self.mains = mains(Pioche : pioche)
-		self.champDeBataille = champBataille()
-		self.royaume = royaume()
+		self.Nom = "Joueur1"
+		self.Pioche = pioche()
+		self.Mains = mains(Pioche : Pioche)
+		self.ChampDeBataille = champBataille()
+		self.Royaume = royaume(Pioche : Pioche) 
 		
 	}
 
@@ -40,14 +41,14 @@ public class joueur : JoueurProtocol{
 	//résultat: la carte indiquée est posée à la position choisie sur le champ de bataille
 	//post-conditions: 1 carte en moins dans la main, 1 carte en plus sur le champ de bataille (à la bonne position)
 	func poserCarte( identifiantCarte: Int, positionCarte: String) throws{
-		guard self.mains.estDansMains(identifiantCarte : identifiantCarte ) else {
+		guard self.Mains.estDansMains(identifiantCarte : identifiantCarte ) else {
 			throw joueurError.mainincorrecte}		
 		
-		if self.champDeBataille.checkPositionDispo(nomZone : positionCarte) {
-			var carte : carte = try! self.mains.getCarteparIdentifiant( identifiantCarte : identifiantCarte)
+		if self.ChampDeBataille.checkPositionDispo(nomZone : positionCarte) {
+			var Carte : carte = try! self.Mains.getCarteparIdentifiant( identifiantCarte : identifiantCarte)
 			
-			try! self.champDeBataille.ajouterCarte(carte : carte , zone : positionCarte)
-			try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
+			try! self.ChampDeBataille.ajouterCarte(carte : Carte , zone : positionCarte)
+			try! self.Mains.enleverCarte(identifiantCarte : identifiantCarte)
 			
 		}
 		
@@ -59,8 +60,8 @@ public class joueur : JoueurProtocol{
 	//Résultat: ChampDeBataille avec n cartes en plus aux positions choisies
 	//post-conditions: n cartes en moins dans le royaume, n cartes en plus sur le ChampDeBataille
 	func mobiliser(CarteMobilisee : carte, nomZone : String) throws{
-		try! self.royaume.removeCarte(carteSelectionne :  CarteMobilisee)
-		try! self.champDeBataille.ajouterCarte(carte : CarteMobilisee, zone : nomZone.getZone())//pb de fonction manquante dans champ de bataille---------------------
+		try! self.Royaume.removeCarte(carteSelectionne :  CarteMobilisee)
+		try! self.ChampDeBataille.ajouterCarte(carte : CarteMobilisee, zone : nomZone)//pb de fonction manquante dans champ de bataille---------------------
 	}
 
 
@@ -71,14 +72,16 @@ public class joueur : JoueurProtocol{
 	//pré-conditions: entier compris entre 1 et 6, sinon échoue
 	//Résultat: Main avec une carte en moins
 	//Post-conditions: Main avec une carte en moins, royaume avec une carte en plus 
-	func demobiliser( identifiantCarte : Int) throws -> mains {
-		guard identifiantCarte>0 || identifiantCarte<7 else {
+	func demobiliser( IdentifiantCarte : Int) throws -> mains {
+		guard IdentifiantCarte>0 || IdentifiantCarte<7 else {
 			throw joueurError.mainincorrecte}
-		var carte : carte = try! getCarteparIdentifiant( identifiantCarte : identifiantCarte)
-		try! self.mains.enleverCarte(identifiantCarte : identifiantCarte)
-		try! self.royaume.ajouterCarte(carteSel : carte) //pb manque cette fonction dans royaume ------------------------
-		return self.mains
+		var Carte : carte = try! self.Mains.getCarteparIdentifiant( identifiantCarte : IdentifiantCarte)
+		try! self.Mains.enleverCarte(identifiantCarte : IdentifiantCarte)
+		try! self.Royaume.ajouterCarte(carteSel : Carte) //pb manque cette fonction dans royaume ------------------------
+		return self.Mains
 	}
+
+
 
 	//piocherCarte:  Joueur-> CarteProtocol
 	// pioche une carte au hasard dans la pioche (utiliser getPioche), la créer suivant la chaine de caractère renvoyé par la fonction piocher de PiocheProtocol
@@ -87,8 +90,8 @@ public class joueur : JoueurProtocol{
 	//résultat: 1 carte 
 	//post-conditions: nombrecarte de la pioche à baisssé de 1, 1 carte en plus dans la main
 	func piocherCarte() -> carte{
-		var carte = self.pioche.piocher()
-		self.mains.ajouterCarte(carte : carte)
+		var carte = self.Pioche.piocher()
+		self.Mains.ajouterCarte(carte : carte)
 		return carte
 	}
 
@@ -126,7 +129,7 @@ public class joueur : JoueurProtocol{
 	//Résultat: return true si la carteAttaquante(nom de ma zone où se trouve la carte ) est dans listeAttaquant() sinon renvoie false
 	func attaquantDispo(carteAttaquante: String) -> Bool{
 		var test=false
-		var liste=self.champDeBataille.listeAttaquant()
+		var liste=self.ChampDeBataille.listeAttaquant()
 		for (carte) in liste! {
 			if carte==carteAttaquante{
 				test=true
@@ -142,7 +145,7 @@ public class joueur : JoueurProtocol{
     func checkCarteAttaque(nomZoneAttaquant: String, carteAttaquableparJ: [String]) -> Bool{
 	    var test=false
 	    for (carte) in carteAttaquableparJ{
-		    if carte.getNom()==nomZoneAttaquant{
+		    if carte==nomZoneAttaquant{
 			    test=true
 		    }
 		    
@@ -158,48 +161,52 @@ public class joueur : JoueurProtocol{
 	func estAPortee(zoneAttaquant: String, zoneCible: String) -> Bool{
 		var test=false
 		var CarteZoneAttaquant: carte
-		CarteZoneAttaquant = zoneAttaquant.getCarteZone()
+		CarteZoneAttaquant = try! self.ChampDeBataille.getZone(nomZone : zoneAttaquant).getCarteZone()!
 		var CarteZoneCible: carte
-		CarteZoneCible=zoneCible.getCarteZone()
+		CarteZoneCible = try! self.ChampDeBataille.getZone(nomZone : zoneCible).getCarteZone()!
 		//PB zone attaquanr 
-		if (CarteZoneAttaquant.attaquePossible(zoneCible)){
-			test=true
+		if !(CarteZoneAttaquant.estDefensif()){ 
+			test = true
 		}
-		return true
+		return test
 	}
 	
 	//checkCible: ChampDeBatailleProtocol x [String]->Bool
 	//Appelle la fonction de ChampDeBatailleProtocol listeAttaquant et regarde pour chaque carte donné par liseAttaquant si au moins une d'entre elles peut cibler une carte du champs de bataille de l'ennemie
 	//Résultat: renvoie vrai si au moins une carte de la listeAttaquant() à une cible à sa porté
-	func checkCible(champAdversaire : champBataille) -> Bool{
+	//Impossible de savoir si les cartes dans liste attaquantes peuvent attaquer celle du ChampDeBataille adverse
+	/*func checkCible(champAdversaire : champBataille) -> Bool{
 		var tab=champAdversaire.listeAttaquant()
 		var test=false
-		if (tab!=nil){
-			test=true
+		
+		for (carte) in tab! {
+			var Cartes : carte = self.ChampDeBataille.getZone(nomZone : carte )!.getCarteZone()
+				test=true
 		}
 		return test		
 	}
+	*/
 
 
 
 	//Capturer: JoueurProtocol x CarteProtocol ->
 	//Prend la carte passée en paramètre, la retire du champ de bataille adverse et la place dans le royaume du joueur courant
 	//Résultat: Carte en moins dans le champ de bataille adverse et 1 en plus dans le royaume
-	func Capturer(carteCapturée : carte){
-		self.champDeBataille.CapturerCarte(carteCapturée)
-	}
+	/*func Capturer(carteCapturée : carte){
+		self.ChampDeBataille.CapturerCarte(carteCapturée)
+	}*/
 	
     //getPioche: JoueurProtocol -> PiocheProtocol
     //Renvoie la pioche du JoueurProtocol
     func getPioche() -> pioche{
-	    return self.pioche
+	    return self.Pioche
     }
     	
 	
     //getRoyaume: JoueurProtocol -> RoyaumeProtocol
     //Renvoie le Royaume du JoueurProtocol
     func getRoyaume() -> royaume{
-	    return self.royaume
+	    return self.Royaume
     }
     
     
@@ -207,20 +214,20 @@ public class joueur : JoueurProtocol{
     //getMain: JoueurProtocol -> MainsProtocol
     //Renvoie la main du JoueurProtocol
     func getMain() -> mains {
-	    return self.mains
+	    return self.Mains
     }
     
     
     //getChampDeBataille: JoueurProtocol -> ChampDeBatailleProtocol
     //Renvoie le ChampDeBataille du JoueurProtocol
     func getChampDeBataille() -> champBataille{
-	    return self.champDeBataille
+	    return self.ChampDeBataille
     }
     
     //getNomJoueur: JoueurProtocol -> String
 	//Renvoie le nom du Joueur : Joueur1 ou Joueur2
 	func getNomJoueur() -> String{
-		return self.nom
+		return self.Nom
 	}
     
 }

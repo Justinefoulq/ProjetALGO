@@ -36,7 +36,5 @@ protocol ZoneProtocol {
 	//sinon renvoie faux
 	func estVide()-> Bool
 
-	mutating func setNomZone()
-
 
 }

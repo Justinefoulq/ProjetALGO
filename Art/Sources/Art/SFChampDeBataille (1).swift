@@ -80,7 +80,7 @@ protocol ChampDeBatailleProtocol : Sequence {
     //Renvoie la zone dont le nom est passé en paramètre
     //pré-conditions: Chaîne de caactères entrée en paramètre correspond à une zone initialisée 
     //Resultat: renvoie un zone, celle dont le nom est passé en paramètre
-    //func getZone(nomZone: String) -> Zone-------------------------------inutile je pense -----------------------------------
+    func getZone(nomZone: String) throws -> TZone
 	
     //affichageCible: [String] ->
     //Renvoie les cartes et toutes leurs propritétés détailées (point de défense restant...) des zones présentes dans la tableau de chaine de caractères passé en paramètre, qui est le résultat de carteAttaquable

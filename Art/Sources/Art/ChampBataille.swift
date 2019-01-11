@@ -280,7 +280,12 @@ public class champBataille : ChampDeBatailleProtocol {
     //pré-conditions: Chaîne de caactères entrée en paramètre correspond à une zone initialisée 
     //Resultat: renvoie un zone, celle dont le nom est passé en paramètre
     
-    //func getZone(nomZone: String) -> Zone-----------------------------Pas utile ici car dictionnaire mais peut etre a mettre dans zone--------------------
+    func getZone(nomZone: String) throws -> zone {
+    	guard nomZone=="A1" || nomZone=="A2" || nomZone=="A3" || nomZone=="F1" || nomZone=="F2" || nomZone=="F3" else {
+    		throw ChampBatailleError.zonePasDansChampBat
+    	}
+    	return self.champBataille[nomZone]!
+    }
 	
     
     //affichageCible: [String] -> 

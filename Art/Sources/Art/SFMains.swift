@@ -21,8 +21,8 @@ protocol MainsProtocol : Sequence {
 
 	// getmain() -> MainsProtocol
 	//fonction qui renvois la main 
-	//
-	func getmain()
+	
+	func getMain() -> [Int : carte]
 
 
 	

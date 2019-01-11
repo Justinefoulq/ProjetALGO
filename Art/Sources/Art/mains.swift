@@ -54,7 +54,7 @@ public class mains : MainsProtocol{
 		self.carte2 = carte()
 		self.carte3 = carte()
 
-		self.carte0 = carte0.creerRoi1()
+		self.carte0 = carte0.creerRoi2()
 		self.carte1 = Pioche.piocher()
 		self.carte2 = Pioche.piocher()
 		self.carte3 = Pioche.piocher()

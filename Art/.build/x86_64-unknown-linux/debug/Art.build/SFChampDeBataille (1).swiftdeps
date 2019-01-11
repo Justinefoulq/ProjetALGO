@@ -30,6 +30,7 @@ depends-member:
 - ["3Art23ChampDeBatailleProtocolP", "checkPositionDispo"]
 - ["3Art23ChampDeBatailleProtocolP", "estVide"]
 - ["3Art23ChampDeBatailleProtocolP", "getPositionDispo"]
+- ["3Art23ChampDeBatailleProtocolP", "getZone"]
 - ["3Art23ChampDeBatailleProtocolP", "init"]
 - ["3Art23ChampDeBatailleProtocolP", "initialiserAttaqueSoldat"]
 - ["3Art23ChampDeBatailleProtocolP", "initialiserPointdeDefTour"]
@@ -56,4 +57,4 @@ depends-external:
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
 - "/home/justine/swift-4.2.1-RELEASE-ubuntu18.04/usr/lib/swift/linux/x86_64/glibc.modulemap"
-interface-hash: "65469de6a1a07d782f61095f683252fd"
+interface-hash: "d4ab361403cf457bf1ee2516b7095cd2"
