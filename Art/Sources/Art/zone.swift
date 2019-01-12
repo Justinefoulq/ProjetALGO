@@ -33,7 +33,7 @@ public class zone : ZoneProtocol {
 
 	//getNomZone: ZoneProtocol -> String
 	//Renvoie le nom de la zone (F1 , F2 , F3 , A1, A2 , A3)
-	func getNomZone() -> String{
+	public func getNomZone() -> String{
 		return self.nom
 	}
 
@@ -45,7 +45,7 @@ public class zone : ZoneProtocol {
 
 	//getCarteZone: ZoneProtocol -> CarteProtocol | nil
 	//Renvoie la valeur (et description) de la carte présente dans la zone passée en paramètre, si la zone est vide, renvoie nil
-	func getCarteZone() -> carte?{
+	public func getCarteZone() -> carte?{
 		if (self.carte == nil){
 			return nil
 		}else{

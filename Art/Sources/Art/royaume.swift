@@ -27,7 +27,7 @@ public class royaume : RoyaumeProtocol {
 	//nombreCitoyens: RoyaumeProtocol -> Int
 	//Résultat: Renvoie le nombre de citoyens (cartes) qu'il y a dans le royaume, si royaume vide, renvoie 0
 	//Post-conditions: renvoie un entier supérieur ou égal à 0
-	func nombreCitoyens() -> Int {
+	public func nombreCitoyens() -> Int {
 		return self.royaume.count
 	}
 

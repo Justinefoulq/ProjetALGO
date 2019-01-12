@@ -33,14 +33,14 @@ func saisieChaine()-> String{
   return position
 }
 
-func choisirCarteMain(joueurCourant: Joueur)-> Int{
+func choisirCarteMain(joueurCourant: joueur)-> Int{
   var saisieVerifiee = false
   var numCarte : Int
-  while(saisieVerifié == false){
+  while(saisieVerifiee == false){
     print("Choisissez une carte de votre main (Rentrer le numéro de la carte)")
-    print(joueurCourant.main().affichage())
+    print(joueurCourant.Mains().affichage())
     numCarte = saisieEntier()
-    saisieVerifiee = joueurCourant.main().estDansMain(identifiantCarte : numCarte)
+    saisieVerifiee = joueurCourant.Mains().estDansMain(identifiantCarte : numCarte)
   }
   return numCarte
 }
@@ -53,22 +53,23 @@ func afficherTabString(positionDisponible : [String]){
      }
 }
 
-func choisirPosition(joueurCourant : Joueur) -> String{
+func choisirPosition(joueurCourant : joueur) -> String{
   var saisieVerifiee = false
   var positionDisponible : [String]
   var position : String
-  while(saisieVerifié == false){
+  while(saisieVerifiee == false){
     print("Choisissez où poser la carte")
-    positionDisponible = joueurCourant.champDeBataille().getPositionDispo()
+    positionDisponible = joueurCourant.ChampDeBataille().getPositionDispo()
     print(positionDisponible)
     position = saisieChaine()
-    saisieVerifiee = joueurCourant.champDeBataille().checkPositionDispo(nomZone : position)
+    saisieVerifiee = joueurCourant.ChampDeBataille().checkPositionDispo(nomZone : position)
   }
   return position
 }
 
-func verificationFinDeGuerre(joueurCourant: Joueur, adversaire : Joueur)-> Joueur{
-    if(joueurCourant.royaume().nombreCitoyens() > adversaire.royaume().nombreCitoyens()){
+func verificationFinDeGuerre(joueurCourant: joueur, adversaire : joueur)-> joueur{
+    var gagnant : joueur
+    if(joueurCourant.Royaume().nombreCitoyens() > adversaire.Royaume().nombreCitoyens()){
       gagnant = joueurCourant
 
     }
@@ -86,7 +87,7 @@ func choixAction() -> Int{
   }	
 }
 
-func afficherChampsdeBataille(cdbAllie : ChampsDeBataille) -> String{
+func afficherChampsdeBataille(cdbAllie : champBataille) -> String{
 // faire un print du champs de bataille en mettant dans une str ce qu'on veut afficher
   //[F1  ][F2  ][F3  ]   = plateau vide
   //[A1  ][A2  ][A3  ]
@@ -96,7 +97,7 @@ func afficherChampsdeBataille(cdbAllie : ChampsDeBataille) -> String{
   var afficher : String
   var ItZone  = cdbAllie.makeIterator()
   var i = 0
-  var carte : Carte
+  var carte : carte
   var nomZone : String
   var nomCarte : String
   while(i < 6){
@@ -121,7 +122,7 @@ func afficherChampsdeBataille(cdbAllie : ChampsDeBataille) -> String{
 
 
 
-func afficherCarte(carte : Carte) -> String{
+func afficherCarte(carte : carte) -> String{
   var nom = carte.getNom()
   var orientationBool = carte.estDefensif()
   var ptDefTour = carte.getPointdeDefduTour()
@@ -131,7 +132,7 @@ func afficherCarte(carte : Carte) -> String{
   var portee = carte.getPortee()
   var orientation : String
   var affichage : String
-  if orientationBool == True {
+  if orientationBool == true {
   	orientation = "Défensive"
   }
   else{
@@ -147,17 +148,17 @@ func afficherCarte(carte : Carte) -> String{
 
 
 
-func afficherRoyaume(royaume : Royaume) -> String{
-  var afficher = " Vous avez " + royaumenombreCitoyens() + " citoyens"
+func afficherRoyaume(royaume : royaume) -> String{
+  var afficher = " Vous avez " + royaume.nombreCitoyens() + " citoyens"
   return afficher
 }
 
-func afficherMain(main : Mains){
-	var carte : Carte
+func afficherMain(main : mains){
+	var carte : carte
   var ItMain = main.makeIterator()
   var id = ItMain.next()
-  var affCarte
-  var affichage
+  //var affCarte
+  var affichage 
   while (id != nil) {
     carte = main.getCarteparIdentifiant(identifiantCarte : id)
     affichage = affichage + "Carte \(id) : \(carte.afficherCarte()) \n \n"
@@ -188,21 +189,21 @@ var carteAttaquableParJ : [String]? // Stock les carte attaquable par une zone, 
 var strcarteAttaque : String // Permet au joueur de saisir le nom de la zone où il veut attaquer une carte
 var strcarteAttaquante : String // Permet à l'utilisateur de saisir le nom de la zone où il veut selectionner une carte pour attaquer
 var egalite = false   // permet de vérifier la condition d'égaliter
-var carteAttaque : Carte
-var cartePioche :  Carte
-var carteAttaquante : Carte
-var carteMobilise : Carte
-var carteRemove : Carte
+var carteAttaque : carte
+var cartePioche :  carte
+var carteAttaquante : carte
+var carteMobilise : carte
+var carteRemove : carte
 var continuer : Int // pour demander à l'utilisateur si il veux continuer d'attaquer
 var fin = false // permet de terminer la boucle principale lorque la variable sera égale à true
 var saisieVerifieDemobilisation = -1 // permet de vérifier le choix du joueur dans la phase de développement
-var gagnant : Joueur //permet de déterminer le joueur gagnant
+var gagnant : joueur //permet de déterminer le joueur gagnant
 
 //Initialisation de la partie
 
 print("Bienvenue dans l'Art de la Guerre")
-var joueur1 = Joueur()
-var joueur2 = Joueur()
+var joueur1 = joueur()
+var joueur2 = joueur()
 
 //Initialisation  des joueurs
 
@@ -314,7 +315,7 @@ while(fin == false && egalite == false){
       if(carteAttaquante.estSoldat()){
         carteAttaquante.setAttaque(valeur: joueurCourant.main().nombreCartes())
       }
-      carteAttaque = getCarteZone(nomZone : strcarteAttaque)
+      carteAttaque = zone.getCarteZone(nomZone : strcarteAttaque)
       resultatAttaque = joueurCourant.attaque(carteAttaquante : carteAttaquante,carteCiblé : carteAttaque) // Si bléssé change les "pointDefduTour"
       if( resultatAttaque == 0 ){ // carte capturé       
         carteRemove = adversaire.champDeBataille().remove(nomZone: strcarteAttaque)
@@ -430,7 +431,7 @@ while(fin == false && egalite == false){
   //                                     PHASE DE DEVELOPPEMENT
   if(fin == false && egalite == false){
     print("phase de développement")
-    print(afficherMain(main : joueur1.main()))
+    print(afficherMain(main : joueur1.maximumLengthOfBytesains()))
     while(saisieVerifieDemobilisation != 0 && saisieVerifieDemobilisation != 1 && joueurCourant.main().nombreCartes() < 6){
       print("Tapez 1 pour démobiliser une carte. Tapez 0 pour passer votre tour")
       var saisieVerifieDemobilisation = saisieEntier()
@@ -445,16 +446,15 @@ while(fin == false && egalite == false){
     i=i+1 // Numéro du tour suivant
     action = 0 // réinitialise la variable action pour le prochain tour
   }
-}
 
 if(egalite == true){
   print("EGALITE : La guerre est finit et vos deux royaumes sont aussi prospère")
 }
-if(gagnant == joueur1){
+if(gagnant === joueur1){
   print("Bravo joueur1, vous avez gagné !")
   print(libVictoire)
 }
-if(gagnant == joueur2){
+if(gagnant === joueur2){
   print("Bravo joueur2, vous avez gagné !")
   print(libVictoire)
 }

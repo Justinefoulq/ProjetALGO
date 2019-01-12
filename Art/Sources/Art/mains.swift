@@ -130,7 +130,7 @@ public class mains : MainsProtocol{
 	//renvoie une carte à partir d'un identifiant passé en paramètre
 	//précondition: identifiantCarte.estDansMain() renvoie True
 	//post-conditions: renvoie une Carte qui est dans la main et qui a pour identifiantCarte celui passé en paramètre
-	func getCarteparIdentifiant( identifiantCarte : Int) throws -> carte  {
+	public func getCarteparIdentifiant( identifiantCarte : Int) throws -> carte  {
 		guard estDansMains(identifiantCarte: identifiantCarte) else {
 			throw MainsError.pasDansMains
 		}

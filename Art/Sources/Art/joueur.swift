@@ -10,11 +10,11 @@ public class joueur : JoueurProtocol{
 
 
 	
-	private var Nom : String // Joueur1 ou Joueur2
-	private var Pioche : pioche
-	private var Royaume : royaume
-	private var Mains : mains
-	private var ChampDeBataille : champBataille
+	var Nom : String // Joueur1 ou Joueur2
+	var Pioche : pioche
+	public var Royaume : royaume
+	public var Mains : mains
+	public var ChampDeBataille : champBataille
 	
 	//init : ->JoueurProtocol
 	//creation d'un joueur avec initialisation de: sa main, son champ de bataille, son royaume, sa pioche

@@ -30,13 +30,13 @@ public class carte : CarteProtocol{
     //getNom: CarteProtocol -> String
     //Renvoie le nom de la carte
     //-> String
-    func getNom() -> String{
+    public func getNom() -> String{
 	    return self.Nom
     }     
 
 	//mettreEnPositionOffensive: CarteProtocol -> CarteProtocol
 	//met la carte en position offensive ( horizontale )
-	func mettreEnPositionOffensive(){
+	public func mettreEnPositionOffensive(){
 		self.Position=true 
 	
 	}
@@ -50,7 +50,7 @@ public class carte : CarteProtocol{
 	//getPointdeDefduTour:  CarteProtocol-> Int
 	//Résultat : renvoie les points de def de la carte (au cas où elle a déjà eu des dégâts) après une attaque (points de dégâts cumulésjusqu'à la fin du tour)
 	//post conditions: les points de def du tour son > 0 et <= au point de Def en vigueur de la carte
-	func getPointdeDefduTour() -> Int{
+	public func getPointdeDefduTour() -> Int{
 		 return self.PointdeDefduTour
 	}
 
@@ -141,7 +141,7 @@ public class carte : CarteProtocol{
 	//																   Soldat: égale au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains); 
 	//																   Garde: 1;
 	//																   Archer: 1
-	func getAttaque() -> Int{
+	public func getAttaque() -> Int{
 		return self.Attaque
 	}
 
@@ -154,7 +154,7 @@ public class carte : CarteProtocol{
 	//																   		 Soldat: 2; 
 	//																   		 Garde: 3;
 	//																   		 Archer: 2
-	func getDefPDef() -> Int{
+	public func getDefPDef() -> Int{
 		return self.DefPDef
 	}
 
@@ -166,7 +166,7 @@ public class carte : CarteProtocol{
 	//																   		 Soldat: 1; 
 	//																   		 Garde: 2;
 	//																   		 Archer: 1
-	func getDefPOff() -> Int{
+	public func getDefPOff() -> Int{
 		return self.DefPOff
 	}
 
@@ -178,7 +178,7 @@ public class carte : CarteProtocol{
 	//																   		 Soldat: la position devant lui; 
 	//																   		 Garde: la position devant lui;
 	//																   		 Archer: les 4 positions devant lui qui serait les cases d’arrivée par un mouvement de cavalier aux échecs, c'est-à-dire la position d'arrivée d'un L majuscule (tourné vers la gauche ou la droite) formé par les positions, soit en parcourant 2 positions horizontales + 1 verticale ou 2 positions verticales et 1 horizontale
-	func getPortee() -> Int  { //PB portee----------------------
+	public func getPortee() -> Int  { //PB portee----------------------
 		return self.Portee
 	}
 
@@ -186,7 +186,7 @@ public class carte : CarteProtocol{
 	//Attribue la valeur de la force d'attaque à une carte
 	//Pré-conditions: Valeur de la force d'attaque = entier rentré en paramètre = 1 si l'carte est un roi1, roi2, garde ou archer ou égal au nombre d'cartes qu'il y a dans la main (donnée par la fonction NbreCartes du type Mains)
 	//Résultat: La carte à une valeur de force d'attaque affectée
-	func setAttaque(valeur: Int){
+	public func setAttaque(valeur: Int){
 		self.Attaque=valeur
 	}
 	 
@@ -194,7 +194,7 @@ public class carte : CarteProtocol{
 	//Attribue la valeur de la force de défense en position défensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position défensive = entier rentré en paramètre = 2 si l'carte est un soldat ou archer, 3 si c'est un garde, 4 si c'est un Roi1, 5 si c'est un Roi2
 	//Résultat: La carte à une valeur de force de défense en position défensive affectée
-	func setDefPDef(valeur: Int) {
+	public func setDefPDef(valeur: Int) {
 		self.DefPDef=valeur
 	}
 
@@ -202,7 +202,7 @@ public class carte : CarteProtocol{
 	//Attribue la valeur de la force de défense en position offensive à une carte
 	//Pré-conditions: Valeur de la force de défense en position offensive = entier rentré en paramètre = 1 si l'carte est un soldat ou archer, 2 si c'est un garde, 4 si c'est un Roi1 ou Roi2
 	//Résultat: La carte à une valeur de force de défense en position offensive affectée
-	func setDefPOff(valeur: Int) {
+	public func setDefPOff(valeur: Int) {
 		self.DefPOff=valeur
 	}
 
@@ -211,7 +211,7 @@ public class carte : CarteProtocol{
 	// Attibue la valeur de defense de ce tour à une carte
 	//Pré-conditions: valeur >= 0 et valeur <= Points de def en fonction de la position de la carte
 	//Résultat: La carte à une nouvelle valeur de défense pour ce tour qui lui est affectée
-	func setPointsDefTour(valeur: Int) {
+	public func setPointsDefTour(valeur: Int) {
 		self.PointdeDefduTour=valeur
 	}
 
@@ -219,7 +219,7 @@ public class carte : CarteProtocol{
 	//estRoi:CarteProtocol -> Bool
 	//Indique si une carte est un roi ou pas, appelle getNom
 	//Résultat: Booléen: vrai si la fonction getNom renvoie  Roi1 ou Roi2, faux sinon
-	func estRoi() -> Bool{
+	public func estRoi() -> Bool{
 		if self.Nom=="Roi1" || self.Nom=="Roi2"{
 			return true
 		}else {
@@ -230,7 +230,7 @@ public class carte : CarteProtocol{
 	//estSoldat:CarteProtocol -> Bool
 	//Indique si une carte est un soldat ou pas, apelle getNom
 	//Résultat: Booléen: vrai si la fonction getNom renvoie Soldat, faux sinon
-	func estSoldat() -> Bool{
+	public func estSoldat() -> Bool{
 		if self.Nom=="Soldat"{
 			return true
 		
@@ -242,7 +242,7 @@ public class carte : CarteProtocol{
 	//EstDefensif: CarteProtocol -> Bool
 	//Indique si la carte est en position défensive (vertical)
 	//Résultat: retourne true si carte en position défensive, false sinon
-	func estDefensif() -> Bool{
+	public func estDefensif() -> Bool{
 		if self.Position==false{
 			return true
 		}else {
@@ -250,7 +250,7 @@ public class carte : CarteProtocol{
 		}
 	}
 
-	func getZone() -> zone{
+	public func getZone() -> zone{
 		return self.Zone		
 	}
 
@@ -261,14 +261,14 @@ public class carte : CarteProtocol{
 	//estGarde:CarteProtocol -> Bool
 	//Indique si une carte est un Garde ou pas, appelle getNom
 	//Résultat: Booléen: vrai si la fonction getNom renvoie  Garde1 ou Garde2, faux sinon
-	func estGarde() -> Bool{
+	public func estGarde() -> Bool{
 		if self.Nom=="Garde1" || self.Nom == "Garde2"{
 			return true
 		}else{
 			return false
 		}
 	}
-	func estArcher() -> Bool{
+	public func estArcher() -> Bool{
 		if self.Nom=="Archer1" || self.Nom == "Archer2"{
 			return true
 		}else{
